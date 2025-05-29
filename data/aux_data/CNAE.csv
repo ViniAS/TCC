@@ -1,0 +1,218 @@
+value;cod
+Produção de Lavouras Temporárias;011
+Horticultura e Produtos de Viveiro;012
+Produção de Lavouras Permanentes;013
+Pecuária;014
+Produção Mista: Lavoura e Pecuária;015
+Ativ Serv Relac Agric/Pecuária, Exc Ativ Veter;016
+Silvicultur, Exploração Florestal e Serv Relac;021
+Pesca, Aqüicultura e Ativ Serv Relac;051
+Extração De Carvão Mineral;100
+Extração de Petróleo e Gás Natural;111
+Serv Relac Extr Petról/Gás, exc Prosp Real Ter;112
+Extração de Minério de Ferro;131
+Extração de Minérios Metálicos Não-Ferrosos;132
+Extração de Pedra, Areia e Argila;141
+Extração De Outros Minerais Não-Metálicos;142
+Abate e Preparação Produtos de Carne e Pescado;151
+Process, Preserv e Prod de Conservas;152
+Produção Óleos e Gorduras Vegetais e Animais;153
+Laticínios;154
+Moagem, Fabr Prod Amilác Rações Balanc p/Anim;155
+Fabricação e Refino de Açúcar;156
+Torrefação e Moagem de Café;157
+Fabricação de Outros Produtos Alimentícios;158
+Fabricação de Bebidas;159
+Fabricação de Produtos do Fumo;160
+Beneficiamento de Fibras Têxteis Naturais;171
+Fiação;172
+Tecelagem - inclusive Fiação e Tecelagem;173
+Fabricação de Artefatos Têxteis Incl Tecelagem;174
+Serv Acab em Fios, Tecidos e Artigos Têxteis;175
+Fabr Artef Têxteis Excl Vest e Outr Art Têxt;176
+Fabr Tecidos e Artigos de Malhas de Vestuário;177
+Confecção de artigo do vestuário e acessórios;181
+Fabr Acessórios Vestuário e Segurança Profiss;182
+Curtimento e outras Preparações de Couro;191
+Fabr Artigos Viagem e Artefatos Diversos Couro;192
+Fabricação de Calçados;193
+Desdobramento de Madeira;201
+Fabr Prod Madeira, Cortiça e Material Trançado;202
+Fabr Celulose e Outras Pastas para fabr papel;211
+Fabr Papel, Papelão Liso, Cartolina e Cartão;212
+Fabricação de Embalagens de Papel ou Papelão;213
+Fabr Artef Div Papel, Papelão, Cartolin Cartão;214
+Edição e Impressão;221
+Impressão e Serviços Conexos para Terceiros;222
+Reprodução de Materiais Gravados;223
+Coquerias;231
+Refino de Petróleo;232
+Elaboração de Combustíveis Nucleares;233
+Produção de Álcool;234
+Fabricação de Produtos Químicos Inorgânicos;241
+Fabricação de Produtos Químicos Orgânicos;242
+Fabr Resinas Termoplást e Termofixas e Elastôm;243
+Fabr Fibras Fios Cabos e Filam Cont Artif/Sint;244
+Fabricação de Produtos Farmacêuticos;245
+Fabricação de Defensivos Agrícolas (Agrotóx);246
+Fabr Sabões Detergent Prod Limpeza Art Perfum;247
+Fabr Tintas Verniz Esmalt Lacas Solvent Afins;248
+Fabr Produtos e Preparados Químicos Diversos;249
+Fabr Art Borracha Pneumáticos e Câmaras-de-ar;251
+Fabricação de Produtos de Plástico;252
+Fabricação de Vidro e de Produtos do Vidro;261
+Fabricação de Cimento;262
+Fabr Artef Concr Cimento Fibrocim Gesso Estuq;263
+Fabricação de Produtos Cerâmicos;264
+Aparelh Pedras Fabr Cal e Outr Prod Min ñ Met;269
+Siderúrgicas Integradas;271
+Fabricação de Produtos Siderúrgicos;272
+Fabricação de Tubos;273
+Metalurgia de Metais Não-Ferrosos;274
+Fundição;275
+Fabr Estrut Metálicas e Obras Caldeirar Pesada;281
+Fabr Tanques, Caldeiras e Reserv Metálicos;282
+Forj, Estamp, Metalurg Pó e Serv Trat Metais;283
+Fabr Art Cutelaria Serralheria Ferram Manuais;284
+Fabricação de Produtos Diversos de Metal;289
+Fabr Motores Bombas Compress e Equip Transm;291
+Fabr Máquinas e Equipamentos de Uso Geral;292
+Fabr Trator Máq Equip Agric, Avic e Prod Anim;293
+Fabricação de Máquinas-Ferramenta;294
+Fabr Máq Equip Indústr Extr Mineral Construção;295
+Fabr Outr Máq Equipamentos de Uso Específico;296
+Fabr Armas, Munições e Equi Militares e Bélico;297
+Fabricação de Eletrodomésticos;298
+Fabricação de Máquinas para Escritório;301
+Fabr Máq Equip Sist Eletr Process de Dados;302
+Fabr Geradores, Transform e Motores Elétricos;311
+Fabr Equip Distrib e Contr de Energia Elétrica;312
+Fabr Fios, Cabos e Condutores Elétr Isolados;313
+Fabr Pilhas, Baterias e Acumuladores Elétricos;314
+Fabr Lâmpadas e Luminárias e Equip Iluminação;315
+Fabr Material Elétrico para Veículos;316
+Fabr Outros Equipamentos e Aparelhos Elétricos;319
+Fabricação de Material Eletrônico Básico;321
+Fabr Apar Equip Telef Radiotel Transm TV Rádio;322
+Fabr Apar Rec Rád TV e Repr Grav Ampl Som/Víd;323
+Fabr Apar Instr Méd-Hosp Odont Labor Ap Ortop;331
+Fabr Apar Instr de Medida, Testes e Controle;332
+Fabr Máq Apar Equip Autom Industr Cont Proces;333
+Fabr Apar Instr Mat Óticos, Fotogr e Cinemat;334
+Fabricação de Cronômetros e Relógios;335
+Fabr Automóveis, Camionetas e Utilitários;341
+Fabricação de Caminhões e Ônibus;342
+Fabricação de Cabines, Carrocerias e Reboques;343
+Fabr Peças e Acessórios Veículos Automotores;344
+Recond ou Recup de Motores Veíc Automotores;345
+Constr repar embarcações e estrut flutuantes;351
+Constr Montag Repar Veículos Ferroviários;352
+Construção, Montagem e Reparação de Aeronaves;353
+Fabricação Outros Equipamentos de Transporte;359
+Fabricação de Artigos do Mobiliário;361
+Fabricação de Produtos Diversos;369
+Reciclagem de Sucatas Metálicas;371
+Reciclagem de Sucatas Não-Metálicas;372
+Produção e Distribuição de Energia Elétrica;401
+Produção e Distrib Gás Através de Tubulações;402
+Produção e Distribuição de Vapor e Água Quente;403
+Captação, Tratamento e Distribuição de Água;410
+Preparação do Terreno;451
+Constr Edifícios e Obras de Engenharia Civil;452
+Obras Infra-Estr Engenh Elétr, Eletrôn Ambient;453
+Obras de Instalações;454
+Obras de Acabamentos e Serv Aux da Construção;455
+Aluguel Equip Constr e Demolição com Operários;456
+Comércio Varejo Atacado Veículos Automotores;501
+Manutenção e Reparação de Veículos Automotores;502
+Comérc Varejo Atac Peças Acess Veíc Automotor;503
+Comércio Manut Repar Motocicl Part Peças Acess;504
+Comércio a Varejo de Combustíveis;505
+Intermediários do Comércio;511
+"Comércio Atac Prod Agropecuários ""In Natura""";512
+Comércio Atac Prod Alimentícios Bebidas e Fumo;513
+Comércio Atac Art Usos Pessoal e Doméstico;514
+Comérc Atac Prod Interm ñ Agropec Resíd Sucat;515
+Comércio Atac Máquinas, Aparelhos e Equip;516
+Com Atac Mercad em Geral ñ compreen Grup Anter;519
+Comércio Varejista Não Especializado;521
+Com Varej Prod Alim Bebidas Fumo Lojas Espec;522
+Com Varej Tecid  Vest compl em Lojas Espec;523
+Comércio Varejista Outr Prod, em Lojas Espec;524
+Comércio Varejista de Artigos Usados, em Lojas;525
+Comércio Varejista Não Realizado em Lojas;526
+Reparação de Objetos Pessoais e Domésticos;527
+Estab Hoteleiros e Outr Tip Aloj Temporário;551
+Restaurantes e Outr Estab Serviços Alimentação;552
+Transporte Ferroviário Interurbano;601
+Outros Transportes Terrestres;602
+Transporte Dutoviário;603
+Transporte Marítimo de Cabotagem e Longo Curso;611
+Outros Transporte Aquaviários;612
+Transporte Aéreo, Regular;621
+Transporte Aéreo, Não-Regular;622
+Transporte Espacial;623
+Movim e Armazenam e depósitos Cargas descarga;631
+Ativ Aux Transp terrestres aquaviários aéreos;632
+Ativ Agências de Viagens e Organiz de Viagem;633
+Ativ Relac à Organização Transporte de Cargas;634
+Correio;641
+Telecomunicações;642
+Banco Central;651
+Intermediação Monetária - Depósitos à Vista;652
+Intermed Monetária - Outros Tipos de Depósitos;653
+Arrendamento Mercantil;654
+Outras Atividades de Concessão de Crédito;655
+Outras Atividades de Intermediação Financeira;659
+Seguros de Vida e Não-Vida e resseguros;661
+Previdência Privada fechada e aberta;662
+Planos de Saúde;663
+Ativ Aux Intermediação Financeira;671
+Ativ Aux Seguros e da Previdência Privada;672
+Incorporação de Imóveis por Conta Própria;701
+Aluguel de Imóveis;702
+Atividades Imobiliárias por Conta de Terceiros;703
+Condomínios Prediais;704
+Aluguel de Automóveis;711
+Aluguel Outr Meios Transp terr, embarc e aeron;712
+Aluguel de Máquinas e Equipamentos;713
+Aluguel de Objetos Pessoais e Domésticos;714
+Consultoria em Sistemas de Informática;721
+Desenvolvimento de Programas de Informática;722
+Processamento de Dados;723
+Atividades de Banco de Dados;724
+Manut e Reparação Máq Escrit e de Informática;725
+Outr Ativ Informática, Não Espec Anteriormente;729
+Pesq e Desenvolv Ciências Físicas e Naturais;731
+Pesq e Desenvolv Ciências Sociais e Humanas;732
+Ativ Jurídicas, Contábeis e Assess Empresarial;741
+Serv Arquit e Engenharia e Assess Técn Espec;742
+Ensaios de Materiais e Prod  Análise de Qualid;743
+Publicidade;744
+Seleç, Agenc e Locaç Mão-de-Obra p/ Serv Temp;745
+Ativ de Investigação, Vigilância e Segurança;746
+Atividades de Limpeza em Prédios e Domicílios;747
+Outras Ativ de Serv Prest Princip às Empresas;749
+Administr de Estado e Política Econôm e Social;751
+Serviços Coletivos Prestados Administr Pública;752
+Seguridade Social;753
+Educação Pré-Escolar e Fundamental;801
+Educação Média de Form Geral, Profiss Técnica;802
+Educação Superior;803
+Formação Permanente e Outras Ativ de Ensino;809
+Atividades de Atenção à Saúde;851
+Serviços Veterinários;852
+Serviços Sociais com ou sem alojamento;853
+Limpeza Urbana e Esgoto e Atividades Conexas;900
+Ativ Organ Empresariais, Patron e Profiss;911
+Atividades de Organizações Sindicais;912
+Outras Atividades Associativas;919
+Atividades Cinematográficas e de Vídeo;921
+Atividades de Rádio e de Televisão;922
+Outras Atividades Artísticas e de Espetáculos;923
+Atividades de Agências de Notícias;924
+Ativ Bibliot, Arquiv, Museus e Outr Ativ Cult;925
+Atividades Desportivas e Outras Relac ao Lazer;926
+Serviços Pessoais;930
+Serviços Domésticos;950
+Organ Internac e Outras Instit Extraterritor;990

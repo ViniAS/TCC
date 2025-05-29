@@ -1,0 +1,5801 @@
+value;cod
+Porto Velho;110020
+Porto Velho;110033
+Porto Velho;110045
+Porto Velho;110070
+Porto Velho;110080
+Porto Velho;110094
+Porto Velho;110110
+Guajará-Mirim;110008
+Guajará-Mirim;110010
+Guajará-Mirim;110149
+Ariquemes;110002
+Ariquemes;110013
+Ariquemes;110026
+Ariquemes;110040
+Ariquemes;110060
+Ariquemes;110140
+Ariquemes;110175
+Ji-Paraná;110011
+Ji-Paraná;110012
+Ji-Paraná;110015
+Ji-Paraná;110025
+Ji-Paraná;110100
+Ji-Paraná;110130
+Ji-Paraná;110143
+Ji-Paraná;110155
+Ji-Paraná;110160
+Ji-Paraná;110170
+Ji-Paraná;110180
+Alvorada D'Oeste;110014
+Alvorada D'Oeste;110032
+Alvorada D'Oeste;110034
+Alvorada D'Oeste;110150
+Cacoal;110001
+Cacoal;110004
+Cacoal;110009
+Cacoal;110028
+Cacoal;110029
+Cacoal;110037
+Cacoal;110050
+Cacoal;110090
+Cacoal;110120
+Vilhena;110018
+Vilhena;110030
+Vilhena;110092
+Vilhena;110145
+Vilhena;110147
+Vilhena;110148
+Colorado Oeste;110003
+Colorado Oeste;110005
+Colorado Oeste;110006
+Colorado Oeste;110007
+Colorado Oeste;110146
+Ignorado - RO;110000
+Ignorado - RO;119999
+Cruzeiro do Sul;120020
+Cruzeiro do Sul;120033
+Cruzeiro do Sul;120035
+Cruzeiro do Sul;120039
+Cruzeiro do Sul;120042
+Tarauacá;120030
+Tarauacá;120032
+Tarauacá;120060
+Sena Madureira;120034
+Sena Madureira;120043
+Sena Madureira;120050
+Rio Branco;120001
+Rio Branco;120013
+Rio Branco;120017
+Rio Branco;120038
+Rio Branco;120040
+Rio Branco;120045
+Rio Branco;120080
+Brasiléia;120005
+Brasiléia;120010
+Brasiléia;120025
+Brasiléia;120070
+Ignorado - AC;120000
+Ignorado - AC;129999
+Rio Negro AM;130040
+Rio Negro AM;130320
+Rio Negro AM;130360
+Rio Negro AM;130380
+Japurá;130210
+Japurá;130280
+Alto Solimões;130006
+Alto Solimões;130020
+Alto Solimões;130060
+Alto Solimões;130160
+Alto Solimões;130230
+Alto Solimões;130370
+Alto Solimões;130390
+Alto Solimões;130406
+Alto Solimões;130423
+Juruá;130100
+Juruá;130140
+Juruá;130150
+Juruá;130165
+Juruá;130180
+Juruá;130195
+Juruá;130220
+Tefé;130002
+Tefé;130029
+Tefé;130420
+Tefé;130426
+Coari;130008
+Coari;130010
+Coari;130063
+Coari;130083
+Coari;130120
+Coari;130130
+Manaus;130030
+Manaus;130110
+Manaus;130115
+Manaus;130185
+Manaus;130250
+Manaus;130255
+Manaus;130260
+Manaus;132603
+R.Preto da Eva;130353
+R.Preto da Eva;130356
+Itacoatiara;130190
+Itacoatiara;130200
+Itacoatiara;130310
+Itacoatiara;130400
+Itacoatiara;130440
+Parintins;130050
+Parintins;130068
+Parintins;130290
+Parintins;130300
+Parintins;130340
+Parintins;133403
+Parintins;130395
+Parintins;130430
+Boca do Acre;130070
+Boca do Acre;130350
+Purus;130090
+Purus;130240
+Purus;130410
+Madeira;130014
+Madeira;130080
+Madeira;130170
+Madeira;130270
+Madeira;130330
+Ignorado - AM;130000
+Ignorado - AM;139999
+Boa Vista;140002
+Boa Vista;140005
+Boa Vista;140010
+Boa Vista;1401
+Boa Vista;140045
+Nordeste RR;140015
+Nordeste RR;140017
+Nordeste RR;140040
+Nordeste RR;140070
+Caracaraí;140020
+Caracaraí;140028
+Caracaraí;140030
+Sudeste RR;140023
+Sudeste RR;140047
+Sudeste RR;140050
+Sudeste RR;140060
+Ignorado - RR;140000
+Ignorado - RR;149999
+Óbidos;150300
+Óbidos;150390
+Óbidos;150510
+Óbidos;150530
+Óbidos;150797
+Santarém;150040
+Santarém;150145
+Santarém;150285
+Santarém;150475
+Santarém;150480
+Santarém;150565
+Santarém;150600
+Santarém;150680
+Almeirim;150050
+Almeirim;150590
+Portel;150110
+Portel;150310
+Portel;150450
+Portel;150580
+Furos de Breves;150030
+Furos de Breves;150070
+Furos de Breves;150180
+Furos de Breves;150280
+Furos de Breves;150770
+Arari;150200
+Arari;150250
+Arari;150490
+Arari;150570
+Arari;150630
+Arari;150640
+Arari;150790
+Belém;150080
+Belém;150130
+Belém;150140
+Belém;150150
+Belém;150442
+Belém;150635
+Castanhal;150190
+Castanhal;150240
+Castanhal;150340
+Castanhal;150650
+Castanhal;150700
+Salgado;150260
+Salgado;150290
+Salgado;150410
+Salgado;150430
+Salgado;150440
+Salgado;150620
+Salgado;150710
+Salgado;150746
+Salgado;150747
+Salgado;150796
+Salgado;150820
+Bragantina;150090
+Bragantina;150160
+Bragantina;150170
+Bragantina;150220
+Bragantina;150320
+Bragantina;150500
+Bragantina;150560
+Bragantina;150610
+Bragantina;150611
+Bragantina;150660
+Bragantina;150690
+Bragantina;150740
+Bragantina;150803
+Cametá;150010
+Cametá;150120
+Cametá;150210
+Cametá;150330
+Cametá;150400
+Cametá;150460
+Cametá;150520
+Tomé-Açu;150020
+Tomé-Açu;150275
+Tomé-Açu;150470
+Tomé-Açu;150795
+Tomé-Açu;150800
+Guamá;150095
+Guamá;150195
+Guamá;150230
+Guamá;150307
+Guamá;150345
+Guamá;150350
+Guamá;150405
+Guamá;150495
+Guamá;150540
+Guamá;150655
+Guamá;150720
+Guamá;150760
+Guamá;150830
+Itaituba;150100
+Itaituba;150360
+Itaituba;150375
+Itaituba;150503
+Itaituba;150619
+Itaituba;150805
+Altamira;150060
+Altamira;150085
+Altamira;150172
+Altamira;150445
+Altamira;150548
+Altamira;150780
+Altamira;150815
+Altamira;150835
+Tucuruí;150178
+Tucuruí;150370
+Tucuruí;150380
+Tucuruí;150497
+Tucuruí;150506
+Tucuruí;150810
+Paragominas;150013
+Paragominas;150157
+Paragominas;150293
+Paragominas;150309
+Paragominas;150550
+Paragominas;150618
+Paragominas;150812
+S.Félix Xingu;150125
+S.Félix Xingu;150276
+S.Félix Xingu;150543
+S.Félix Xingu;150730
+S.Félix Xingu;150808
+Parauapebas;150034
+Parauapebas;150215
+Parauapebas;150277
+Parauapebas;150295
+Parauapebas;150553
+Marabá;150175
+Marabá;150420
+Marabá;150549
+Marabá;150715
+Marabá;150750
+Redenção;150555
+Redenção;150563
+Redenção;150613
+Redenção;150616
+Redenção;150745
+Redenção;150775
+Redenção;150840
+Conc.Araguaia;150270
+Conc.Araguaia;150304
+Conc.Araguaia;150658
+Conc.Araguaia;150670
+Ignorado - PA;150000
+Ignorado - PA;159999
+Oiapoque;160020
+Oiapoque;160050
+Amapá;160010
+Amapá;160055
+Amapá;160070
+Macapá;160005
+Macapá;160015
+Macapá;160021
+Macapá;160023
+Macapá;160025
+Macapá;160030
+Macapá;160053
+Macapá;160060
+Mazagão;160027
+Mazagão;160040
+Mazagão;160080
+Ignorado - AP;160000
+Ignorado - AP;169999
+Bico Papagaio;170030
+Bico Papagaio;170100
+Bico Papagaio;170105
+Bico Papagaio;170220
+Bico Papagaio;170255
+Bico Papagaio;170290
+Bico Papagaio;170380
+Bico Papagaio;170382
+Bico Papagaio;170389
+Bico Papagaio;170650
+Bico Papagaio;170740
+Bico Papagaio;171070
+Bico Papagaio;171245
+Bico Papagaio;171280
+Bico Papagaio;171380
+Bico Papagaio;171430
+Bico Papagaio;171830
+Bico Papagaio;171855
+Bico Papagaio;171880
+Bico Papagaio;172000
+Bico Papagaio;172010
+Bico Papagaio;172020
+Bico Papagaio;172030
+Bico Papagaio;172080
+Bico Papagaio;172120
+Araguaína;170130
+Araguaína;170210
+Araguaína;170215
+Araguaína;170230
+Araguaína;170300
+Araguaína;170305
+Araguaína;170388
+Araguaína;170550
+Araguaína;170770
+Araguaína;171395
+Araguaína;171488
+Araguaína;171570
+Araguaína;171630
+Araguaína;171720
+Araguaína;171886
+Araguaína;172208
+Araguaína;172210
+Miracema TO;170025
+Miracema TO;170190
+Miracema TO;170310
+Miracema TO;170320
+Miracema TO;170360
+Miracema TO;170390
+Miracema TO;170600
+Miracema TO;170710
+Miracema TO;170720
+Miracema TO;170825
+Miracema TO;170830
+Miracema TO;170930
+Miracema TO;171110
+Miracema TO;171180
+Miracema TO;171250
+Miracema TO;171320
+Miracema TO;171330
+Miracema TO;171370
+Miracema TO;171665
+Miracema TO;171670
+Miracema TO;171840
+Miracema TO;171870
+Miracema TO;172125
+Miracema TO;172130
+Rio Formoso;170200
+Rio Formoso;170460
+Rio Formoso;170610
+Rio Formoso;170730
+Rio Formoso;170755
+Rio Formoso;170820
+Rio Formoso;171190
+Rio Formoso;171500
+Rio Formoso;171550
+Rio Formoso;171610
+Rio Formoso;171750
+Rio Formoso;171845
+Rio Formoso;171884
+Gurupi TO;170035
+Gurupi TO;170070
+Gurupi TO;170370
+Gurupi TO;170386
+Gurupi TO;170625
+Gurupi TO;170765
+Gurupi TO;170950
+Gurupi TO;171150
+Gurupi TO;171575
+Gurupi TO;171660
+Gurupi TO;171889
+Gurupi TO;172025
+Gurupi TO;172085
+Gurupi TO;172097
+Porto Nacional;170110
+Porto Nacional;170330
+Porto Nacional;170980
+Porto Nacional;171200
+Porto Nacional;171360
+Porto Nacional;171650
+Porto Nacional;171820
+Porto Nacional;171888
+Porto Nacional;172065
+Porto Nacional;172100
+Porto Nacional;172110
+Jalapão;170307
+Jalapão;170384
+Jalapão;170410
+Jalapão;170900
+Jalapão;171050
+Jalapão;171090
+Jalapão;171195
+Jalapão;171240
+Jalapão;171270
+Jalapão;171510
+Jalapão;171790
+Jalapão;171850
+Jalapão;171875
+Jalapão;171900
+Jalapão;172015
+Dianópolis;170040
+Dianópolis;170240
+Dianópolis;170270
+Dianópolis;170510
+Dianópolis;170555
+Dianópolis;170560
+Dianópolis;170700
+Dianópolis;171215
+Dianópolis;171420
+Dianópolis;171515
+Dianópolis;171525
+Dianópolis;171620
+Dianópolis;171700
+Dianópolis;171780
+Dianópolis;171800
+Dianópolis;171865
+Dianópolis;171890
+Dianópolis;172049
+Dianópolis;172090
+Dianópolis;172093
+Ignorado - TO;170000
+Ignorado - TO;179999
+Ignorado - TO;170172
+Ignorado - TO;171350
+Ignorado - TO;172206
+Litoral Ocid.MA;210020
+Litoral Ocid.MA;210083
+Litoral Ocid.MA;210130
+Litoral Ocid.MA;210135
+Litoral Ocid.MA;210190
+Litoral Ocid.MA;210240
+Litoral Ocid.MA;210310
+Litoral Ocid.MA;210312
+Litoral Ocid.MA;210370
+Litoral Ocid.MA;210490
+Litoral Ocid.MA;210680
+Litoral Ocid.MA;210905
+Litoral Ocid.MA;211178
+São Luís;210750
+São Luís;210945
+São Luís;211120
+São Luís;211130
+Rosário;210110
+Rosário;210125
+Rosário;210237
+Rosário;210510
+Rosário;210710
+Rosário;210920
+Rosário;210960
+Rosário;211020
+Lençóis MA;210170
+Lençóis MA;211707
+Lençóis MA;210500
+Lençóis MA;210805
+Lençóis MA;210940
+Lençóis MA;211027
+Lençóis MA;211250
+Baixada MA;210070
+Baixada MA;210100
+Baixada MA;210177
+Baixada MA;210250
+Baixada MA;210355
+Baixada MA;210515
+Baixada MA;210650
+Baixada MA;210690
+Baixada MA;210745
+Baixada MA;210760
+Baixada MA;210825
+Baixada MA;210830
+Baixada MA;210840
+Baixada MA;210860
+Baixada MA;210927
+Baixada MA;210980
+Baixada MA;211050
+Baixada MA;211100
+Baixada MA;211170
+Baixada MA;211280
+Baixada MA;211290
+Itapecuru Mirim;210270
+Itapecuru Mirim;210540
+Itapecuru Mirim;210663
+Itapecuru Mirim;210675
+Itapecuru Mirim;210720
+Itapecuru Mirim;210880
+Itapecuru Mirim;210930
+Itapecuru Mirim;211270
+Gurupi MA;210055
+Gurupi MA;210197
+Gurupi MA;210260
+Gurupi MA;210290
+Gurupi MA;210315
+Gurupi MA;210317
+Gurupi MA;210430
+Gurupi MA;210467
+Gurupi MA;210565
+Gurupi MA;210620
+Gurupi MA;210632
+Gurupi MA;210637
+Gurupi MA;211240
+Gurupi MA;211245
+Pindaré;210040
+Pindaré;210047
+Pindaré;210087
+Pindaré;210200
+Pindaré;210203
+Pindaré;210215
+Pindaré;210232
+Pindaré;210465
+Pindaré;210570
+Pindaré;210596
+Pindaré;210635
+Pindaré;210735
+Pindaré;210810
+Pindaré;210850
+Pindaré;210923
+Pindaré;210990
+Pindaré;211000
+Pindaré;211003
+Pindaré;211102
+Pindaré;211227
+Pindaré;211300
+Pindaré;211400
+Imperatriz;210005
+Imperatriz;210060
+Imperatriz;210235
+Imperatriz;210325
+Imperatriz;210375
+Imperatriz;210455
+Imperatriz;210530
+Imperatriz;210542
+Imperatriz;210550
+Imperatriz;210598
+Imperatriz;210700
+Imperatriz;210955
+Imperatriz;211085
+Imperatriz;211153
+Imperatriz;211176
+Imperatriz;211285
+Médio Mearim;210120
+Médio Mearim;210193
+Médio Mearim;210207
+Médio Mearim;210400
+Médio Mearim;210520
+Médio Mearim;210580
+Médio Mearim;210590
+Médio Mearim;210594
+Médio Mearim;210600
+Médio Mearim;210740
+Médio Mearim;210820
+Médio Mearim;210870
+Médio Mearim;210890
+Médio Mearim;211030
+Médio Mearim;211140
+Médio Mearim;211150
+Médio Mearim;211163
+Médio Mearim;211167
+Médio Mearim;211172
+Médio Mearim;211223
+A.Mearim/Grajaú;210095
+A.Mearim/Grajaú;210160
+A.Mearim/Grajaú;210408
+A.Mearim/Grajaú;210409
+A.Mearim/Grajaú;210480
+A.Mearim/Grajaú;210535
+A.Mearim/Grajaú;210547
+A.Mearim/Grajaú;210560
+A.Mearim/Grajaú;210975
+A.Mearim/Grajaú;211180
+A.Mearim/Grajaú;211230
+Pres. Dutra;210380
+Pres. Dutra;210420
+Pres. Dutra;210440
+Pres. Dutra;210450
+Pres. Dutra;210460
+Pres. Dutra;210462
+Pres. Dutra;210470
+Pres. Dutra;210910
+Pres. Dutra;211070
+Pres. Dutra;211125
+Pres. Dutra;211174
+B.Parnaíba MA;210015
+B.Parnaíba MA;210090
+B.Parnaíba MA;210630
+B.Parnaíba MA;211010
+B.Parnaíba MA;211023
+B.Parnaíba MA;211060
+Chapadinha;210080
+Chapadinha;210173
+Chapadinha;210210
+Chapadinha;210220
+Chapadinha;210320
+Chapadinha;210640
+Chapadinha;210667
+Chapadinha;211040
+Chapadinha;211260
+Codó;210043
+Codó;210275
+Codó;210330
+Codó;213307
+Codó;210360
+Codó;210845
+Codó;211210
+Coelho Neto;210010
+Coelho Neto;210030
+Coelho Neto;210340
+Coelho Neto;210390
+Caxias;210230
+Caxias;210300
+Caxias;210660
+Caxias;210780
+Caxias;211107
+Caxias;211220
+Chap.Itapecuru;210150
+Chap.Itapecuru;210350
+Chap.Itapecuru;210545
+Chap.Itapecuru;210592
+Chap.Itapecuru;210670
+Chap.Itapecuru;210730
+Chap.Itapecuru;210770
+Chap.Itapecuru;210790
+Chap.Itapecuru;210800
+Chap.Itapecuru;211090
+Chap.Itapecuru;211110
+Chap.Itapecuru;211190
+Chap.Itapecuru;211195
+Porto Franco;210255
+Porto Franco;210280
+Porto Franco;210405
+Porto Franco;210900
+Porto Franco;211105
+Porto Franco;211157
+Gerais Balsas;210050
+Gerais Balsas;210140
+Gerais Balsas;210407
+Gerais Balsas;210950
+Gerais Balsas;211200
+Chap.Mangab.;210180
+Chap.Mangab.;210410
+Chap.Mangab.;210610
+Chap.Mangab.;210725
+Chap.Mangab.;210970
+Chap.Mangab.;211065
+Chap.Mangab.;211080
+Chap.Mangab.;211160
+Ignorado - MA;210000
+Ignorado - MA;219999
+B.Parnaíba PI;220120
+B.Parnaíba PI;220150
+B.Parnaíba PI;220177
+B.Parnaíba PI;220196
+B.Parnaíba PI;220205
+B.Parnaíba PI;220217
+B.Parnaíba PI;220370
+B.Parnaíba PI;220540
+B.Parnaíba PI;220545
+B.Parnaíba PI;220580
+B.Parnaíba PI;220585
+B.Parnaíba PI;220610
+B.Parnaíba PI;220620
+B.Parnaíba PI;220667
+B.Parnaíba PI;220680
+B.Parnaíba PI;220840
+B.Parnaíba PI;220850
+B.Parnaíba PI;220997
+Litoral PI;220191
+Litoral PI;220200
+Litoral PI;220208
+Litoral PI;220253
+Litoral PI;220265
+Litoral PI;220270
+Litoral PI;220272
+Litoral PI;220465
+Litoral PI;220570
+Litoral PI;220669
+Litoral PI;220770
+Litoral PI;220830
+Litoral PI;220987
+Litoral PI;221005
+Teresina;220040
+Teresina;220160
+Teresina;220273
+Teresina;220325
+Teresina;220330
+Teresina;220550
+Teresina;220555
+Teresina;220558
+Teresina;220630
+Teresina;220640
+Teresina;220672
+Teresina;220779
+Teresina;221100
+Teresina;221110
+Campo Maior;220030
+Campo Maior;220105
+Campo Maior;220194
+Campo Maior;220202
+Campo Maior;220220
+Campo Maior;220240
+Campo Maior;220260
+Campo Maior;220271
+Campo Maior;220342
+Campo Maior;220527
+Campo Maior;220551
+Campo Maior;220557
+Campo Maior;220635
+Campo Maior;220675
+Campo Maior;220695
+Campo Maior;220790
+Campo Maior;220990
+Campo Maior;221040
+Campo Maior;221065
+M.Parnaíba PI;220010
+M.Parnaíba PI;220020
+M.Parnaíba PI;220050
+M.Parnaíba PI;220060
+M.Parnaíba PI;220100
+M.Parnaíba PI;220140
+M.Parnaíba PI;220410
+M.Parnaíba PI;220460
+M.Parnaíba PI;220525
+M.Parnaíba PI;220554
+M.Parnaíba PI;220710
+M.Parnaíba PI;220750
+M.Parnaíba PI;220775
+M.Parnaíba PI;220880
+M.Parnaíba PI;220945
+M.Parnaíba PI;220980
+M.Parnaíba PI;221050
+Valença PI;220090
+Valença PI;220117
+Valença PI;220350
+Valença PI;220400
+Valença PI;220470
+Valença PI;220559
+Valença PI;220690
+Valença PI;220810
+Valença PI;220860
+Valença PI;220915
+Valença PI;220960
+Valença PI;221038
+Valença PI;221130
+Valença PI;221140
+A.Parnaíba PI;220115
+A.Parnaíba PI;220890
+A.Parnaíba PI;220920
+A.Parnaíba PI;221120
+Bertolínia;220080
+Bertolínia;220170
+Bertolínia;220275
+Bertolínia;220360
+Bertolínia;220560
+Bertolínia;220590
+Bertolínia;220600
+Bertolínia;220855
+Bertolínia;221063
+Floriano;220225
+Floriano;220380
+Floriano;220390
+Floriano;220450
+Floriano;220510
+Floriano;220530
+Floriano;220670
+Floriano;220785
+Floriano;220900
+Floriano;220970
+Floriano;221010
+Floriano;221039
+A.M.Gurguéia;220045
+A.M.Gurguéia;220130
+A.M.Gurguéia;220190
+A.M.Gurguéia;220310
+A.M.Gurguéia;220323
+A.M.Gurguéia;220440
+A.M.Gurguéia;220660
+A.M.Gurguéia;220740
+A.M.Gurguéia;220870
+A.M.Gurguéia;220930
+A.M.Gurguéia;220975
+S.Raim.Nonato;220070
+S.Raim.Nonato;220192
+S.Raim.Nonato;220198
+S.Raim.Nonato;220230
+S.Raim.Nonato;220250
+S.Raim.Nonato;220285
+S.Raim.Nonato;220335
+S.Raim.Nonato;220345
+S.Raim.Nonato;220375
+S.Raim.Nonato;220455
+S.Raim.Nonato;220553
+S.Raim.Nonato;220735
+S.Raim.Nonato;220955
+S.Raim.Nonato;221035
+S.Raim.Nonato;221060
+S.Raim.Nonato;221095
+S.Raim.Nonato;221135
+Chap.Ext.Sul PI;220110
+Chap.Ext.Sul PI;220290
+Chap.Ext.Sul PI;220300
+Chap.Ext.Sul PI;220320
+Chap.Ext.Sul PI;220552
+Chap.Ext.Sul PI;220665
+Chap.Ext.Sul PI;220760
+Chap.Ext.Sul PI;220885
+Chap.Ext.Sul PI;221062
+Picos;220095
+Picos;220180
+Picos;220207
+Picos;220277
+Picos;220340
+Picos;220435
+Picos;220480
+Picos;220700
+Picos;220755
+Picos;220800
+Picos;220910
+Picos;220935
+Picos;220937
+Picos;220985
+Picos;220995
+Picos;221020
+Picos;221037
+Picos;221093
+Picos;221097
+Picos;221170
+Pio IX;220025
+Pio IX;220027
+Pio IX;220420
+Pio IX;220650
+Pio IX;220820
+Pio IX;220940
+Pio IX;221030
+A.M.Canindé;220005
+A.M.Canindé;220155
+A.M.Canindé;220157
+A.M.Canindé;220173
+A.M.Canindé;220209
+A.M.Canindé;220210
+A.M.Canindé;220211
+A.M.Canindé;220213
+A.M.Canindé;220245
+A.M.Canindé;220255
+A.M.Canindé;220280
+A.M.Canindé;220327
+A.M.Canindé;220385
+A.M.Canindé;220415
+A.M.Canindé;220430
+A.M.Canindé;220490
+A.M.Canindé;220500
+A.M.Canindé;220515
+A.M.Canindé;220520
+A.M.Canindé;220535
+A.M.Canindé;220556
+A.M.Canindé;220595
+A.M.Canindé;220605
+A.M.Canindé;220720
+A.M.Canindé;220730
+A.M.Canindé;220777
+A.M.Canindé;220780
+A.M.Canindé;220793
+A.M.Canindé;220795
+A.M.Canindé;220865
+A.M.Canindé;220887
+A.M.Canindé;220950
+A.M.Canindé;220965
+A.M.Canindé;221000
+A.M.Canindé;221070
+A.M.Canindé;221080
+A.M.Canindé;221090
+A.M.Canindé;221150
+A.M.Canindé;221160
+Ignorado - PI;220000
+Ignorado - PI;229999
+Camocim/Acaraú;230020
+Camocim/Acaraú;230205
+Camocim/Acaraú;230230
+Camocim/Acaraú;230260
+Camocim/Acaraú;230390
+Camocim/Acaraú;230425
+Camocim/Acaraú;230470
+Camocim/Acaraú;230655
+Camocim/Acaraú;230725
+Camocim/Acaraú;230780
+Camocim/Acaraú;230790
+Camocim/Acaraú;230890
+Ibiapaba;230340
+Ibiapaba;230423
+Ibiapaba;230500
+Ibiapaba;230530
+Ibiapaba;231230
+Ibiapaba;231340
+Ibiapaba;231360
+Ibiapaba;231410
+Coreaú;230400
+Coreaú;230450
+Coreaú;230880
+Coreaú;231390
+Meruoca;230050
+Meruoca;230820
+Sobral;230310
+Sobral;230435
+Sobral;230465
+Sobral;230490
+Sobral;230610
+Sobral;230800
+Sobral;230837
+Sobral;230900
+Sobral;230990
+Sobral;231200
+Sobral;231280
+Sobral;231290
+Ipu;230580
+Ipu;230590
+Ipu;231095
+Ipu;231100
+Ipu;231170
+Ipu;231395
+Santa Quitéria;230365
+Santa Quitéria;230520
+Santa Quitéria;231220
+Itapipoca;230075
+Itapipoca;230640
+Itapipoca;231350
+Baixo Curu;231020
+Baixo Curu;231025
+Baixo Curu;231240
+Uruburetama;230630
+Uruburetama;231355
+Uruburetama;231375
+Uruburetama;231380
+Médio Curu;230090
+Médio Curu;230460
+Médio Curu;231070
+Médio Curu;231260
+Médio Curu;231335
+Canindé;230280
+Canindé;230300
+Canindé;230660
+Canindé;231040
+Baturité;230015
+Baturité;230120
+Baturité;230140
+Baturité;230210
+Baturité;230290
+Baturité;230510
+Baturité;230650
+Baturité;230910
+Baturité;230980
+Baturité;231010
+Baturité;231160
+Chorozinho;230195
+Chorozinho;230395
+Chorozinho;230945
+Cascavel CE;230220
+Cascavel CE;230350
+Cascavel CE;231085
+Fortaleza;230100
+Fortaleza;230370
+Fortaleza;230428
+Fortaleza;230440
+Fortaleza;230495
+Fortaleza;230625
+Fortaleza;230765
+Fortaleza;230770
+Fortaleza;230970
+Pacajus;230523
+Pacajus;230960
+Sertão Cratéus;230125
+Sertão Cratéus;230410
+Sertão Cratéus;230560
+Sertão Cratéus;230565
+Sertão Cratéus;230860
+Sertão Cratéus;230930
+Sertão Cratéus;230940
+Sertão Cratéus;231126
+Sertão Cratéus;231320
+Quixeramobim;230185
+Quixeramobim;230240
+Quixeramobim;230393
+Quixeramobim;230526
+Quixeramobim;230763
+Quixeramobim;231130
+Quixeramobim;231140
+Sertão Inhamuns;230040
+Sertão Inhamuns;230150
+Sertão Inhamuns;230360
+Sertão Inhamuns;231030
+Sertão Inhamuns;231190
+Sertão Inhamuns;231330
+Senador Pompeu;230030
+Senador Pompeu;230426
+Senador Pompeu;230835
+Senador Pompeu;230850
+Senador Pompeu;231050
+Senador Pompeu;231090
+Senador Pompeu;231270
+Senador Pompeu;231300
+Litoral Aracati;230110
+Litoral Aracati;230445
+Litoral Aracati;230535
+Litoral Aracati;230620
+Baixo Jaguaribe;230070
+Baixo Jaguaribe;230533
+Baixo Jaguaribe;230700
+Baixo Jaguaribe;230760
+Baixo Jaguaribe;230870
+Baixo Jaguaribe;231000
+Baixo Jaguaribe;231150
+Baixo Jaguaribe;231180
+Baixo Jaguaribe;231250
+Baixo Jaguaribe;231310
+Médio Jaguaribe;230670
+Médio Jaguaribe;230680
+Médio Jaguaribe;230690
+Serra Pereiro;230427
+Serra Pereiro;230600
+Serra Pereiro;231080
+Serra Pereiro;231123
+Iguatu;230380
+Iguatu;230540
+Iguatu;230550
+Iguatu;230950
+Iguatu;231135
+Várzea Alegre;230080
+Várzea Alegre;230330
+Várzea Alegre;230740
+Várzea Alegre;231325
+Várzea Alegre;231400
+Lavr.Mangabeira;230180
+Lavr.Mangabeira;230570
+Lavr.Mangabeira;230750
+Lavr.Mangabeira;231370
+Chap.Araripe;230130
+Chap.Araripe;230160
+Chap.Araripe;230270
+Chap.Araripe;231120
+Chap.Araripe;231195
+Caririaçu;230060
+Caririaçu;230320
+Caririaçu;230430
+Caririaçu;230480
+Barro;230170
+Barro;230200
+Barro;230810
+Cariri;230190
+Cariri;230420
+Cariri;230710
+Cariri;230730
+Cariri;230840
+Cariri;230920
+Cariri;231110
+Cariri;231210
+Brejo Santo;230010
+Brejo Santo;230250
+Brejo Santo;230720
+Brejo Santo;230830
+Brejo Santo;231060
+Ignorado - CE;230000
+Ignorado - CE;239999
+Mossoró;240110
+Mossoró;240145
+Mossoró;240440
+Mossoró;240800
+Mossoró;241105
+Mossoró;241335
+Chap.Apodi;240100
+Chap.Apodi;240230
+Chap.Apodi;240370
+Chap.Apodi;240430
+Médio Oeste;240130
+Médio Oeste;240520
+Médio Oeste;240760
+Médio Oeste;240870
+Médio Oeste;241445
+Médio Oeste;241460
+Vale do Açu;240020
+Vale do Açu;240070
+Vale do Açu;240250
+Vale do Açu;240470
+Vale do Açu;240485
+Vale do Açu;240610
+Vale do Açu;240990
+Vale do Açu;241025
+Vale do Açu;241280
+Serra S.Miguel;240040
+Serra S.Miguel;240290
+Serra S.Miguel;240320
+Serra S.Miguel;240330
+Serra S.Miguel;240700
+Serra S.Miguel;240725
+Serra S.Miguel;241080
+Serra S.Miguel;241250
+Serra S.Miguel;241475
+Pau dos Ferros;240050
+Pau dos Ferros;240390
+Pau dos Ferros;240490
+Pau dos Ferros;240600
+Pau dos Ferros;240730
+Pau dos Ferros;240860
+Pau dos Ferros;240940
+Pau dos Ferros;241000
+Pau dos Ferros;241020
+Pau dos Ferros;241050
+Pau dos Ferros;241070
+Pau dos Ferros;241100
+Pau dos Ferros;241190
+Pau dos Ferros;241360
+Pau dos Ferros;241380
+Pau dos Ferros;241410
+Pau dos Ferros;241490
+Umarizal;240060
+Umarizal;240090
+Umarizal;240400
+Umarizal;240590
+Umarizal;240690
+Umarizal;240740
+Umarizal;240840
+Umarizal;240930
+Umarizal;241060
+Umarizal;241355
+Umarizal;241450
+Macau;240185
+Macau;240410
+Macau;240450
+Macau;240720
+Macau;241160
+Angicos;240030
+Angicos;240080
+Angicos;240190
+Angicos;240375
+Angicos;240550
+Angicos;240670
+Angicos;240960
+Angicos;240970
+Serra Santana;240165
+Serra Santana;240270
+Serra Santana;240380
+Serra Santana;240650
+Serra Santana;241140
+Serra Santana;241300
+Serra Santana;241415
+Seridó Ocid.;240200
+Seridó Ocid.;240480
+Seridó Ocid.;240560
+Seridó Ocid.;241180
+Seridó Ocid.;241210
+Seridó Ocid.;241340
+Seridó Ocid.;241430
+Seridó Oriental;240010
+Seridó Oriental;240240
+Seridó Oriental;240300
+Seridó Oriental;240310
+Seridó Oriental;240340
+Seridó Oriental;240570
+Seridó Oriental;240850
+Seridó Oriental;240890
+Seridó Oriental;241142
+Seridó Oriental;241240
+Baixa Verde;240160
+Baixa Verde;240510
+Baixa Verde;240580
+Baixa Verde;240880
+Baixa Verde;241010
+Borborema RN;240150
+Borborema RN;240210
+Borborema RN;240280
+Borborema RN;240500
+Borborema RN;240540
+Borborema RN;240640
+Borborema RN;240680
+Borborema RN;240790
+Borborema RN;241110
+Borborema RN;241120
+Borborema RN;241170
+Borborema RN;241230
+Borborema RN;241290
+Borborema RN;241330
+Borborema RN;241370
+Borborema RN;241400
+Agreste RN;240170
+Agreste RN;240180
+Agreste RN;240460
+Agreste RN;240530
+Agreste RN;240615
+Agreste RN;240620
+Agreste RN;240630
+Agreste RN;240660
+Agreste RN;240780
+Agreste RN;240830
+Agreste RN;240910
+Agreste RN;240920
+Agreste RN;240933
+Agreste RN;241030
+Agreste RN;241090
+Agreste RN;241150
+Agreste RN;241260
+Agreste RN;241270
+Agreste RN;241310
+Agreste RN;241350
+Agreste RN;241470
+Agreste RN;241480
+Litoral NE;240750
+Litoral NE;240895
+Litoral NE;240950
+Litoral NE;241040
+Litoral NE;241255
+Litoral NE;241390
+Litoral NE;241440
+Macaíba;240260
+Macaíba;240710
+Macaíba;240820
+Macaíba;241200
+Macaíba;241220
+Natal;240325
+Natal;240360
+Natal;240810
+Litoral Sul RN;240120
+Litoral Sul RN;240140
+Litoral Sul RN;240220
+Litoral Sul RN;240350
+Litoral Sul RN;240420
+Litoral Sul RN;240770
+Litoral Sul RN;240980
+Litoral Sul RN;241320
+Litoral Sul RN;241420
+Litoral Sul RN;241500
+Ignorado - RN;240000
+Ignorado - RN;249999
+Catolé do Rocha;250200
+Catolé do Rocha;250230
+Catolé do Rocha;250280
+Catolé do Rocha;250290
+Catolé do Rocha;250430
+Catolé do Rocha;250740
+Catolé do Rocha;250810
+Catolé do Rocha;250937
+Catolé do Rocha;251280
+Catolé do Rocha;251390
+Catolé do Rocha;251465
+Cajazeiras;250070
+Cajazeiras;250205
+Cajazeiras;250220
+Cajazeiras;250240
+Cajazeiras;250330
+Cajazeiras;250370
+Cajazeiras;250410
+Cajazeiras;250960
+Cajazeiras;251203
+Cajazeiras;251207
+Cajazeiras;251330
+Cajazeiras;251365
+Cajazeiras;251450
+Cajazeiras;251680
+Cajazeiras;251690
+Sousa;250077
+Sousa;250375
+Sousa;250450
+Sousa;250550
+Sousa;250840
+Sousa;250880
+Sousa;250915
+Sousa;251000
+Sousa;251090
+Sousa;251210
+Sousa;251320
+Sousa;251392
+Sousa;251396
+Sousa;251398
+Sousa;251420
+Sousa;251620
+Sousa;251720
+Patos;250115
+Patos;250340
+Patos;250870
+Patos;251070
+Patos;251080
+Patos;251260
+Patos;251380
+Patos;251440
+Patos;251460
+Piancó;250020
+Piancó;250260
+Piancó;250420
+Piancó;250480
+Piancó;250590
+Piancó;251020
+Piancó;251040
+Piancó;251130
+Piancó;251360
+Itaporanga;250210
+Itaporanga;250440
+Itaporanga;250530
+Itaporanga;250560
+Itaporanga;250660
+Itaporanga;250700
+Itaporanga;251100
+Itaporanga;251335
+Itaporanga;251350
+Itaporanga;251430
+Itaporanga;251570
+Serra Teixeira;250010
+Serra Teixeira;250355
+Serra Teixeira;250540
+Serra Teixeira;250670
+Serra Teixeira;250800
+Serra Teixeira;250900
+Serra Teixeira;250939
+Serra Teixeira;251230
+Serra Teixeira;251455
+Serra Teixeira;251660
+Serra Teixeira;251670
+Seridó Ocid.PB;250780
+Seridó Ocid.PB;251300
+Seridó Ocid.PB;251340
+Seridó Ocid.PB;251470
+Seridó Ocid.PB;251490
+Seridó Ocid.PB;251710
+Seridó Or.PB;250153
+Seridó Or.PB;250500
+Seridó Or.PB;250620
+Seridó Or.PB;250770
+Seridó Or.PB;251030
+Seridó Or.PB;251110
+Seridó Or.PB;251140
+Seridó Or.PB;251540
+Seridó Or.PB;251675
+Cariri Ocid.;250073
+Cariri Ocid.;250135
+Cariri Ocid.;250390
+Cariri Ocid.;250470
+Cariri Ocid.;250485
+Cariri Ocid.;250850
+Cariri Ocid.;250970
+Cariri Ocid.;251060
+Cariri Ocid.;251065
+Cariri Ocid.;251220
+Cariri Ocid.;251410
+Cariri Ocid.;251480
+Cariri Ocid.;251520
+Cariri Ocid.;251550
+Cariri Ocid.;251630
+Cariri Ocid.;251650
+Cariri Ocid.;251740
+Cariri Oriental;250053
+Cariri Oriental;250157
+Cariri Oriental;250170
+Cariri Oriental;250250
+Cariri Oriental;250310
+Cariri Oriental;250407
+Cariri Oriental;250435
+Cariri Oriental;250650
+Cariri Oriental;251278
+Cariri Oriental;251385
+Cariri Oriental;251394
+Cariri Oriental;251400
+Curimataú Ocid.;250057
+Curimataú Ocid.;250090
+Curimataú Ocid.;250908
+Curimataú Ocid.;250160
+Curimataú Ocid.;250510
+Curimataú Ocid.;250535
+Curimataú Ocid.;251010
+Curimataú Ocid.;251050
+Curimataú Ocid.;251200
+Curimataú Ocid.;251270
+Curimataú Ocid.;251610
+Curimataú Ocid.;251615
+Curimataú Or.;250100
+Curimataú Or.;250350
+Curimataú Or.;250415
+Curimataú Or.;250570
+Curimataú Or.;251274
+Curimataú Or.;251600
+Curimataú Or.;251640
+Esperança;250120
+Esperança;250600
+Esperança;250950
+Esperança;251510
+Brejo PB;250030
+Brejo PB;250040
+Brejo PB;250110
+Brejo PB;250150
+Brejo PB;250270
+Brejo PB;250933
+Brejo PB;251160
+Brejo PB;251590
+Guarabira;250050
+Guarabira;250502
+Guarabira;250080
+Guarabira;250190
+Guarabira;250360
+Guarabira;250520
+Guarabira;250580
+Guarabira;250630
+Guarabira;250820
+Guarabira;250855
+Guarabira;250980
+Guarabira;251170
+Guarabira;251180
+Guarabira;251560
+Guarabira;251593
+Campina Grande;250215
+Campina Grande;250400
+Campina Grande;254009
+Campina Grande;250610
+Campina Grande;250830
+Campina Grande;250920
+Campina Grande;251240
+Campina Grande;251250
+Campina Grande;251580
+Itabaiana;250380
+Itabaiana;250640
+Itabaiana;250680
+Itabaiana;250690
+Itabaiana;250720
+Itabaiana;250760
+Itabaiana;250940
+Itabaiana;251275
+Itabaiana;251310
+Umbuzeiro;250130
+Umbuzeiro;250625
+Umbuzeiro;250990
+Umbuzeiro;251315
+Umbuzeiro;251700
+Litoral Norte;250140
+Litoral Norte;250403
+Litoral Norte;250523
+Litoral Norte;250527
+Litoral Norte;250710
+Litoral Norte;250730
+Litoral Norte;250890
+Litoral Norte;250905
+Litoral Norte;250930
+Litoral Norte;251272
+Litoral Norte;251290
+Sapé;250490
+Sapé;250790
+Sapé;250910
+Sapé;251150
+Sapé;251276
+Sapé;251445
+Sapé;251500
+Sapé;251530
+Sapé;251597
+João Pessoa;250180
+João Pessoa;250320
+João Pessoa;250460
+João Pessoa;250750
+João Pessoa;257507
+João Pessoa;250860
+João Pessoa;251370
+Litoral Sul PB;250060
+Litoral Sul PB;250300
+Litoral Sul PB;251120
+Litoral Sul PB;251190
+Ignorado - PB;250000
+Ignorado - PB;259999
+Araripina;260110
+Araripina;260200
+Araripina;260530
+Araripina;260630
+Araripina;260730
+Araripina;260990
+Araripina;261245
+Araripina;261255
+Araripina;261430
+Araripina;261560
+Salgueiro;260430
+Salgueiro;260930
+Salgueiro;261040
+Salgueiro;261220
+Salgueiro;261350
+Salgueiro;261400
+Salgueiro;261610
+Pajeú;260010
+Pajeú;260250
+Pajeú;260340
+Pajeú;260390
+Pajeú;260560
+Pajeú;260690
+Pajeú;260710
+Pajeú;260770
+Pajeú;261153
+Pajeú;261247
+Pajeú;261280
+Pajeú;261360
+Pajeú;261390
+Pajeú;261440
+Pajeú;261460
+Pajeú;261570
+Pajeú;261590
+Sertão Moxotó;260120
+Sertão Moxotó;260180
+Sertão Moxotó;260510
+Sertão Moxotó;260660
+Sertão Moxotó;260700
+Sertão Moxotó;260915
+Sertão Moxotó;261410
+Petrolina;260020
+Petrolina;260300
+Petrolina;260515
+Petrolina;260875
+Petrolina;260980
+Petrolina;261110
+Petrolina;261260
+Petrolina;261520
+Itaparica;260160
+Itaparica;260392
+Itaparica;260570
+Itaparica;260740
+Itaparica;260805
+Itaparica;261100
+Itaparica;261480
+Vale do Ipanema;260050
+Vale do Ipanema;260280
+Vale do Ipanema;260750
+Vale do Ipanema;261080
+Vale do Ipanema;261580
+Vale do Ipanema;261600
+Vale do Ipojuca;260060
+Vale do Ipojuca;260170
+Vale do Ipojuca;260190
+Vale do Ipojuca;260260
+Vale do Ipojuca;260310
+Vale do Ipojuca;260380
+Vale do Ipojuca;260410
+Vale do Ipojuca;260640
+Vale do Ipojuca;260800
+Vale do Ipojuca;261090
+Vale do Ipojuca;261120
+Vale do Ipojuca;261170
+Vale do Ipojuca;261240
+Vale do Ipojuca;261300
+Vale do Ipojuca;261310
+Vale do Ipojuca;261470
+Alto Capibaribe;260415
+Alto Capibaribe;260580
+Alto Capibaribe;261250
+Alto Capibaribe;261270
+Alto Capibaribe;261450
+Alto Capibaribe;261500
+Alto Capibaribe;261540
+Alto Capibaribe;261618
+Alto Capibaribe;261620
+M.Capibaribe;260220
+M.Capibaribe;260490
+M.Capibaribe;260540
+M.Capibaribe;260810
+M.Capibaribe;260890
+M.Capibaribe;260910
+M.Capibaribe;260970
+M.Capibaribe;261050
+M.Capibaribe;261210
+M.Capibaribe;261380
+Garanhuns;260100
+Garanhuns;260210
+Garanhuns;260240
+Garanhuns;260320
+Garanhuns;260330
+Garanhuns;260370
+Garanhuns;260470
+Garanhuns;260600
+Garanhuns;260650
+Garanhuns;260825
+Garanhuns;260830
+Garanhuns;260840
+Garanhuns;260860
+Garanhuns;260880
+Garanhuns;261010
+Garanhuns;261030
+Garanhuns;261230
+Garanhuns;261320
+Garanhuns;261510
+Brejo PE;260030
+Brejo PE;260080
+Brejo PE;260130
+Brejo PE;260230
+Brejo PE;260350
+Brejo PE;260500
+Brejo PE;260670
+Brejo PE;260870
+Brejo PE;261020
+Brejo PE;261200
+Brejo PE;261330
+Mata Set.PE;260070
+Mata Set.PE;260270
+Mata Set.PE;260360
+Mata Set.PE;260400
+Mata Set.PE;260460
+Mata Set.PE;260550
+Mata Set.PE;260620
+Mata Set.PE;260765
+Mata Set.PE;260780
+Mata Set.PE;260845
+Mata Set.PE;260850
+Mata Set.PE;260900
+Mata Set.PE;260950
+Mata Set.PE;261060
+Mata Set.PE;261530
+Mata Set.PE;261550
+Mata Set.PE;261630
+Vitória S.Antão;260440
+Vitória S.Antão;260450
+Vitória S.Antão;260610
+Vitória S.Antão;261130
+Vitória S.Antão;261640
+Mata Merid.PE;260040
+Mata Merid.PE;260090
+Mata Merid.PE;260140
+Mata Merid.PE;260150
+Mata Merid.PE;260420
+Mata Merid.PE;260480
+Mata Merid.PE;260520
+Mata Merid.PE;260590
+Mata Merid.PE;260795
+Mata Merid.PE;260820
+Mata Merid.PE;260920
+Mata Merid.PE;261000
+Mata Merid.PE;261140
+Mata Merid.PE;261150
+Mata Merid.PE;261180
+Mata Merid.PE;261190
+Mata Merid.PE;261290
+Mata Merid.PE;261340
+Mata Merid.PE;261420
+Mata Merid.PE;261485
+Mata Merid.PE;261650
+Itamaracá;260105
+Itamaracá;260680
+Itamaracá;260760
+Itamaracá;260775
+Recife;260005
+Recife;260345
+Recife;260790
+Recife;260940
+Recife;260960
+Recife;261070
+Recife;261160
+Recife;261370
+Suape;260290
+Suape;260720
+Fern.Noronha;260545
+Fern.Noronha;20001
+Ignorado - PE;260000
+Ignorado - PE;269999
+Serr.Sertão AL;270010
+Serr.Sertão AL;270160
+Serr.Sertão AL;270330
+Serr.Sertão AL;270500
+Serr.Sertão AL;270642
+Sert.S.Franc.AL;270240
+Sert.S.Franc.AL;270580
+Sert.S.Franc.AL;270710
+Santana Ipanema;270180
+Santana Ipanema;270250
+Santana Ipanema;270460
+Santana Ipanema;270610
+Santana Ipanema;270620
+Santana Ipanema;270640
+Santana Ipanema;270720
+Santana Ipanema;270800
+Santana Ipanema;270840
+Santana Ipanema;270895
+Batalha;270070
+Batalha;270090
+Batalha;270340
+Batalha;270370
+Batalha;270440
+Batalha;270540
+Batalha;270570
+Batalha;270600
+Palmeira Índios;270080
+Palmeira Índios;270120
+Palmeira Índios;270255
+Palmeira Índios;270310
+Palmeira Índios;270480
+Palmeira Índios;270490
+Palmeira Índios;270530
+Palmeira Índios;270630
+Palmeira Índios;270660
+Palmeira Índios;270760
+Palmeira Índios;270900
+Arapiraca;270030
+Arapiraca;270150
+Arapiraca;270200
+Arapiraca;270235
+Arapiraca;270260
+Arapiraca;270290
+Arapiraca;270410
+Arapiraca;270420
+Arapiraca;270880
+Arapiraca;270910
+Traipu;270590
+Traipu;270820
+Traipu;270920
+Serr.Quilombos;270190
+Serr.Quilombos;270300
+Serr.Quilombos;270700
+Serr.Quilombos;270810
+Serr.Quilombos;270830
+Serr.Quilombos;270930
+Serr.Quilombos;270940
+Mata AL;270040
+Mata AL;270110
+Mata AL;270130
+Mata AL;270135
+Mata AL;270170
+Mata AL;270210
+Mata AL;270280
+Mata AL;270350
+Mata AL;270380
+Mata AL;270390
+Mata AL;270510
+Mata AL;270520
+Mata AL;270550
+Mata AL;270560
+Mata AL;270730
+Mata AL;270850
+Litoral N AL;270360
+Litoral N AL;270450
+Litoral N AL;270650
+Litoral N AL;270740
+Litoral N AL;270870
+Maceió;270050
+Maceió;270060
+Maceió;270220
+Maceió;270430
+Maceió;270470
+Maceió;270644
+Maceió;270690
+Maceió;270770
+Maceió;270790
+Maceió;270890
+S.Miguel Campos;270020
+S.Miguel Campos;270100
+S.Miguel Campos;270140
+S.Miguel Campos;270230
+S.Miguel Campos;270375
+S.Miguel Campos;270400
+S.Miguel Campos;270780
+S.Miguel Campos;270860
+S.Miguel Campos;270915
+Penedo;270270
+Penedo;270320
+Penedo;270670
+Penedo;270680
+Penedo;270750
+Ignorado - AL;270000
+Ignorado - AL;279999
+Sert.S.Franc.SE;280120
+Sert.S.Franc.SE;280220
+Sert.S.Franc.SE;280240
+Sert.S.Franc.SE;280260
+Sert.S.Franc.SE;280310
+Sert.S.Franc.SE;280420
+Sert.S.Franc.SE;280450
+Sert.S.Franc.SE;280540
+Sert.S.Franc.SE;280560
+Carira;280140
+Carira;280230
+Carira;280445
+Carira;280500
+Carira;280520
+Carira;280600
+NS das Dores;280020
+NS das Dores;280190
+NS das Dores;280380
+NS das Dores;280430
+NS das Dores;280460
+NS das Dores;280700
+Agr.Itabaiana;280050
+Agr.Itabaiana;280100
+Agr.Itabaiana;280290
+Agr.Itabaiana;280370
+Agr.Itabaiana;280390
+Agr.Itabaiana;280410
+Agr.Itabaiana;280680
+Tobias Barreto;280550
+Tobias Barreto;280710
+Tobias Barreto;280740
+Agr.Lagarto;280350
+Agr.Lagarto;280580
+Propriá;280010
+Propriá;280070
+Propriá;280110
+Propriá;280160
+Propriá;280270
+Propriá;280440
+Propriá;280470
+Propriá;280570
+Propriá;280640
+Propriá;280730
+Cotinguiba;280130
+Cotinguiba;280200
+Cotinguiba;280650
+Cotinguiba;280720
+Japaratuba;280330
+Japaratuba;280340
+Japaratuba;280490
+Japaratuba;280530
+Japaratuba;280690
+B.Cotinguiba;280150
+B.Cotinguiba;280250
+B.Cotinguiba;280360
+B.Cotinguiba;280400
+B.Cotinguiba;280590
+B.Cotinguiba;280610
+B.Cotinguiba;280660
+Aracaju;280030
+Aracaju;280060
+Aracaju;280480
+Aracaju;280670
+Boquim;280040
+Boquim;280067
+Boquim;280170
+Boquim;280300
+Boquim;280510
+Boquim;280620
+Boquim;280750
+Boquim;280760
+Estância;280210
+Estância;280280
+Estância;280320
+Estância;280630
+Ignorado - SE;280000
+Ignorado - SE;289999
+Barreiras;290250
+Barreiras;290320
+Barreiras;290740
+Barreiras;291110
+Barreiras;291955
+Barreiras;292620
+Barreiras;292890
+Cotegipe;290140
+Cotegipe;290440
+Cotegipe;290940
+Cotegipe;290970
+Cotegipe;292045
+Cotegipe;292840
+Cotegipe;293090
+Cotegipe;293345
+S Maria Vitória;290610
+S Maria Vitória;290810
+S Maria Vitória;290910
+S Maria Vitória;290930
+S Maria Vitória;291735
+S Maria Vitória;292810
+S Maria Vitória;292820
+S Maria Vitória;292905
+S Maria Vitória;293030
+Juazeiro;290590
+Juazeiro;290720
+Juazeiro;290990
+Juazeiro;291840
+Juazeiro;292440
+Juazeiro;292600
+Juazeiro;293020
+Juazeiro;293077
+Paulo Afonso;290020
+Paulo Afonso;290770
+Paulo Afonso;291140
+Paulo Afonso;291990
+Paulo Afonso;292400
+Paulo Afonso;292710
+Barra;290270
+Barra;290475
+Barra;291320
+Barra;291535
+Barra;292160
+Barra;292225
+Barra;293360
+B Jesus da Lapa;290390
+B Jesus da Lapa;290710
+B Jesus da Lapa;291077
+B Jesus da Lapa;292370
+B Jesus da Lapa;293015
+B Jesus da Lapa;293025
+B Jesus da Lapa;293075
+Senhor Bonfim;290135
+Senhor Bonfim;290180
+Senhor Bonfim;290600
+Senhor Bonfim;291085
+Senhor Bonfim;291700
+Senhor Bonfim;291770
+Senhor Bonfim;292460
+Senhor Bonfim;293010
+Senhor Bonfim;293245
+Irecê;290115
+Irecê;290300
+Irecê;290323
+Irecê;290530
+Irecê;290620
+Irecê;290760
+Irecê;291130
+Irecê;291240
+Irecê;291310
+Irecê;291440
+Irecê;291460
+Irecê;291835
+Irecê;291850
+Irecê;291915
+Irecê;292205
+Irecê;292560
+Irecê;292925
+Irecê;293080
+Irecê;293240
+Jacobina;290510
+Jacobina;290550
+Jacobina;290687
+Jacobina;291750
+Jacobina;292120
+Jacobina;292140
+Jacobina;292170
+Jacobina;292335
+Jacobina;292480
+Jacobina;292525
+Jacobina;292593
+Jacobina;292937
+Jacobina;292980
+Jacobina;293060
+Jacobina;293310
+Jacobina;293315
+Itaberaba;290260
+Itaberaba;290380
+Itaberaba;291190
+Itaberaba;291260
+Itaberaba;291470
+Itaberaba;291900
+Itaberaba;291960
+Itaberaba;292010
+Itaberaba;292210
+Itaberaba;292720
+Itaberaba;293130
+Itaberaba;293305
+F Santana;290040
+F Santana;290150
+F Santana;290170
+F Santana;290820
+F Santana;290850
+F Santana;290890
+F Santana;291030
+F Santana;291080
+F Santana;291380
+F Santana;291400
+F Santana;291450
+F Santana;291685
+F Santana;292330
+F Santana;292410
+F Santana;292465
+F Santana;292595
+F Santana;292750
+F Santana;292830
+F Santana;292850
+F Santana;292880
+F Santana;292930
+F Santana;293040
+F Santana;293110
+F Santana;293140
+Jeremoabo;290920
+Jeremoabo;291810
+Jeremoabo;292420
+Jeremoabo;292760
+Jeremoabo;293076
+Euclides Cunha;290680
+Euclides Cunha;290682
+Euclides Cunha;291070
+Euclides Cunha;292150
+Euclides Cunha;292265
+Euclides Cunha;292580
+Euclides Cunha;292590
+Euclides Cunha;293190
+Euclides Cunha;293200
+Ribeira Pombal;290035
+Ribeira Pombal;290160
+Ribeira Pombal;290265
+Ribeira Pombal;290780
+Ribeira Pombal;290790
+Ribeira Pombal;291075
+Ribeira Pombal;291185
+Ribeira Pombal;291650
+Ribeira Pombal;292290
+Ribeira Pombal;292305
+Ribeira Pombal;292310
+Ribeira Pombal;292380
+Ribeira Pombal;292650
+Ribeira Pombal;292660
+Serrinha;290210
+Serrinha;290327
+Serrinha;290360
+Serrinha;290640
+Serrinha;290685
+Serrinha;290840
+Serrinha;291125
+Serrinha;291330
+Serrinha;291910
+Serrinha;292273
+Serrinha;292405
+Serrinha;292610
+Serrinha;292630
+Serrinha;292800
+Serrinha;292895
+Serrinha;293050
+Serrinha;293150
+Serrinha;293300
+Alagoinhas;290030
+Alagoinhas;290070
+Alagoinhas;290190
+Alagoinhas;290205
+Alagoinhas;290220
+Alagoinhas;290960
+Alagoinhas;291370
+Alagoinhas;292700
+Alagoinhas;292970
+Entre Rios;290700
+Entre Rios;290860
+Entre Rios;291050
+Entre Rios;291060
+Entre Rios;291790
+Catu;290110
+Catu;290750
+Catu;291590
+Catu;292100
+Catu;292520
+Catu;292950
+Catu;293170
+S Antônio Jesus;290230
+S Antônio Jesus;290485
+S Antônio Jesus;290490
+S Antônio Jesus;290730
+S Antônio Jesus;290830
+S Antônio Jesus;290980
+S Antônio Jesus;291020
+S Antônio Jesus;291160
+S Antônio Jesus;291780
+S Antônio Jesus;292060
+S Antônio Jesus;292220
+S Antônio Jesus;292230
+S Antônio Jesus;292250
+S Antônio Jesus;292730
+S Antônio Jesus;292860
+S Antônio Jesus;292870
+S Antônio Jesus;292900
+S Antônio Jesus;292910
+S Antônio Jesus;292960
+S Antônio Jesus;292975
+S Antônio Jesus;293317
+Salvador;290570
+Salvador;290650
+Salvador;291005
+Salvador;291610
+Salvador;291920
+Salvador;291992
+Salvador;292740
+Salvador;292920
+Salvador;293070
+Salvador;293320
+Boquira;290410
+Boquira;290420
+Boquira;290450
+Boquira;290755
+Boquira;291250
+Boquira;291300
+Boquira;291410
+Boquira;291980
+Boquira;292303
+Boquira;292320
+Boquira;293105
+Seabra;290010
+Seabra;290130
+Seabra;290280
+Seabra;290400
+Seabra;290405
+Seabra;290880
+Seabra;291220
+Seabra;291500
+Seabra;291860
+Seabra;291930
+Seabra;292190
+Seabra;292285
+Seabra;292350
+Seabra;292430
+Seabra;292670
+Seabra;292990
+Seabra;293280
+Seabra;293340
+Jequié;290060
+Jequié;290100
+Jequié;290195
+Jequié;290430
+Jequié;290950
+Jequié;291420
+Jequié;291430
+Jequié;291510
+Jequié;291670
+Jequié;291690
+Jequié;291760
+Jequié;291800
+Jequié;291820
+Jequié;291830
+Jequié;291870
+Jequié;291880
+Jequié;291905
+Jequié;292050
+Jequié;292080
+Jequié;292130
+Jequié;292240
+Jequié;292280
+Jequié;292490
+Jequié;292790
+Jequié;292940
+Jequié;293210
+Livr.Brumado;290050
+Livr.Brumado;291010
+Livr.Brumado;291950
+Livr.Brumado;292360
+Livr.Brumado;292690
+Guanambi;290500
+Guanambi;290520
+Guanambi;290660
+Guanambi;291170
+Guanambi;291200
+Guanambi;291340
+Guanambi;291733
+Guanambi;291740
+Guanambi;291875
+Guanambi;291940
+Guanambi;292020
+Guanambi;292105
+Guanambi;292180
+Guanambi;292340
+Guanambi;292450
+Guanambi;292640
+Guanambi;293000
+Guanambi;293260
+Brumado;290200
+Brumado;290460
+Brumado;290689
+Brumado;290870
+Brumado;290900
+Brumado;291165
+Brumado;291720
+Brumado;291995
+Brumado;292030
+Brumado;292470
+Brumado;292570
+Brumado;292680
+Brumado;293100
+Brumado;293180
+Vit.Conquista;290120
+Vit.Conquista;290290
+Vit.Conquista;290350
+Vit.Conquista;290370
+Vit.Conquista;290395
+Vit.Conquista;290480
+Vit.Conquista;290515
+Vit.Conquista;290670
+Vit.Conquista;291000
+Vit.Conquista;291230
+Vit.Conquista;291350
+Vit.Conquista;292040
+Vit.Conquista;292145
+Vit.Conquista;292270
+Vit.Conquista;292500
+Vit.Conquista;292510
+Vit.Conquista;293330
+Itapetinga;291040
+Itapetinga;291580
+Itapetinga;291640
+Itapetinga;291680
+Itapetinga;291710
+Itapetinga;291970
+Itapetinga;292000
+Itapetinga;292540
+Itapetinga;292665
+Valença;290540
+Valença;290580
+Valença;291345
+Valença;291730
+Valença;292070
+Valença;292260
+Valença;292467
+Valença;292575
+Valença;293120
+Valença;293290
+Ilhéus-Itabuna;290090
+Ilhéus-Itabuna;290225
+Ilhéus-Itabuna;290240
+Ilhéus-Itabuna;290310
+Ilhéus-Itabuna;290330
+Ilhéus-Itabuna;290340
+Ilhéus-Itabuna;290470
+Ilhéus-Itabuna;290560
+Ilhéus-Itabuna;290630
+Ilhéus-Itabuna;290800
+Ilhéus-Itabuna;291090
+Ilhéus-Itabuna;291100
+Ilhéus-Itabuna;291120
+Ilhéus-Itabuna;291150
+Ilhéus-Itabuna;291210
+Ilhéus-Itabuna;291270
+Ilhéus-Itabuna;291290
+Ilhéus-Itabuna;291360
+Ilhéus-Itabuna;291390
+Ilhéus-Itabuna;291480
+Ilhéus-Itabuna;291490
+Ilhéus-Itabuna;291520
+Ilhéus-Itabuna;291540
+Ilhéus-Itabuna;291550
+Ilhéus-Itabuna;291570
+Ilhéus-Itabuna;291620
+Ilhéus-Itabuna;291630
+Ilhéus-Itabuna;291660
+Ilhéus-Itabuna;291855
+Ilhéus-Itabuna;292090
+Ilhéus-Itabuna;292275
+Ilhéus-Itabuna;292390
+Ilhéus-Itabuna;292780
+Ilhéus-Itabuna;292805
+Ilhéus-Itabuna;292935
+Ilhéus-Itabuna;293160
+Ilhéus-Itabuna;293220
+Ilhéus-Itabuna;293230
+Ilhéus-Itabuna;293250
+Ilhéus-Itabuna;293270
+Ilhéus-Itabuna;293350
+Porto Seguro;290080
+Porto Seguro;290690
+Porto Seguro;291072
+Porto Seguro;291180
+Porto Seguro;291280
+Porto Seguro;291465
+Porto Seguro;291530
+Porto Seguro;291560
+Porto Seguro;291600
+Porto Seguro;291845
+Porto Seguro;291890
+Porto Seguro;292110
+Porto Seguro;292200
+Porto Seguro;292300
+Porto Seguro;292530
+Porto Seguro;292550
+Porto Seguro;292770
+Porto Seguro;293135
+Porto Seguro;293325
+Ignorado - BA;290000
+Ignorado - BA;299999
+Unaí;310450
+Unaí;310820
+Unaí;310930
+Unaí;310945
+Unaí;312247
+Unaí;312620
+Unaí;314437
+Unaí;317040
+Unaí;317047
+Paracatu;310855
+Paracatu;312860
+Paracatu;313630
+Paracatu;313710
+Paracatu;313753
+Paracatu;314700
+Paracatu;315340
+Paracatu;316170
+Paracatu;317075
+Paracatu;317100
+Januária;310825
+Januária;311615
+Januária;311783
+Januária;313005
+Januária;313210
+Januária;313520
+Januária;313695
+Januária;313930
+Januária;314085
+Januária;314225
+Januária;314270
+Januária;314915
+Januária;315057
+Januária;316110
+Januária;316245
+Januária;317052
+Janaúba;311547
+Janaúba;312430
+Janaúba;312733
+Janaúba;313505
+Janaúba;313510
+Janaúba;313925
+Janaúba;314100
+Janaúba;314290
+Janaúba;314505
+Janaúba;314655
+Janaúba;315220
+Janaúba;315450
+Janaúba;316695
+Salinas;310100
+Salinas;310665
+Salinas;312087
+Salinas;312235
+Salinas;312707
+Salinas;313065
+Salinas;314345
+Salinas;314465
+Salinas;314537
+Salinas;315560
+Salinas;315650
+Salinas;315700
+Salinas;315737
+Salinas;316045
+Salinas;316270
+Salinas;316800
+Salinas;317065
+Pirapora;310940
+Pirapora;312960
+Pirapora;313560
+Pirapora;313730
+Pirapora;313810
+Pirapora;315120
+Pirapora;315445
+Pirapora;315760
+Pirapora;316420
+Pirapora;317080
+Montes Claros;310860
+Montes Claros;311115
+Montes Claros;311270
+Montes Claros;311650
+Montes Claros;311880
+Montes Claros;312670
+Montes Claros;312735
+Montes Claros;312965
+Montes Claros;313535
+Montes Claros;313680
+Montes Claros;313865
+Montes Claros;313868
+Montes Claros;314200
+Montes Claros;314330
+Montes Claros;314795
+Montes Claros;315213
+Montes Claros;316225
+Montes Claros;316240
+Montes Claros;316265
+Montes Claros;317000
+Montes Claros;317090
+Montes Claros;317103
+Grão Mogol;310850
+Grão Mogol;312030
+Grão Mogol;312780
+Grão Mogol;313200
+Grão Mogol;313657
+Grão Mogol;314625
+Bocaiúva;310730
+Bocaiúva;312380
+Bocaiúva;312660
+Bocaiúva;312825
+Bocaiúva;314545
+Diamantina;312010
+Diamantina;312100
+Diamantina;312160
+Diamantina;312540
+Diamantina;312550
+Diamantina;312760
+Diamantina;315330
+Diamantina;316590
+Capelinha;310285
+Capelinha;310445
+Capelinha;310650
+Capelinha;311230
+Capelinha;311350
+Capelinha;311610
+Capelinha;312650
+Capelinha;313250
+Capelinha;313545
+Capelinha;313652
+Capelinha;313835
+Capelinha;314180
+Capelinha;316970
+Capelinha;317107
+Araçuaí;310340
+Araçuaí;311300
+Araçuaí;311950
+Araçuaí;313400
+Araçuaí;314530
+Araçuaí;314630
+Araçuaí;315217
+Araçuaí;317160
+Pedra Azul;310270
+Pedra Azul;311700
+Pedra Azul;313330
+Pedra Azul;314140
+Pedra Azul;314870
+Almenara;310170
+Almenara;310520
+Almenara;312245
+Almenara;312560
+Almenara;313470
+Almenara;313580
+Almenara;313600
+Almenara;313650
+Almenara;314055
+Almenara;314315
+Almenara;314675
+Almenara;315510
+Almenara;315660
+Almenara;315710
+Almenara;315810
+Almenara;316030
+Teófilo Otoni;310470
+Teófilo Otoni;311545
+Teófilo Otoni;312675
+Teófilo Otoni;312680
+Teófilo Otoni;313230
+Teófilo Otoni;313700
+Teófilo Otoni;313920
+Teófilo Otoni;314535
+Teófilo Otoni;314620
+Teófilo Otoni;314850
+Teófilo Otoni;315240
+Teófilo Otoni;316555
+Teófilo Otoni;316860
+Nanuque;310090
+Nanuque;310660
+Nanuque;311370
+Nanuque;312015
+Nanuque;312705
+Nanuque;313890
+Nanuque;314430
+Nanuque;315765
+Nanuque;316670
+Nanuque;317030
+Ituiutaba;310980
+Ituiutaba;311260
+Ituiutaba;312910
+Ituiutaba;313140
+Ituiutaba;313420
+Ituiutaba;315980
+Uberlândia;310350
+Uberlândia;310375
+Uberlândia;311180
+Uberlândia;311500
+Uberlândia;311580
+Uberlândia;313070
+Uberlândia;314280
+Uberlândia;315280
+Uberlândia;316960
+Uberlândia;317020
+Patrocínio;310010
+Patrocínio;311930
+Patrocínio;312070
+Patrocínio;312350
+Patrocínio;312480
+Patrocínio;312790
+Patrocínio;313160
+Patrocínio;314310
+Patrocínio;314810
+Patrocínio;315640
+Patrocínio;316680
+Patos de Minas;310380
+Patos de Minas;311430
+Patos de Minas;312890
+Patos de Minas;313750
+Patos de Minas;314120
+Patos de Minas;314800
+Patos de Minas;315550
+Patos de Minas;315970
+Patos de Minas;316210
+Patos de Minas;316890
+Frutal;311110
+Frutal;311455
+Frutal;311690
+Frutal;312700
+Frutal;312710
+Frutal;313340
+Frutal;313440
+Frutal;313862
+Frutal;315070
+Frutal;315160
+Frutal;316130
+Frutal;317043
+Uberaba;310070
+Uberaba;311140
+Uberaba;311730
+Uberaba;311820
+Uberaba;312125
+Uberaba;317010
+Uberaba;317110
+Araxá;310400
+Araxá;311150
+Araxá;312950
+Araxá;314500
+Araxá;314920
+Araxá;314980
+Araxá;315300
+Araxá;315690
+Araxá;315770
+Araxá;316810
+Três Marias;310020
+Três Marias;310700
+Três Marias;311560
+Três Marias;314350
+Três Marias;314640
+Três Marias;315200
+Três Marias;316935
+Curvelo;310480
+Curvelo;310920
+Curvelo;311910
+Curvelo;312090
+Curvelo;312570
+Curvelo;313110
+Curvelo;313640
+Curvelo;314250
+Curvelo;314360
+Curvelo;315320
+Curvelo;316060
+Bom Despacho;310390
+Bom Despacho;310740
+Bom Despacho;312320
+Bom Despacho;312470
+Bom Despacho;313530
+Bom Despacho;313720
+Bom Despacho;313830
+Bom Despacho;313880
+Bom Despacho;314050
+Bom Despacho;314240
+Bom Despacho;315370
+Bom Despacho;316660
+Sete Lagoas;310320
+Sete Lagoas;310500
+Sete Lagoas;310960
+Sete Lagoas;310990
+Sete Lagoas;311250
+Sete Lagoas;311890
+Sete Lagoas;312640
+Sete Lagoas;312720
+Sete Lagoas;313100
+Sete Lagoas;313460
+Sete Lagoas;313570
+Sete Lagoas;313970
+Sete Lagoas;314110
+Sete Lagoas;314690
+Sete Lagoas;314740
+Sete Lagoas;314960
+Sete Lagoas;315360
+Sete Lagoas;315850
+Sete Lagoas;315900
+Sete Lagoas;316720
+Conc. M. Dentro;310240
+Conc. M. Dentro;311750
+Conc. M. Dentro;311810
+Conc. M. Dentro;312260
+Conc. M. Dentro;313280
+Conc. M. Dentro;314370
+Conc. M. Dentro;314750
+Conc. M. Dentro;315600
+Conc. M. Dentro;316020
+Conc. M. Dentro;316050
+Conc. M. Dentro;316480
+Conc. M. Dentro;316650
+Conc. M. Dentro;316710
+Pará de Minas;312600
+Pará de Minas;314580
+Pará de Minas;314710
+Pará de Minas;315140
+Pará de Minas;316310
+B Horizonte;310620
+B Horizonte;310670
+B Horizonte;310900
+B Horizonte;311000
+B Horizonte;311787
+B Horizonte;311860
+B Horizonte;312410
+B Horizonte;312980
+B Horizonte;313010
+B Horizonte;313665
+B Horizonte;313760
+B Horizonte;314015
+B Horizonte;314070
+B Horizonte;314480
+B Horizonte;314930
+B Horizonte;315390
+B Horizonte;315460
+B Horizonte;315480
+B Horizonte;315670
+B Horizonte;315780
+B Horizonte;316292
+B Horizonte;316295
+B Horizonte;316553
+B Horizonte;317120
+Itabira;310230
+Itabira;310540
+Itabira;310600
+Itabira;310770
+Itabira;311535
+Itabira;312180
+Itabira;312590
+Itabira;313170
+Itabira;313620
+Itabira;313660
+Itabira;314470
+Itabira;315570
+Itabira;315720
+Itabira;315800
+Itabira;316100
+Itabira;316190
+Itabira;316340
+Itabira;316830
+Itaguara;310640
+Itaguara;310810
+Itaguara;312060
+Itaguara;313220
+Itaguara;313370
+Itaguara;313540
+Itaguara;314230
+Itaguara;315040
+Itaguara;315530
+Ouro Preto;312170
+Ouro Preto;313190
+Ouro Preto;314000
+Ouro Preto;314610
+Cons. Lafaiete;311490
+Cons. Lafaiete;311540
+Cons. Lafaiete;311800
+Cons. Lafaiete;311830
+Cons. Lafaiete;312040
+Cons. Lafaiete;312140
+Cons. Lafaiete;312390
+Cons. Lafaiete;313390
+Cons. Lafaiete;314590
+Cons. Lafaiete;315380
+Cons. Lafaiete;315910
+Cons. Lafaiete;316090
+Guanhães;310880
+Guanhães;311380
+Guanhães;311680
+Guanhães;312220
+Guanhães;312310
+Guanhães;312750
+Guanhães;312800
+Guanhães;314060
+Guanhães;314840
+Guanhães;315680
+Guanhães;315750
+Guanhães;316280
+Guanhães;316550
+Guanhães;316610
+Guanhães;317180
+Peçanha;310060
+Peçanha;311205
+Peçanha;312695
+Peçanha;313655
+Peçanha;314860
+Peçanha;315820
+Peçanha;316350
+Peçanha;316410
+Peçanha;316450
+Gov. Valadares;310180
+Gov. Valadares;311080
+Gov. Valadares;311265
+Gov. Valadares;311920
+Gov. Valadares;312210
+Gov. Valadares;312370
+Gov. Valadares;312580
+Gov. Valadares;312690
+Gov. Valadares;312730
+Gov. Valadares;312770
+Gov. Valadares;313270
+Gov. Valadares;313320
+Gov. Valadares;313507
+Gov. Valadares;314010
+Gov. Valadares;314420
+Gov. Valadares;314490
+Gov. Valadares;315000
+Gov. Valadares;316160
+Gov. Valadares;316165
+Gov. Valadares;316300
+Gov. Valadares;316330
+Gov. Valadares;316770
+Gov. Valadares;316950
+Gov. Valadares;317150
+Gov. Valadares;317190
+Mantena;311570
+Mantena;313180
+Mantena;313960
+Mantena;314150
+Mantena;314467
+Mantena;316105
+Mantena;316257
+Ipatinga;310050
+Ipatinga;310300
+Ipatinga;310630
+Ipatinga;311940
+Ipatinga;313130
+Ipatinga;313500
+Ipatinga;313610
+Ipatinga;314030
+Ipatinga;314170
+Ipatinga;314435
+Ipatinga;314995
+Ipatinga;315895
+Ipatinga;316870
+Caratinga;310780
+Caratinga;310925
+Caratinga;311340
+Caratinga;312000
+Caratinga;312250
+Caratinga;312385
+Caratinga;312930
+Caratinga;313055
+Caratinga;313090
+Caratinga;313115
+Caratinga;315015
+Caratinga;315053
+Caratinga;315725
+Caratinga;315935
+Caratinga;316095
+Caratinga;316260
+Caratinga;316447
+Caratinga;316840
+Caratinga;317005
+Caratinga;317057
+Aimorés;310110
+Aimorés;310220
+Aimorés;311740
+Aimorés;311840
+Aimorés;312083
+Aimorés;312737
+Aimorés;313120
+Aimorés;313410
+Aimorés;314400
+Aimorés;315190
+Aimorés;315430
+Aimorés;315950
+Aimorés;316805
+Piuí;310510
+Piuí;311980
+Piuí;312340
+Piuí;313030
+Piuí;314130
+Piuí;315150
+Piuí;316430
+Piuí;316820
+Piuí;317060
+Divinópolis;311420
+Divinópolis;311660
+Divinópolis;311760
+Divinópolis;312230
+Divinópolis;313020
+Divinópolis;313380
+Divinópolis;314520
+Divinópolis;314970
+Divinópolis;316040
+Divinópolis;316180
+Divinópolis;316460
+Formiga;310420
+Formiga;311040
+Formiga;311995
+Formiga;312610
+Formiga;313350
+Formiga;314650
+Formiga;314890
+Formiga;315050
+Campo Belo;310080
+Campo Belo;311120
+Campo Belo;311190
+Campo Belo;311200
+Campo Belo;312020
+Campo Belo;314990
+Campo Belo;315880
+Oliveira;310800
+Oliveira;311400
+Oliveira;311450
+Oliveira;313000
+Oliveira;314560
+Oliveira;314770
+Oliveira;315060
+Oliveira;315990
+Oliveira;316120
+Passos;310190
+Passos;310760
+Passos;311240
+Passos;311280
+Passos;311510
+Passos;311640
+Passos;312120
+Passos;312630
+Passos;312970
+Passos;313375
+Passos;314790
+Passos;315290
+Passos;316220
+Passos;316294
+S. Seb. Paraíso;310410
+S. Seb. Paraíso;310950
+S. Seb. Paraíso;312830
+S. Seb. Paraíso;312870
+S. Seb. Paraíso;313290
+S. Seb. Paraíso;313480
+S. Seb. Paraíso;313690
+S. Seb. Paraíso;314300
+S. Seb. Paraíso;314320
+S. Seb. Paraíso;314410
+S. Seb. Paraíso;314510
+S. Seb. Paraíso;316390
+S. Seb. Paraíso;316470
+S. Seb. Paraíso;316510
+Alfenas;310160
+Alfenas;310200
+Alfenas;310430
+Alfenas;311440
+Alfenas;311470
+Alfenas;311710
+Alfenas;312240
+Alfenas;312520
+Alfenas;313900
+Alfenas;314720
+Alfenas;315170
+Alfenas;316690
+Varginha;310710
+Varginha;311090
+Varginha;311130
+Varginha;311160
+Varginha;311390
+Varginha;311870
+Varginha;312360
+Varginha;312810
+Varginha;313050
+Varginha;314260
+Varginha;315830
+Varginha;316080
+Varginha;316520
+Varginha;316930
+Varginha;316940
+Varginha;317070
+P. Caldas;310140
+P. Caldas;310260
+P. Caldas;310530
+P. Caldas;310840
+P. Caldas;311030
+P. Caldas;311100
+P. Caldas;312990
+P. Caldas;313060
+P. Caldas;313490
+P. Caldas;314340
+P. Caldas;314600
+P. Caldas;315180
+P. Caldas;315920
+P. Alegre;310790
+P. Alegre;310830
+P. Alegre;310910
+P. Alegre;311050
+P. Alegre;311060
+P. Alegre;311790
+P. Alegre;311990
+P. Alegre;312440
+P. Alegre;312450
+P. Alegre;312510
+P. Alegre;312740
+P. Alegre;313150
+P. Alegre;313360
+P. Alegre;314380
+P. Alegre;315250
+P. Alegre;316540
+P. Alegre;316557
+P. Alegre;316580
+P. Alegre;316905
+P. Alegre;316910
+S Rita Sapucaí;310970
+S Rita Sapucaí;311360
+S Rita Sapucaí;311720
+S Rita Sapucaí;311780
+S Rita Sapucaí;311900
+S Rita Sapucaí;312920
+S Rita Sapucaí;314440
+S Rita Sapucaí;314910
+S Rita Sapucaí;315960
+S Rita Sapucaí;316200
+S Rita Sapucaí;316230
+S Rita Sapucaí;316320
+S Rita Sapucaí;316440
+S Rita Sapucaí;316740
+S Rita Sapucaí;316980
+S. Lourenço;310130
+S. Lourenço;310490
+S. Lourenço;311070
+S. Lourenço;311410
+S. Lourenço;311550
+S. Lourenço;311770
+S. Lourenço;313300
+S. Lourenço;313310
+S. Lourenço;313590
+S. Lourenço;313780
+S. Lourenço;314550
+S. Lourenço;314760
+S. Lourenço;315260
+S. Lourenço;316370
+S. Lourenço;316490
+S. Lourenço;316780
+Andrelândia;310120
+Andrelândia;310280
+Andrelândia;310360
+Andrelândia;310720
+Andrelândia;310750
+Andrelândia;311480
+Andrelândia;312080
+Andrelândia;313850
+Andrelândia;314190
+Andrelândia;314780
+Andrelândia;316530
+Andrelândia;316640
+Andrelândia;316700
+Itajubá;310890
+Itajubá;311850
+Itajubá;312050
+Itajubá;312110
+Itajubá;312280
+Itajubá;313240
+Itajubá;313990
+Itajubá;314040
+Itajubá;314730
+Itajubá;315090
+Itajubá;315100
+Itajubá;317170
+Itajubá;317220
+Lavras;311460
+Lavras;313040
+Lavras;313080
+Lavras;313430
+Lavras;313450
+Lavras;313820
+Lavras;313870
+Lavras;314460
+Lavras;315470
+S J del Rei;311520
+S J del Rei;311970
+S J del Rei;312300
+S J del Rei;313740
+S J del Rei;313910
+S J del Rei;314450
+S J del Rei;315030
+S J del Rei;315270
+S J del Rei;315420
+S J del Rei;315610
+S J del Rei;315733
+S J del Rei;315870
+S J del Rei;316250
+S J del Rei;316500
+S J del Rei;316880
+Barbacena;310163
+Barbacena;310290
+Barbacena;310560
+Barbacena;310590
+Barbacena;311220
+Barbacena;311310
+Barbacena;311320
+Barbacena;312150
+Barbacena;312940
+Barbacena;315440
+Barbacena;315730
+Barbacena;316620
+Ponte Nova;310040
+Ponte Nova;310570
+Ponte Nova;312270
+Ponte Nova;312820
+Ponte Nova;313550
+Ponte Nova;314585
+Ponte Nova;315020
+Ponte Nova;315210
+Ponte Nova;315400
+Ponte Nova;315490
+Ponte Nova;315500
+Ponte Nova;315740
+Ponte Nova;316010
+Ponte Nova;316400
+Ponte Nova;316556
+Ponte Nova;316630
+Ponte Nova;317050
+Ponte Nova;317115
+Manhuaçu;310030
+Manhuaçu;310205
+Manhuaçu;311210
+Manhuaçu;311290
+Manhuaçu;311600
+Manhuaçu;312352
+Manhuaçu;313770
+Manhuaçu;313867
+Manhuaçu;313940
+Manhuaçu;313950
+Manhuaçu;314053
+Manhuaçu;314090
+Manhuaçu;314875
+Manhuaçu;315350
+Manhuaçu;315415
+Manhuaçu;315790
+Manhuaçu;315890
+Manhuaçu;316255
+Manhuaçu;316360
+Manhuaçu;316760
+Viçosa;310210
+Viçosa;310250
+Viçosa;310370
+Viçosa;310870
+Viçosa;311020
+Viçosa;311170
+Viçosa;311630
+Viçosa;311670
+Viçosa;312400
+Viçosa;313790
+Viçosa;314830
+Viçosa;314880
+Viçosa;315080
+Viçosa;315230
+Viçosa;315310
+Viçosa;315520
+Viçosa;316380
+Viçosa;316600
+Viçosa;316850
+Viçosa;317130
+Muriaé;310310
+Muriaé;310550
+Muriaé;311010
+Muriaé;311330
+Muriaé;312200
+Muriaé;312420
+Muriaé;312490
+Muriaé;312530
+Muriaé;312595
+Muriaé;314210
+Muriaé;314220
+Muriaé;314390
+Muriaé;314587
+Muriaé;314820
+Muriaé;314900
+Muriaé;315645
+Muriaé;316140
+Muriaé;316443
+Muriaé;316920
+Muriaé;317140
+Ubá;310460
+Ubá;312190
+Ubá;312330
+Ubá;312840
+Ubá;312880
+Ubá;312900
+Ubá;314160
+Ubá;315130
+Ubá;315580
+Ubá;315630
+Ubá;316150
+Ubá;316570
+Ubá;316730
+Ubá;316790
+Ubá;316900
+Ubá;316990
+Ubá;317200
+Juiz de Fora;310330
+Juiz de Fora;310610
+Juiz de Fora;310680
+Juiz de Fora;310690
+Juiz de Fora;311590
+Juiz de Fora;311620
+Juiz de Fora;311960
+Juiz de Fora;312130
+Juiz de Fora;312500
+Juiz de Fora;312738
+Juiz de Fora;312850
+Juiz de Fora;313670
+Juiz de Fora;313860
+Juiz de Fora;313980
+Juiz de Fora;314020
+Juiz de Fora;314080
+Juiz de Fora;314540
+Juiz de Fora;314570
+Juiz de Fora;314660
+Juiz de Fora;314940
+Juiz de Fora;314950
+Juiz de Fora;315010
+Juiz de Fora;315540
+Juiz de Fora;315590
+Juiz de Fora;315620
+Juiz de Fora;315727
+Juiz de Fora;315860
+Juiz de Fora;315930
+Juiz de Fora;315940
+Juiz de Fora;316070
+Juiz de Fora;316290
+Juiz de Fora;316560
+Juiz de Fora;316750
+Cataguases;310150
+Cataguases;310440
+Cataguases;311530
+Cataguases;312290
+Cataguases;312460
+Cataguases;313260
+Cataguases;313800
+Cataguases;313840
+Cataguases;314670
+Cataguases;315110
+Cataguases;315410
+Cataguases;315840
+Cataguases;316000
+Cataguases;317210
+Ignorado - MG;310000
+Ignorado - MG;319999
+Barra S.Franc.;320016
+Barra S.Franc.;320090
+Barra S.Franc.;320210
+Barra S.Franc.;320330
+Nova Venécia;320013
+Nova Venécia;320100
+Nova Venécia;320390
+Nova Venécia;320470
+Nova Venécia;320515
+Nova Venécia;320517
+Colatina;320035
+Colatina;320080
+Colatina;320150
+Colatina;320225
+Colatina;320335
+Colatina;320400
+Colatina;320465
+Montanha;320350
+Montanha;320360
+Montanha;320410
+Montanha;320425
+São Mateus;320160
+São Mateus;320305
+São Mateus;320405
+São Mateus;320490
+Linhares;320060
+Linhares;320220
+Linhares;320250
+Linhares;320313
+Linhares;320320
+Linhares;320435
+Linhares;320501
+Afonso Cláudio;320010
+Afonso Cláudio;320115
+Afonso Cláudio;320170
+Afonso Cláudio;320190
+Afonso Cláudio;320316
+Afonso Cláudio;320334
+Afonso Cláudio;320506
+Santa Teresa;320270
+Santa Teresa;320290
+Santa Teresa;320450
+Santa Teresa;320455
+Santa Teresa;320460
+Santa Teresa;320495
+Vitória;320130
+Vitória;320500
+Vitória;320510
+Vitória;320520
+Vitória;320530
+Guarapari;320030
+Guarapari;320040
+Guarapari;320240
+Guarapari;320260
+Guarapari;320420
+Guarapari;320440
+Alegre;320020
+Alegre;320180
+Alegre;320200
+Alegre;320230
+Alegre;320245
+Alegre;320255
+Alegre;320265
+Alegre;320300
+Alegre;320370
+Cach.Itapemirim;320050
+Cach.Itapemirim;320070
+Cach.Itapemirim;320110
+Cach.Itapemirim;320120
+Cach.Itapemirim;320140
+Cach.Itapemirim;320310
+Cach.Itapemirim;320340
+Cach.Itapemirim;320380
+Cach.Itapemirim;320480
+Cach.Itapemirim;320503
+Itapemirim;320280
+Itapemirim;320332
+Itapemirim;320430
+Ignorado - ES;320000
+Ignorado - ES;329999
+Itaperuna;330060
+Itaperuna;330205
+Itaperuna;330220
+Itaperuna;330230
+Itaperuna;330310
+Itaperuna;330410
+Itaperuna;330615
+S.Antônio Pádua;330015
+S.Antônio Pádua;330090
+S.Antônio Pádua;330210
+S.Antônio Pádua;330300
+S.Antônio Pádua;330470
+S.Antônio Pádua;330513
+Campos Goytac.;330100
+Campos Goytac.;330115
+Campos Goytac.;330475
+Campos Goytac.;330480
+Campos Goytac.;330500
+Macaé;330093
+Macaé;330140
+Macaé;330240
+Macaé;330415
+Três Rios;330022
+Três Rios;330095
+Três Rios;330370
+Três Rios;330540
+Três Rios;330600
+Cantag/Cordeiro;330110
+Cantag/Cordeiro;330120
+Cantag/Cordeiro;330150
+Cantag/Cordeiro;330245
+Nova Friburgo;330050
+Nova Friburgo;330160
+Nova Friburgo;330340
+Nova Friburgo;330570
+S.M.Madalena;330460
+S.M.Madalena;330530
+S.M.Madalena;330590
+Bacia de S.João;330130
+Bacia de S.João;330452
+Bacia de S.João;330560
+Lagos;330020
+Lagos;330023
+Lagos;330025
+Lagos;330070
+Lagos;330187
+Lagos;330520
+Lagos;330550
+Vale Paraíba RJ;330040
+Vale Paraíba RJ;330225
+Vale Paraíba RJ;330395
+Vale Paraíba RJ;330400
+Vale Paraíba RJ;330411
+Vale Paraíba RJ;330412
+Vale Paraíba RJ;330420
+Vale Paraíba RJ;330440
+Vale Paraíba RJ;330630
+Vale Paraíba RJ;336305
+Barra do Piraí;330030
+Barra do Piraí;330450
+Barra do Piraí;330610
+Baía I.Grande;330010
+Baía I.Grande;330380
+Vassouras;330180
+Vassouras;330280
+Vassouras;330290
+Vassouras;330360
+Vassouras;330385
+Vassouras;330620
+Serrana;330390
+Serrana;330515
+Serrana;330580
+Macacu-Caceribu;330080
+Macacu-Caceribu;330430
+Itaguaí;330200
+Itaguaí;330260
+Itaguaí;330555
+Rio de Janeiro;330045
+Rio de Janeiro;330170
+Rio de Janeiro;330185
+Rio de Janeiro;330190
+Rio de Janeiro;330227
+Rio de Janeiro;330250
+Rio de Janeiro;330270
+Rio de Janeiro;330285
+Rio de Janeiro;330320
+Rio de Janeiro;330330
+Rio de Janeiro;330350
+Rio de Janeiro;330414
+Rio de Janeiro;330455
+Rio de Janeiro;334501
+Rio de Janeiro;334502
+Rio de Janeiro;334503
+Rio de Janeiro;334504
+Rio de Janeiro;334505
+Rio de Janeiro;334506
+Rio de Janeiro;334507
+Rio de Janeiro;334508
+Rio de Janeiro;334509
+Rio de Janeiro;334510
+Rio de Janeiro;334511
+Rio de Janeiro;334512
+Rio de Janeiro;334513
+Rio de Janeiro;334514
+Rio de Janeiro;334515
+Rio de Janeiro;334516
+Rio de Janeiro;334517
+Rio de Janeiro;334518
+Rio de Janeiro;334519
+Rio de Janeiro;334520
+Rio de Janeiro;334521
+Rio de Janeiro;334522
+Rio de Janeiro;334523
+Rio de Janeiro;334524
+Rio de Janeiro;334525
+Rio de Janeiro;334526
+Rio de Janeiro;334527
+Rio de Janeiro;334528
+Rio de Janeiro;334529
+Rio de Janeiro;334530
+Rio de Janeiro;330490
+Rio de Janeiro;330510
+Rio de Janeiro;330575
+Ignorado - RJ;330000
+Ignorado - RJ;339999
+Ignorado - RJ;330064
+Jales;350260
+Jales;350395
+Jales;351385
+Jales;351420
+Jales;352480
+Jales;352910
+Jales;352965
+Jales;353284
+Jales;353520
+Jales;353590
+Jales;354025
+Jales;354040
+Jales;354450
+Jales;354570
+Jales;354610
+Jales;354660
+Jales;354720
+Jales;354740
+Jales;354765
+Jales;354900
+Jales;355490
+Jales;355580
+Jales;355695
+Fernandópolis;351520
+Fernandópolis;351550
+Fernandópolis;351800
+Fernandópolis;352070
+Fernandópolis;352820
+Fernandópolis;352960
+Fernandópolis;353000
+Fernandópolis;353475
+Fernandópolis;353690
+Fernandópolis;354920
+Fernandópolis;355530
+Votuporanga;350120
+Votuporanga;350180
+Votuporanga;351070
+Votuporanga;351290
+Votuporanga;353625
+Votuporanga;354030
+Votuporanga;354420
+Votuporanga;355610
+Votuporanga;355710
+S.José R.Preto;350020
+S.José R.Preto;350090
+S.José R.Preto;350460
+S.José R.Preto;350480
+S.José R.Preto;351130
+S.José R.Preto;351750
+S.José R.Preto;351790
+S.José R.Preto;351940
+S.José R.Preto;351980
+S.José R.Preto;352115
+S.José R.Preto;352450
+S.José R.Preto;352570
+S.José R.Preto;352950
+S.José R.Preto;353030
+S.José R.Preto;353040
+S.José R.Preto;353280
+S.José R.Preto;353300
+S.José R.Preto;353390
+S.José R.Preto;353400
+S.José R.Preto;353420
+S.José R.Preto;353500
+S.José R.Preto;353660
+S.José R.Preto;353960
+S.José R.Preto;354080
+S.José R.Preto;354980
+S.José R.Preto;355340
+S.José R.Preto;355535
+S.José R.Preto;355560
+S.José R.Preto;355715
+Catanduva;350370
+Catanduva;350930
+Catanduva;351110
+Catanduva;351120
+Catanduva;351492
+Catanduva;351495
+Catanduva;353325
+Catanduva;353510
+Catanduva;353570
+Catanduva;353810
+Catanduva;354560
+Catanduva;355190
+Catanduva;355260
+Auriflama;350420
+Auriflama;351590
+Auriflama;351680
+Auriflama;351690
+Auriflama;351890
+Auriflama;352830
+Auriflama;353286
+Auriflama;353330
+Auriflama;354925
+Nhandeara;352810
+Nhandeara;353100
+Nhandeara;353140
+Nhandeara;353250
+Nhandeara;353260
+Nhandeara;353270
+Nhandeara;353990
+Nhandeara;355130
+Nhandeara;355570
+Novo Horizonte;352150
+Novo Horizonte;352190
+Novo Horizonte;352885
+Novo Horizonte;353350
+Novo Horizonte;354480
+Novo Horizonte;355600
+Barretos;350550
+Barretos;351200
+Barretos;351210
+S.Joaquim Barra;351740
+S.Joaquim Barra;352130
+S.Joaquim Barra;352420
+S.Joaquim Barra;352970
+S.Joaquim Barra;353190
+S.Joaquim Barra;353360
+S.Joaquim Barra;353430
+S.Joaquim Barra;354490
+S.Joaquim Barra;354940
+Ituverava;350300
+Ituverava;350820
+Ituverava;351770
+Ituverava;352010
+Ituverava;352410
+Franca;351320
+Franca;351620
+Franca;352370
+Franca;352540
+Franca;353630
+Franca;353700
+Franca;354270
+Franca;354310
+Franca;354360
+Franca;354950
+Jaboticabal;350610
+Jaboticabal;351010
+Jaboticabal;351560
+Jaboticabal;351860
+Jaboticabal;352430
+Jaboticabal;353130
+Jaboticabal;353150
+Jaboticabal;353900
+Jaboticabal;353950
+Jaboticabal;354650
+Jaboticabal;355310
+Jaboticabal;355320
+Jaboticabal;355365
+Jaboticabal;355370
+Jaboticabal;355440
+Jaboticabal;355680
+Jaboticabal;355690
+Ribeirão Preto;350560
+Ribeirão Preto;350780
+Ribeirão Preto;351310
+Ribeirão Preto;351460
+Ribeirão Preto;351885
+Ribeirão Preto;352510
+Ribeirão Preto;352760
+Ribeirão Preto;354020
+Ribeirão Preto;354090
+Ribeirão Preto;354340
+Ribeirão Preto;354750
+Ribeirão Preto;354760
+Ribeirão Preto;355090
+Ribeirão Preto;355140
+Ribeirão Preto;355150
+Ribeirão Preto;355170
+Batatais;350100
+Batatais;350590
+Batatais;350940
+Batatais;351090
+Batatais;354625
+Batatais;354790
+Andradina;350210
+Andradina;351100
+Andradina;351780
+Andradina;352044
+Andradina;352300
+Andradina;353010
+Andradina;353210
+Andradina;353320
+Andradina;353740
+Andradina;355230
+Andradina;355255
+Araçatuba;350280
+Araçatuba;350620
+Araçatuba;351820
+Araçatuba;352650
+Araçatuba;354440
+Araçatuba;354805
+Araçatuba;355630
+Birigui;350110
+Birigui;350440
+Birigui;350510
+Birigui;350640
+Birigui;350650
+Birigui;350770
+Birigui;350775
+Birigui;350810
+Birigui;351190
+Birigui;351250
+Birigui;351650
+Birigui;351710
+Birigui;352725
+Birigui;352770
+Birigui;353730
+Birigui;353770
+Birigui;354840
+Birigui;355520
+Lins;350880
+Lins;351700
+Lins;351720
+Lins;351730
+Lins;352580
+Lins;352710
+Lins;354160
+Lins;354460
+Bauru;350070
+Bauru;350340
+Bauru;350360
+Bauru;350430
+Bauru;350470
+Bauru;350600
+Bauru;350745
+Bauru;350830
+Bauru;351450
+Bauru;351810
+Bauru;351910
+Bauru;352680
+Bauru;352750
+Bauru;353657
+Bauru;353890
+Bauru;353940
+Bauru;354010
+Bauru;354110
+Bauru;354250
+Bauru;355550
+Bauru;355590
+Jaú;350520
+Jaú;350530
+Jaú;350680
+Jaú;350730
+Jaú;351410
+Jaú;352000
+Jaú;352200
+Jaú;352290
+Jaú;352530
+Jaú;352800
+Jaú;352980
+Jaú;353670
+Avaré;350055
+Avaré;350310
+Avaré;350450
+Avaré;351140
+Avaré;351925
+Avaré;352180
+Avaré;352350
+Avaré;353580
+Botucatu;350230
+Botucatu;350690
+Botucatu;350750
+Botucatu;351230
+Botucatu;353610
+Botucatu;354105
+Botucatu;355010
+Araraquara;350170
+Araraquara;350320
+Araraquara;350670
+Araraquara;350740
+Araraquara;351400
+Araraquara;351685
+Araraquara;351960
+Araraquara;352270
+Araraquara;352930
+Araraquara;353205
+Araraquara;353290
+Araraquara;354370
+Araraquara;354690
+Araraquara;355270
+Araraquara;355475
+São Carlos;350200
+São Carlos;351370
+São Carlos;351430
+São Carlos;351930
+São Carlos;354290
+São Carlos;354890
+Rio Claro;350790
+Rio Claro;351270
+Rio Claro;352110
+Rio Claro;352360
+Rio Claro;354390
+Rio Claro;355470
+Limeira;350330
+Limeira;351220
+Limeira;351240
+Limeira;352140
+Limeira;352670
+Limeira;352690
+Limeira;354620
+Limeira;354670
+Piracicaba;350060
+Piracicaba;351040
+Piracicaba;351170
+Piracicaba;352585
+Piracicaba;353090
+Piracicaba;353870
+Piracicaba;354210
+Piracicaba;354400
+Piracicaba;354515
+Piracicaba;354700
+Piracicaba;355040
+Piracicaba;355450
+Pirassununga;350030
+Pirassununga;353930
+Pirassununga;354070
+Pirassununga;354630
+S.João B.Vista;350040
+S.João B.Vista;350870
+S.João B.Vista;351080
+S.João B.Vista;351390
+S.João B.Vista;351518
+S.João B.Vista;352380
+S.João B.Vista;353050
+S.João B.Vista;354810
+S.João B.Vista;354910
+S.João B.Vista;354970
+S.João B.Vista;355080
+S.João B.Vista;355330
+S.João B.Vista;355360
+S.João B.Vista;355640
+Moji Mirim;350380
+Moji Mirim;351515
+Moji Mirim;352260
+Moji Mirim;353070
+Moji Mirim;353080
+Moji Mirim;354800
+Moji Mirim;355730
+Campinas;350160
+Campinas;350950
+Campinas;351280
+Campinas;351490
+Campinas;351905
+Campinas;351907
+Campinas;352050
+Campinas;352470
+Campinas;353180
+Campinas;353340
+Campinas;353650
+Campinas;353710
+Campinas;354580
+Campinas;355240
+Campinas;355620
+Campinas;355670
+Amparo;350050
+Amparo;350190
+Amparo;352700
+Amparo;353120
+Amparo;353680
+Amparo;353820
+Amparo;355160
+Amparo;355210
+Dracena;351440
+Dracena;352600
+Dracena;353160
+Dracena;353310
+Dracena;353480
+Dracena;353540
+Dracena;353640
+Dracena;354710
+Dracena;354930
+Dracena;355510
+Adamantina;350010
+Adamantina;351580
+Adamantina;351600
+Adamantina;352080
+Adamantina;352160
+Adamantina;352740
+Adamantina;352890
+Adamantina;353460
+Adamantina;353490
+Adamantina;353600
+Adamantina;354085
+Adamantina;354380
+Adamantina;354470
+Adamantina;354510
+Pres.Prudente;350080
+Pres.Prudente;350130
+Pres.Prudente;350240
+Pres.Prudente;350890
+Pres.Prudente;350910
+Pres.Prudente;351512
+Pres.Prudente;351530
+Pres.Prudente;351535
+Pres.Prudente;352060
+Pres.Prudente;352560
+Pres.Prudente;352870
+Pres.Prudente;352920
+Pres.Prudente;353020
+Pres.Prudente;353220
+Pres.Prudente;353830
+Pres.Prudente;353920
+Pres.Prudente;354120
+Pres.Prudente;354130
+Pres.Prudente;354140
+Pres.Prudente;354150
+Pres.Prudente;354220
+Pres.Prudente;354240
+Pres.Prudente;354323
+Pres.Prudente;354425
+Pres.Prudente;354550
+Pres.Prudente;354770
+Pres.Prudente;354830
+Pres.Prudente;355290
+Pres.Prudente;355390
+Pres.Prudente;355430
+Tupã;350335
+Tupã;350580
+Tupã;351900
+Tupã;351920
+Tupã;354180
+Tupã;354200
+Tupã;355500
+Marília;350140
+Marília;350150
+Marília;351470
+Marília;351565
+Marília;351660
+Marília;351670
+Marília;352780
+Marília;352900
+Marília;353370
+Marília;353410
+Marília;353450
+Marília;354000
+Marília;355660
+Assis;350400
+Assis;350720
+Assis;350980
+Assis;351000
+Assis;351330
+Assis;351610
+Assis;351950
+Assis;351990
+Assis;352790
+Assis;352880
+Assis;353215
+Assis;353530
+Assis;353550
+Assis;353715
+Assis;353970
+Assis;354170
+Assis;355395
+Ourinhos;350630
+Ourinhos;351015
+Ourinhos;351519
+Ourinhos;351540
+Ourinhos;352090
+Ourinhos;352860
+Ourinhos;353380
+Ourinhos;353470
+Ourinhos;353880
+Ourinhos;354320
+Ourinhos;354540
+Ourinhos;354640
+Ourinhos;355050
+Ourinhos;355120
+Ourinhos;355300
+Ourinhos;355420
+Ourinhos;355460
+Ourinhos;355720
+Itapeva;350500
+Itapeva;350715
+Itapeva;350800
+Itapeva;351260
+Itapeva;352170
+Itapeva;352240
+Itapeva;352280
+Itapeva;352320
+Itapeva;353282
+Itapeva;354350
+Itapeva;355380
+Itapeva;355385
+Itapetininga;350075
+Itapetininga;350220
+Itapetininga;350945
+Itapetininga;351850
+Itapetininga;352230
+Tatuí;350700
+Tatuí;351150
+Tatuí;351160
+Tatuí;352640
+Tatuí;353750
+Tatuí;354050
+Tatuí;354165
+Tatuí;355400
+Tatuí;355465
+Capão Bonito;350270
+Capão Bonito;350535
+Capão Bonito;351020
+Capão Bonito;351760
+Capão Bonito;352120
+Capão Bonito;352215
+Capão Bonito;352265
+Capão Bonito;354280
+Capão Bonito;354300
+Capão Bonito;354325
+Piedade;351970
+Piedade;353780
+Piedade;353790
+Piedade;355020
+Piedade;355350
+Sorocaba;350115
+Sorocaba;350275
+Sorocaba;350290
+Sorocaba;350840
+Sorocaba;351030
+Sorocaba;352100
+Sorocaba;352390
+Sorocaba;352840
+Sorocaba;354060
+Sorocaba;354520
+Sorocaba;354530
+Sorocaba;355060
+Sorocaba;355110
+Sorocaba;355220
+Sorocaba;355700
+Jundiaí;350960
+Jundiaí;352400
+Jundiaí;352590
+Jundiaí;352730
+Jundiaí;355650
+Bragança SP;350410
+Bragança SP;350710
+Bragança SP;350760
+Bragança SP;352340
+Bragança SP;352520
+Bragança SP;352550
+Bragança SP;353200
+Bragança SP;353240
+Bragança SP;353860
+Bragança SP;355495
+Bragança SP;355635
+Campos Jordão;350970
+Campos Jordão;353170
+Campos Jordão;354820
+Campos Jordão;354860
+S.José Campos;350850
+S.José Campos;352020
+S.José Campos;352440
+S.José Campos;353800
+S.José Campos;354600
+S.José Campos;354990
+S.José Campos;355410
+S.José Campos;355480
+Guaratinguetá;350250
+Guaratinguetá;350860
+Guaratinguetá;350995
+Guaratinguetá;351340
+Guaratinguetá;351840
+Guaratinguetá;352660
+Guaratinguetá;352720
+Guaratinguetá;353850
+Guaratinguetá;354075
+Guaratinguetá;354190
+Guaratinguetá;354430
+Bananal;350315
+Bananal;350350
+Bananal;350490
+Bananal;354960
+Bananal;355200
+Par./Paraitinga;351360
+Par./Paraitinga;352490
+Par./Paraitinga;352630
+Par./Paraitinga;353230
+Par./Paraitinga;353560
+Par./Paraitinga;354230
+Par./Paraitinga;355000
+Caraguatatuba;351050
+Caraguatatuba;352040
+Caraguatatuba;355070
+Caraguatatuba;355540
+Registro;350540
+Registro;350925
+Registro;350990
+Registro;351480
+Registro;352030
+Registro;352042
+Registro;352460
+Registro;352610
+Registro;352990
+Registro;353620
+Registro;354260
+Registro;355180
+Itanhaém;352210
+Itanhaém;352330
+Itanhaém;353110
+Itanhaém;353720
+Itanhaém;353760
+Osasco;350570
+Osasco;350920
+Osasco;351060
+Osasco;352250
+Osasco;352500
+Osasco;353440
+Osasco;353910
+Osasco;354730
+Franco da Rocha;350900
+Franco da Rocha;351630
+Franco da Rocha;351640
+Franco da Rocha;352850
+Guarulhos;350390
+Guarulhos;351880
+Guarulhos;354680
+Itapec.Serra;351300
+Itapec.Serra;351500
+Itapec.Serra;351510
+Itapec.Serra;352220
+Itapec.Serra;352620
+Itapec.Serra;354995
+Itapec.Serra;355280
+Itapec.Serra;355645
+São Paulo;351380
+São Paulo;352940
+São Paulo;354330
+São Paulo;354410
+São Paulo;354780
+São Paulo;354870
+São Paulo;354880
+São Paulo;355030
+São Paulo;358001
+São Paulo;358002
+São Paulo;358003
+São Paulo;358004
+São Paulo;358005
+São Paulo;358006
+São Paulo;358007
+São Paulo;358008
+São Paulo;358009
+São Paulo;358010
+São Paulo;358011
+São Paulo;358012
+São Paulo;358013
+São Paulo;358014
+São Paulo;358015
+São Paulo;358016
+São Paulo;358017
+São Paulo;358018
+São Paulo;358019
+São Paulo;358020
+São Paulo;358021
+São Paulo;358022
+São Paulo;358023
+São Paulo;358024
+São Paulo;358025
+São Paulo;358026
+São Paulo;358027
+São Paulo;358028
+São Paulo;358029
+São Paulo;358030
+São Paulo;358031
+São Paulo;358032
+São Paulo;358033
+São Paulo;358034
+São Paulo;358035
+São Paulo;358036
+São Paulo;358037
+São Paulo;358038
+São Paulo;358039
+São Paulo;358040
+São Paulo;358041
+São Paulo;358042
+São Paulo;358043
+São Paulo;358044
+São Paulo;358045
+São Paulo;358046
+São Paulo;358047
+São Paulo;358048
+São Paulo;358049
+São Paulo;358050
+São Paulo;358051
+São Paulo;358052
+São Paulo;358053
+São Paulo;358054
+São Paulo;358055
+São Paulo;358056
+São Paulo;358057
+São Paulo;358058
+Mogi das Cruzes;350660
+Mogi das Cruzes;351570
+Mogi das Cruzes;351830
+Mogi das Cruzes;352310
+Mogi das Cruzes;353060
+Mogi das Cruzes;353980
+Mogi das Cruzes;354500
+Mogi das Cruzes;355250
+Santos;350635
+Santos;351350
+Santos;351870
+Santos;354100
+Santos;354850
+Santos;355100
+Ignorado - SP;350000
+Ignorado - SP;359999
+Paranavaí;410060
+Paranavaí;410090
+Paranavaí;410670
+Paranavaí;410710
+Paranavaí;410890
+Paranavaí;411030
+Paranavaí;411130
+Paranavaí;411260
+Paranavaí;411350
+Paranavaí;411500
+Paranavaí;411590
+Paranavaí;411650
+Paranavaí;411710
+Paranavaí;411800
+Paranavaí;411810
+Paranavaí;411830
+Paranavaí;411840
+Paranavaí;411970
+Paranavaí;412020
+Paranavaí;412100
+Paranavaí;412330
+Paranavaí;412370
+Paranavaí;412395
+Paranavaí;412420
+Paranavaí;412460
+Paranavaí;412490
+Paranavaí;412590
+Paranavaí;412670
+Paranavaí;412730
+Umuarama;410050
+Umuarama;410070
+Umuarama;410337
+Umuarama;410347
+Umuarama;410660
+Umuarama;410725
+Umuarama;410752
+Umuarama;410832
+Umuarama;410990
+Umuarama;411060
+Umuarama;411155
+Umuarama;411470
+Umuarama;411510
+Umuarama;411720
+Umuarama;411885
+Umuarama;411890
+Umuarama;412535
+Umuarama;412690
+Umuarama;412810
+Umuarama;412862
+Umuarama;412880
+Cianorte;410550
+Cianorte;410560
+Cianorte;410910
+Cianorte;411040
+Cianorte;411240
+Cianorte;411300
+Cianorte;412260
+Cianorte;412555
+Cianorte;412610
+Cianorte;412680
+Cianorte;412790
+Goioerê;410045
+Goioerê;410300
+Goioerê;410390
+Goioerê;410860
+Goioerê;411220
+Goioerê;411295
+Goioerê;411610
+Goioerê;411680
+Goioerê;412065
+Goioerê;412135
+Goioerê;412800
+Campo Mourão;410170
+Campo Mourão;410250
+Campo Mourão;410430
+Campo Mourão;410655
+Campo Mourão;410750
+Campo Mourão;410755
+Campo Mourão;410770
+Campo Mourão;411080
+Campo Mourão;411373
+Campo Mourão;411400
+Campo Mourão;411880
+Campo Mourão;412110
+Campo Mourão;412250
+Campo Mourão;412720
+Astorga;410115
+Astorga;410210
+Astorga;410220
+Astorga;410340
+Astorga;410510
+Astorga;410590
+Astorga;410810
+Astorga;410920
+Astorga;411000
+Astorga;411090
+Astorga;411190
+Astorga;411360
+Astorga;411380
+Astorga;411410
+Astorga;411630
+Astorga;411640
+Astorga;411690
+Astorga;412040
+Astorga;412340
+Astorga;412360
+Astorga;412450
+Astorga;412830
+Porecatu;410080
+Porecatu;410280
+Porecatu;410800
+Porecatu;411600
+Porecatu;412000
+Porecatu;412033
+Porecatu;412050
+Porecatu;412650
+Floraí;410730
+Floraí;410780
+Floraí;410790
+Floraí;411110
+Floraí;411160
+Floraí;411740
+Floraí;412530
+Maringá;411420
+Maringá;411480
+Maringá;411520
+Maringá;411750
+Maringá;412625
+Apucarana;410140
+Apucarana;410150
+Apucarana;410350
+Apucarana;410380
+Apucarana;411210
+Apucarana;411490
+Apucarana;411575
+Apucarana;411729
+Apucarana;412270
+Londrina;410370
+Londrina;410980
+Londrina;411370
+Londrina;411965
+Londrina;412240
+Londrina;412667
+Faxinal;410320
+Faxinal;410330
+Faxinal;410685
+Faxinal;410760
+Faxinal;411310
+Faxinal;411550
+Faxinal;412210
+Ivaiporã;410165
+Ivaiporã;410185
+Ivaiporã;410440
+Ivaiporã;410855
+Ivaiporã;410870
+Ivaiporã;411150
+Ivaiporã;411250
+Ivaiporã;411342
+Ivaiporã;411375
+Ivaiporã;411450
+Ivaiporã;411727
+Ivaiporã;412217
+Ivaiporã;412265
+Ivaiporã;412500
+Ivaiporã;412580
+Assaí;410190
+Assaí;411270
+Assaí;411721
+Assaí;412130
+Assaí;412320
+Assaí;412470
+Assaí;412600
+Assaí;412840
+Corn.Procópio;410010
+Corn.Procópio;410110
+Corn.Procópio;410240
+Corn.Procópio;410600
+Corn.Procópio;410640
+Corn.Procópio;411100
+Corn.Procópio;411340
+Corn.Procópio;411660
+Corn.Procópio;411700
+Corn.Procópio;412190
+Corn.Procópio;412310
+Corn.Procópio;412390
+Corn.Procópio;412430
+Corn.Procópio;412640
+Jacarezinho;410270
+Jacarezinho;410360
+Jacarezinho;411180
+Jacarezinho;411290
+Jacarezinho;412180
+Jacarezinho;412410
+Ibaiti;410610
+Ibaiti;410700
+Ibaiti;410775
+Ibaiti;410970
+Ibaiti;411170
+Ibaiti;411230
+Ibaiti;411920
+Ibaiti;412620
+Wenceslau Braz;410470
+Wenceslau Braz;410900
+Wenceslau Braz;411280
+Wenceslau Braz;412070
+Wenceslau Braz;412290
+Wenceslau Braz;412400
+Wenceslau Braz;412540
+Wenceslau Braz;412660
+Wenceslau Braz;412780
+Wenceslau Braz;412850
+Telêmaco Borba;411007
+Telêmaco Borba;411730
+Telêmaco Borba;412170
+Telêmaco Borba;412710
+Telêmaco Borba;412750
+Telêmaco Borba;412853
+Jaguariaíva;410160
+Jaguariaíva;411200
+Jaguariaíva;411940
+Jaguariaíva;412630
+Ponta Grossa;410465
+Ponta Grossa;410490
+Ponta Grossa;411770
+Ponta Grossa;411990
+Toledo;410200
+Toledo;410715
+Toledo;410753
+Toledo;410820
+Toledo;410880
+Toledo;411065
+Toledo;411275
+Toledo;411460
+Toledo;411535
+Toledo;411585
+Toledo;411722
+Toledo;411745
+Toledo;411790
+Toledo;411845
+Toledo;412085
+Toledo;412350
+Toledo;412545
+Toledo;412575
+Toledo;412740
+Toledo;412770
+Toledo;412795
+Cascavel PR;410105
+Cascavel PR;410305
+Cascavel PR;410335
+Cascavel PR;410345
+Cascavel PR;410405
+Cascavel PR;410460
+Cascavel PR;410480
+Cascavel PR;410500
+Cascavel PR;410630
+Cascavel PR;410712
+Cascavel PR;410930
+Cascavel PR;410975
+Cascavel PR;411005
+Cascavel PR;411345
+Cascavel PR;411670
+Cascavel PR;412382
+Cascavel PR;412402
+Cascavel PR;412785
+Foz do Iguaçu;410530
+Foz do Iguaçu;410830
+Foz do Iguaçu;411095
+Foz do Iguaçu;411560
+Foz do Iguaçu;411580
+Foz do Iguaçu;411605
+Foz do Iguaçu;412125
+Foz do Iguaçu;412405
+Foz do Iguaçu;412570
+Foz do Iguaçu;412635
+Foz do Iguaçu;412855
+Capanema;410100
+Capanema;410275
+Capanema;410450
+Capanema;411900
+Capanema;411980
+Capanema;412035
+Capanema;412140
+Capanema;412380
+Franc.Beltrão;410260
+Franc.Beltrão;410302
+Franc.Beltrão;410315
+Franc.Beltrão;410657
+Franc.Beltrão;410720
+Franc.Beltrão;410740
+Franc.Beltrão;410785
+Franc.Beltrão;410840
+Franc.Beltrão;411435
+Franc.Beltrão;411540
+Franc.Beltrão;411695
+Franc.Beltrão;411725
+Franc.Beltrão;411925
+Franc.Beltrão;412160
+Franc.Beltrão;412280
+Franc.Beltrão;412300
+Franc.Beltrão;412440
+Franc.Beltrão;412520
+Franc.Beltrão;412860
+Pato Branco;410322
+Pato Branco;410540
+Pato Branco;410650
+Pato Branco;411120
+Pato Branco;411530
+Pato Branco;411850
+Pato Branco;412480
+Pato Branco;412627
+Pato Branco;412665
+Pato Branco;412870
+Pitanga;410304
+Pitanga;411325
+Pitanga;411573
+Pitanga;411780
+Pitanga;411960
+Pitanga;412385
+Guarapuava;410395
+Guarapuava;410442
+Guarapuava;410445
+Guarapuava;410754
+Guarapuava;410845
+Guarapuava;410865
+Guarapuava;410940
+Guarapuava;411020
+Guarapuava;411330
+Guarapuava;411545
+Guarapuava;411705
+Guarapuava;411930
+Guarapuava;412015
+Guarapuava;412090
+Guarapuava;412175
+Guarapuava;412215
+Guarapuava;412796
+Guarapuava;412865
+Palmas;410570
+Palmas;410645
+Palmas;410965
+Palmas;411440
+Palmas;411760
+Prudentópolis;410773
+Prudentópolis;410895
+Prudentópolis;411010
+Prudentópolis;411050
+Prudentópolis;411140
+Prudentópolis;412060
+Prudentópolis;412700
+Irati;411070
+Irati;411390
+Irati;412150
+Irati;412200
+União Vitória;410290
+União Vitória;410680
+União Vitória;410850
+União Vitória;411860
+União Vitória;411870
+União Vitória;412030
+União Vitória;412820
+S.Mateus do Sul;410130
+S.Mateus do Sul;412510
+S.Mateus do Sul;412560
+Cerro Azul;410020
+Cerro Azul;410520
+Cerro Azul;412863
+Lapa;411320
+Lapa;412010
+Curitiba;410040
+Curitiba;410180
+Curitiba;410230
+Curitiba;410310
+Curitiba;410400
+Curitiba;410420
+Curitiba;410425
+Curitiba;410580
+Curitiba;410620
+Curitiba;410690
+Curitiba;410765
+Curitiba;411125
+Curitiba;411430
+Curitiba;411915
+Curitiba;411950
+Curitiba;412080
+Curitiba;412220
+Curitiba;412550
+Curitiba;412788
+Paranaguá;410120
+Paranaguá;410950
+Paranaguá;410960
+Paranaguá;411570
+Paranaguá;411620
+Paranaguá;411820
+Paranaguá;411995
+Rio Negro PR;410030
+Rio Negro PR;410410
+Rio Negro PR;411910
+Rio Negro PR;412120
+Rio Negro PR;412230
+Rio Negro PR;412760
+Ignorado - PR;410000
+Ignorado - PR;419999
+S.Miguel Oeste;420080
+S.Miguel Oeste;420208
+S.Miguel Oeste;420209
+S.Miguel Oeste;420215
+S.Miguel Oeste;420490
+S.Miguel Oeste;420500
+S.Miguel Oeste;420640
+S.Miguel Oeste;420660
+S.Miguel Oeste;420765
+S.Miguel Oeste;420840
+S.Miguel Oeste;421100
+S.Miguel Oeste;421200
+S.Miguel Oeste;421223
+S.Miguel Oeste;421415
+S.Miguel Oeste;421507
+S.Miguel Oeste;421520
+S.Miguel Oeste;421555
+S.Miguel Oeste;421625
+S.Miguel Oeste;421670
+S.Miguel Oeste;421720
+S.Miguel Oeste;421875
+Chapecó;420050
+Chapecó;420055
+Chapecó;420257
+Chapecó;420310
+Chapecó;420350
+Chapecó;420410
+Chapecó;420420
+Chapecó;420435
+Chapecó;420440
+Chapecó;420470
+Chapecó;420475
+Chapecó;420535
+Chapecó;420543
+Chapecó;420665
+Chapecó;420775
+Chapecó;420785
+Chapecó;420895
+Chapecó;421050
+Chapecó;421090
+Chapecó;421140
+Chapecó;421145
+Chapecó;421165
+Chapecó;421210
+Chapecó;421290
+Chapecó;421315
+Chapecó;421420
+Chapecó;421535
+Chapecó;421568
+Chapecó;421569
+Chapecó;421575
+Chapecó;421600
+Chapecó;421690
+Chapecó;421715
+Chapecó;421730
+Chapecó;421755
+Chapecó;421775
+Chapecó;421795
+Chapecó;421885
+Xanxerê;420010
+Xanxerê;420253
+Xanxerê;420445
+Xanxerê;420517
+Xanxerê;420530
+Xanxerê;420560
+Xanxerê;420768
+Xanxerê;420917
+Xanxerê;420945
+Xanxerê;421055
+Xanxerê;421185
+Xanxerê;421227
+Xanxerê;421340
+Xanxerê;421610
+Xanxerê;421910
+Xanxerê;421950
+Xanxerê;421970
+Joaçaba;420040
+Joaçaba;420160
+Joaçaba;420300
+Joaçaba;420315
+Joaçaba;420390
+Joaçaba;420400
+Joaçaba;420520
+Joaçaba;420550
+Joaçaba;420670
+Joaçaba;420675
+Joaçaba;420680
+Joaçaba;420757
+Joaçaba;420860
+Joaçaba;420900
+Joaçaba;420920
+Joaçaba;420970
+Joaçaba;421003
+Joaçaba;421005
+Joaçaba;421070
+Joaçaba;421180
+Joaçaba;421300
+Joaçaba;421440
+Joaçaba;421540
+Joaçaba;421790
+Joaçaba;421850
+Joaçaba;421917
+Joaçaba;421930
+Concórdia;420075
+Concórdia;420127
+Concórdia;420165
+Concórdia;420430
+Concórdia;420760
+Concórdia;420770
+Concórdia;420780
+Concórdia;420800
+Concórdia;420985
+Concórdia;421187
+Concórdia;421260
+Concórdia;421310
+Concórdia;421390
+Concórdia;421750
+Concórdia;421960
+Canoinhas;420213
+Canoinhas;420380
+Canoinhas;420790
+Canoinhas;420810
+Canoinhas;421010
+Canoinhas;421030
+Canoinhas;421110
+Canoinhas;421220
+Canoinhas;421360
+Canoinhas;421567
+Canoinhas;421825
+Canoinhas;421830
+S.Bento do Sul;420330
+S.Bento do Sul;421500
+S.Bento do Sul;421580
+Joinville;420130
+Joinville;420205
+Joinville;420450
+Joinville;420580
+Joinville;420650
+Joinville;420845
+Joinville;420890
+Joinville;420910
+Joinville;421060
+Joinville;421620
+Joinville;421740
+Curitibanos;420005
+Curitibanos;420287
+Curitibanos;420360
+Curitibanos;420480
+Curitibanos;420555
+Curitibanos;421105
+Curitibanos;421330
+Curitibanos;421335
+Curitibanos;421550
+Curitibanos;421605
+Curitibanos;421915
+Curitibanos;421985
+Campos de Lages;420100
+Campos de Lages;420243
+Campos de Lages;420250
+Campos de Lages;420260
+Campos de Lages;420325
+Campos de Lages;420340
+Campos de Lages;420415
+Campos de Lages;420411
+Campos de Lages;420417
+Campos de Lages;420455
+Campos de Lages;420930
+Campos de Lages;421175
+Campos de Lages;421189
+Campos de Lages;421205
+Campos de Lages;421505
+Campos de Lages;421650
+Campos de Lages;421680
+Campos de Lages;421890
+Campos de Lages;421895
+Rio do Sul;420030
+Rio do Sul;420190
+Rio do Sul;420285
+Rio do Sul;420510
+Rio do Sul;420690
+Rio do Sul;420915
+Rio do Sul;420950
+Rio do Sul;420990
+Rio do Sul;421085
+Rio do Sul;421370
+Rio do Sul;421400
+Rio do Sul;421410
+Rio do Sul;421450
+Rio do Sul;421460
+Rio do Sul;421480
+Rio do Sul;421530
+Rio do Sul;421780
+Rio do Sul;421860
+Rio do Sul;421935
+Rio do Sul;421940
+Blumenau;420125
+Blumenau;420170
+Blumenau;420220
+Blumenau;420240
+Blumenau;420270
+Blumenau;420290
+Blumenau;420515
+Blumenau;420590
+Blumenau;420630
+Blumenau;420750
+Blumenau;421000
+Blumenau;421320
+Blumenau;421470
+Blumenau;421510
+Blumenau;421820
+Itajaí;420200
+Itajaí;420210
+Itajaí;420245
+Itajaí;420320
+Itajaí;420710
+Itajaí;420820
+Itajaí;420830
+Itajaí;421130
+Itajaí;421250
+Itajaí;421280
+Itajaí;421350
+Itajaí;421635
+Ituporanga;420020
+Ituporanga;420180
+Ituporanga;420419
+Ituporanga;420740
+Ituporanga;420850
+Ituporanga;421270
+Ituporanga;421920
+Tijucas;420090
+Tijucas;420370
+Tijucas;420980
+Tijucas;421020
+Tijucas;421150
+Tijucas;421630
+Tijucas;421800
+Florianópolis;420120
+Florianópolis;420230
+Florianópolis;420540
+Florianópolis;420600
+Florianópolis;421190
+Florianópolis;421230
+Florianópolis;421570
+Florianópolis;421660
+Florianópolis;421725
+Tabuleiro;420060
+Tabuleiro;420070
+Tabuleiro;420110
+Tabuleiro;421430
+Tabuleiro;421590
+Tubarão;420150
+Tubarão;420280
+Tubarão;420395
+Tubarão;420570
+Tubarão;420610
+Tubarão;420620
+Tubarão;420720
+Tubarão;420730
+Tubarão;420880
+Tubarão;420940
+Tubarão;421170
+Tubarão;421240
+Tubarão;421265
+Tubarão;421490
+Tubarão;421545
+Tubarão;421560
+Tubarão;421700
+Tubarão;421710
+Tubarão;421840
+Tubarão;421870
+Criciúma;420425
+Criciúma;420460
+Criciúma;420545
+Criciúma;420700
+Criciúma;420960
+Criciúma;421120
+Criciúma;421160
+Criciúma;421760
+Criciúma;421835
+Criciúma;421900
+Criciúma;422000
+Araranguá;420140
+Araranguá;420195
+Araranguá;420207
+Araranguá;420519
+Araranguá;420870
+Araranguá;421040
+Araranguá;421080
+Araranguá;421125
+Araranguá;421225
+Araranguá;421380
+Araranguá;421565
+Araranguá;421640
+Araranguá;421770
+Araranguá;421810
+Araranguá;421880
+Ignorado - SC;420000
+Ignorado - SC;429999
+Santa Rosa;430030
+Santa Rosa;430430
+Santa Rosa;431040
+Santa Rosa;431342
+Santa Rosa;431500
+Santa Rosa;431505
+Santa Rosa;431507
+Santa Rosa;431720
+Santa Rosa;431790
+Santa Rosa;431849
+Santa Rosa;432180
+Santa Rosa;432210
+Santa Rosa;432230
+Três Passos;430185
+Três Passos;430220
+Três Passos;430237
+Três Passos;430260
+Três Passos;430400
+Três Passos;430600
+Três Passos;430632
+Três Passos;430673
+Três Passos;430745
+Três Passos;430960
+Três Passos;430970
+Três Passos;431230
+Três Passos;431301
+Três Passos;431540
+Três Passos;431910
+Três Passos;432023
+Três Passos;432140
+Três Passos;432147
+Três Passos;432190
+Três Passos;432370
+Fred.Westphalen;430050
+Fred.Westphalen;430064
+Fred.Westphalen;430340
+Fred.Westphalen;430580
+Fred.Westphalen;430607
+Fred.Westphalen;430642
+Fred.Westphalen;430692
+Fred.Westphalen;430730
+Fred.Westphalen;430850
+Fred.Westphalen;430912
+Fred.Westphalen;431050
+Fred.Westphalen;431160
+Fred.Westphalen;431270
+Fred.Westphalen;431344
+Fred.Westphalen;431346
+Fred.Westphalen;431380
+Fred.Westphalen;431449
+Fred.Westphalen;431470
+Fred.Westphalen;431555
+Fred.Westphalen;431590
+Fred.Westphalen;431620
+Fred.Westphalen;432020
+Fred.Westphalen;432132
+Fred.Westphalen;432185
+Fred.Westphalen;432195
+Fred.Westphalen;432310
+Fred.Westphalen;432350
+Erechim;430090
+Erechim;430155
+Erechim;430170
+Erechim;430192
+Erechim;430205
+Erechim;430380
+Erechim;430485
+Erechim;430511
+Erechim;430613
+Erechim;430695
+Erechim;430697
+Erechim;430700
+Erechim;430720
+Erechim;430755
+Erechim;430805
+Erechim;430825
+Erechim;430870
+Erechim;430890
+Erechim;431046
+Erechim;431070
+Erechim;431090
+Erechim;431190
+Erechim;431200
+Erechim;431413
+Erechim;431478
+Erechim;431531
+Erechim;431970
+Erechim;432060
+Erechim;432163
+Erechim;432290
+Sananduva;430180
+Sananduva;430320
+Sananduva;430980
+Sananduva;431170
+Sananduva;431220
+Sananduva;431360
+Sananduva;431660
+Sananduva;431795
+Sananduva;431842
+Sananduva;431860
+Sananduva;432218
+Cerro Largo;430330
+Cerro Largo;430370
+Cerro Largo;430520
+Cerro Largo;430950
+Cerro Largo;431217
+Cerro Largo;431510
+Cerro Largo;431630
+Cerro Largo;431647
+Cerro Largo;431930
+Cerro Largo;431937
+Cerro Largo;432057
+Santo Ângelo;430250
+Santo Ângelo;430500
+Santo Ângelo;430635
+Santo Ângelo;430693
+Santo Ângelo;430783
+Santo Ângelo;430900
+Santo Ângelo;431455
+Santo Ângelo;431595
+Santo Ângelo;431750
+Santo Ângelo;431770
+Santo Ângelo;431890
+Santo Ângelo;431915
+Santo Ângelo;431920
+Santo Ângelo;432032
+Santo Ângelo;432234
+Santo Ângelo;432375
+Ijuí;430020
+Ijuí;430045
+Ijuí;430150
+Ijuí;430258
+Ijuí;430540
+Ijuí;430570
+Ijuí;430587
+Ijuí;430590
+Ijuí;431020
+Ijuí;431041
+Ijuí;431333
+Ijuí;431390
+Ijuí;431430
+Ijuí;431780
+Ijuí;431973
+Carazinho;430047
+Carazinho;430195
+Carazinho;430215
+Carazinho;430470
+Carazinho;430515
+Carazinho;430530
+Carazinho;430585
+Carazinho;431085
+Carazinho;431142
+Carazinho;431295
+Carazinho;431349
+Carazinho;431370
+Carazinho;431445
+Carazinho;431642
+Carazinho;431775
+Carazinho;431845
+Carazinho;431936
+Carazinho;432010
+Passo Fundo;430005
+Passo Fundo;430355
+Passo Fundo;430490
+Passo Fundo;430495
+Passo Fundo;430537
+Passo Fundo;430550
+Passo Fundo;430597
+Passo Fundo;430630
+Passo Fundo;430705
+Passo Fundo;430885
+Passo Fundo;430990
+Passo Fundo;431180
+Passo Fundo;431213
+Passo Fundo;431262
+Passo Fundo;431267
+Passo Fundo;431410
+Passo Fundo;431477
+Passo Fundo;431610
+Passo Fundo;431673
+Passo Fundo;431755
+Passo Fundo;431805
+Passo Fundo;432050
+Passo Fundo;432090
+Passo Fundo;432255
+Passo Fundo;432335
+Passo Fundo;432340
+Cruz Alta;430055
+Cruz Alta;430222
+Cruz Alta;430223
+Cruz Alta;430410
+Cruz Alta;430610
+Cruz Alta;430750
+Cruz Alta;430845
+Cruz Alta;431000
+Cruz Alta;431087
+Cruz Alta;431115
+Cruz Alta;431535
+Cruz Alta;431643
+Cruz Alta;431645
+Cruz Alta;431670
+Não-Me-Toque;430560
+Não-Me-Toque;431127
+Não-Me-Toque;431265
+Não-Me-Toque;432030
+Não-Me-Toque;432100
+Não-Me-Toque;432146
+Não-Me-Toque;432320
+Soledade;430200
+Soledade;430830
+Soledade;430995
+Soledade;431125
+Soledade;431242
+Soledade;431846
+Soledade;432080
+Soledade;432215
+Guaporé;430066
+Guaporé;430070
+Guaporé;430140
+Guaporé;430645
+Guaporé;430925
+Guaporé;430940
+Guaporé;431030
+Guaporé;431057
+Guaporé;431235
+Guaporé;431275
+Guaporé;431280
+Guaporé;431290
+Guaporé;431330
+Guaporé;431400
+Guaporé;431517
+Guaporé;431520
+Guaporé;431844
+Guaporé;431971
+Guaporé;432040
+Guaporé;432235
+Guaporé;432360
+Vacaria;430230
+Vacaria;430360
+Vacaria;430367
+Vacaria;430462
+Vacaria;430740
+Vacaria;431043
+Vacaria;431112
+Vacaria;431130
+Vacaria;431237
+Vacaria;431261
+Vacaria;431446
+Vacaria;431820
+Vacaria;431862
+Vacaria;432250
+Caxias do Sul;430080
+Caxias do Sul;430210
+Caxias do Sul;430225
+Caxias do Sul;430480
+Caxias do Sul;430510
+Caxias do Sul;430593
+Caxias do Sul;430595
+Caxias do Sul;430786
+Caxias do Sul;430790
+Caxias do Sul;430820
+Caxias do Sul;430860
+Caxias do Sul;431238
+Caxias do Sul;431308
+Caxias do Sul;431335
+Caxias do Sul;431454
+Caxias do Sul;430145
+Caxias do Sul;431453
+Caxias do Sul;431725
+Caxias do Sul;431900
+Caxias do Sul;432280
+Caxias do Sul;432330
+Santiago;430465
+Santiago;431055
+Santiago;431113
+Santiago;431120
+Santiago;431447
+Santiago;431532
+Santiago;431740
+Santiago;432220
+Santiago;432237
+Santa Maria;430290
+Santa Maria;430637
+Santa Maria;431053
+Santa Maria;431110
+Santa Maria;431210
+Santa Maria;431303
+Santa Maria;431690
+Santa Maria;431912
+Santa Maria;431940
+Santa Maria;431960
+Santa Maria;431980
+Santa Maria;432149
+Santa Maria;432345
+Restinga Seca;430010
+Restinga Seca;430670
+Restinga Seca;430800
+Restinga Seca;430840
+Restinga Seca;431075
+Restinga Seca;431310
+Restinga Seca;431550
+Restinga Seca;431843
+Restinga Seca;432065
+S. Cruz do Sul;430120
+S. Cruz do Sul;430420
+S. Cruz do Sul;430781
+S. Cruz do Sul;430915
+S. Cruz do Sul;430957
+S. Cruz do Sul;430975
+S. Cruz do Sul;431123
+S. Cruz do Sul;431215
+S. Cruz do Sul;431406
+S. Cruz do Sul;431680
+S. Cruz do Sul;432026
+S. Cruz do Sul;432067
+S. Cruz do Sul;432070
+S. Cruz do Sul;432253
+S. Cruz do Sul;432260
+S. Cruz do Sul;432270
+Lajeado-Estrela;430100
+Lajeado-Estrela;430240
+Lajeado-Estrela;430245
+Lajeado-Estrela;430461
+Lajeado-Estrela;430469
+Lajeado-Estrela;430558
+Lajeado-Estrela;430583
+Lajeado-Estrela;430620
+Lajeado-Estrela;430675
+Lajeado-Estrela;430680
+Lajeado-Estrela;430780
+Lajeado-Estrela;430807
+Lajeado-Estrela;430843
+Lajeado-Estrela;431036
+Lajeado-Estrela;431140
+Lajeado-Estrela;431205
+Lajeado-Estrela;431260
+Lajeado-Estrela;431300
+Lajeado-Estrela;431415
+Lajeado-Estrela;431513
+Lajeado-Estrela;431515
+Lajeado-Estrela;431545
+Lajeado-Estrela;431580
+Lajeado-Estrela;431675
+Lajeado-Estrela;432045
+Lajeado-Estrela;432085
+Lajeado-Estrela;432130
+Lajeado-Estrela;432145
+Lajeado-Estrela;432162
+Lajeado-Estrela;432285
+Lajeado-Estrela;432377
+Cachoeira Sul;430300
+Cachoeira Sul;430513
+Cachoeira Sul;431339
+Cachoeira Sul;431395
+Cachoeira Sul;431402
+Cachoeira Sul;431407
+Cachoeira Sul;431570
+Montenegro;430057
+Montenegro;430165
+Montenegro;430235
+Montenegro;430265
+Montenegro;430468
+Montenegro;430810
+Montenegro;430955
+Montenegro;431164
+Montenegro;431179
+Montenegro;431240
+Montenegro;431403
+Montenegro;431475
+Montenegro;431480
+Montenegro;431650
+Montenegro;431848
+Montenegro;431861
+Montenegro;431935
+Montenegro;431950
+Montenegro;431975
+Montenegro;432225
+Montenegro;432254
+Gramado-Canela;430440
+Gramado-Canela;430640
+Gramado-Canela;430910
+Gramado-Canela;431010
+Gramado-Canela;431080
+Gramado-Canela;431162
+Gramado-Canela;431247
+Gramado-Canela;431320
+Gramado-Canela;431442
+Gramado-Canela;431514
+Gramado-Canela;431575
+Gramado-Canela;431600
+Gramado-Canela;431695
+Gramado-Canela;432120
+Gramado-Canela;432170
+S. Jerônimo;430110
+S. Jerônimo;430175
+S. Jerônimo;430270
+S. Jerônimo;430535
+S. Jerônimo;430880
+S. Jerônimo;431225
+S. Jerônimo;431840
+S. Jerônimo;432200
+S. Jerônimo;432252
+Porto Alegre;430060
+Porto Alegre;430087
+Porto Alegre;430310
+Porto Alegre;430390
+Porto Alegre;430460
+Porto Alegre;430676
+Porto Alegre;430760
+Porto Alegre;430770
+Porto Alegre;430905
+Porto Alegre;430920
+Porto Alegre;430930
+Porto Alegre;431198
+Porto Alegre;431306
+Porto Alegre;431337
+Porto Alegre;431340
+Porto Alegre;431405
+Porto Alegre;431490
+Porto Alegre;431870
+Porto Alegre;431990
+Porto Alegre;432000
+Porto Alegre;432055
+Porto Alegre;432300
+Osório;430105
+Osório;430163
+Osório;430463
+Osório;430467
+Osório;430471
+Osório;430545
+Osório;430655
+Osório;431033
+Osório;431065
+Osório;431173
+Osório;431177
+Osório;431244
+Osório;431250
+Osório;431350
+Osório;431365
+Osório;431760
+Osório;432135
+Osório;432143
+Osório;432150
+Osório;432160
+Osório;432166
+Osório;432183
+Osório;432380
+Camaquã;430085
+Camaquã;430190
+Camaquã;430350
+Camaquã;430517
+Camaquã;430544
+Camaquã;430650
+Camaquã;432035
+Camaquã;432110
+Campanha Ocid.;430040
+Campanha Ocid.;430187
+Campanha Ocid.;430865
+Campanha Ocid.;431060
+Campanha Ocid.;431171
+Campanha Ocid.;431175
+Campanha Ocid.;431530
+Campanha Ocid.;431800
+Campanha Ocid.;431810
+Campanha Ocid.;432240
+Campanha Centr.;431640
+Campanha Centr.;431697
+Campanha Centr.;431710
+Campanha Centr.;431830
+Campanha Merid.;430003
+Campanha Merid.;430160
+Campanha Merid.;430660
+Campanha Merid.;430965
+Campanha Merid.;431150
+Serras Sudeste;430063
+Serras Sudeste;430280
+Serras Sudeste;430435
+Serras Sudeste;430690
+Serras Sudeste;431417
+Serras Sudeste;431450
+Serras Sudeste;431460
+Serras Sudeste;431700
+Pelotas;430107
+Pelotas;430450
+Pelotas;430466
+Pelotas;430512
+Pelotas;430605
+Pelotas;431245
+Pelotas;431420
+Pelotas;431440
+Pelotas;431880
+Pelotas;432232
+Jaguarão;430130
+Jaguarão;430710
+Jaguarão;431100
+Litoral Lagunar;430543
+Litoral Lagunar;431560
+Litoral Lagunar;431730
+Litoral Lagunar;431850
+Ignorado - RS;430000
+Ignorado - RS;439999
+Baixo Pantanal;500320
+Baixo Pantanal;500520
+Baixo Pantanal;500690
+Aquidauana;500070
+Aquidauana;500110
+Aquidauana;500348
+Aquidauana;500560
+Alto Taquari;500025
+Alto Taquari;500260
+Alto Taquari;500330
+Alto Taquari;500390
+Alto Taquari;500640
+Alto Taquari;500740
+Alto Taquari;500769
+Alto Taquari;500793
+Campo Grande;500150
+Campo Grande;500270
+Campo Grande;500310
+Campo Grande;500490
+Campo Grande;500730
+Campo Grande;500750
+Campo Grande;500790
+Campo Grande;500800
+Cassilândia;500290
+Cassilândia;500295
+Cassilândia;500325
+Cassilândia;500627
+Paranaíba;500100
+Paranaíba;500440
+Paranaíba;500630
+Paranaíba;500780
+Três Lagoas;500020
+Três Lagoas;500230
+Três Lagoas;500710
+Três Lagoas;500755
+Três Lagoas;500830
+Nova Andradina;500080
+Nova Andradina;500190
+Nova Andradina;500200
+Nova Andradina;500620
+Nova Andradina;500797
+Bodoquena;500210
+Bodoquena;500215
+Bodoquena;500220
+Bodoquena;500280
+Bodoquena;500410
+Bodoquena;500500
+Bodoquena;500580
+Dourados;500060
+Dourados;500090
+Dourados;500124
+Dourados;500240
+Dourados;500350
+Dourados;500370
+Dourados;500380
+Dourados;500450
+Dourados;500515
+Dourados;500525
+Dourados;500540
+Dourados;500600
+Dourados;500660
+Dourados;500720
+Dourados;500840
+Iguatemi;500085
+Iguatemi;500315
+Iguatemi;500345
+Iguatemi;500375
+Iguatemi;500400
+Iguatemi;500430
+Iguatemi;500460
+Iguatemi;500470
+Iguatemi;500480
+Iguatemi;500510
+Iguatemi;500568
+Iguatemi;500570
+Iguatemi;500625
+Iguatemi;500635
+Iguatemi;500770
+Iguatemi;500795
+Ignorado - MS;500000
+Ignorado - MS;509999
+Aripuanã;510140
+Aripuanã;510190
+Aripuanã;510285
+Aripuanã;510325
+Aripuanã;510337
+Aripuanã;510515
+Aripuanã;510517
+Aripuanã;510757
+Alta Floresta;510025
+Alta Floresta;510080
+Alta Floresta;510279
+Alta Floresta;510615
+Alta Floresta;510629
+Alta Floresta;510895
+Colíder;510320
+Colíder;510410
+Colíder;510560
+Colíder;510621
+Colíder;510626
+Colíder;510642
+Colíder;510805
+Colíder;510880
+Parecis;510263
+Parecis;510268
+Parecis;510330
+Parecis;510350
+Parecis;510787
+Arinos;510510
+Arinos;510627
+Arinos;510680
+Arinos;510730
+Arinos;510794
+Arinos;510890
+A.Teles Pires;510452
+A.Teles Pires;510454
+A.Teles Pires;510445
+A.Teles Pires;510525
+A.Teles Pires;510590
+A.Teles Pires;510622
+A.Teles Pires;510624
+A.Teles Pires;510776
+A.Teles Pires;510792
+A.Teles Pires;510800
+Sinop;510305
+Sinop;510370
+Sinop;510455
+Sinop;510558
+Sinop;510619
+Sinop;510724
+Sinop;510790
+Sinop;510830
+Sinop;510850
+Paranatinga;510385
+Paranatinga;510620
+Paranatinga;510630
+Paranatinga;510645
+Norte Araguaia;510035
+Norte Araguaia;510185
+Norte Araguaia;510269
+Norte Araguaia;510335
+Norte Araguaia;510530
+Norte Araguaia;510631
+Norte Araguaia;510677
+Norte Araguaia;510718
+Norte Araguaia;510735
+Norte Araguaia;510774
+Norte Araguaia;510777
+Norte Araguaia;510785
+Norte Araguaia;510788
+Norte Araguaia;510860
+Canarana;510020
+Canarana;510260
+Canarana;510270
+Canarana;510617
+Canarana;510625
+Canarana;510628
+Canarana;510706
+Canarana;510779
+Médio Araguaia;510100
+Médio Araguaia;510180
+Médio Araguaia;510310
+Alto Guaporé;510336
+Alto Guaporé;510550
+Alto Guaporé;510618
+Alto Guaporé;510675
+Alto Guaporé;510835
+Tangará Serra;510170
+Tangará Serra;510345
+Tangará Serra;510623
+Tangará Serra;510685
+Tangará Serra;510795
+Jauru;510125
+Jauru;510380
+Jauru;510395
+Jauru;510450
+Jauru;510500
+Jauru;510523
+Jauru;510562
+Jauru;510682
+Jauru;510710
+Jauru;510715
+Jauru;510720
+Jauru;510775
+Alto Paraguai;510050
+Alto Paraguai;510130
+Alto Paraguai;510600
+Alto Paraguai;510726
+Alto Paraguai;510885
+Rosário Oeste;510010
+Rosário Oeste;510490
+Rosário Oeste;510770
+Cuiabá;510300
+Cuiabá;510340
+Cuiabá;510610
+Cuiabá;510780
+Cuiabá;510840
+Alto Pantanal;510160
+Alto Pantanal;510250
+Alto Pantanal;510343
+Alto Pantanal;510650
+Primavera Leste;510267
+Primavera Leste;510704
+Tesouro;510120
+Tesouro;510390
+Tesouro;510420
+Tesouro;510665
+Tesouro;510670
+Tesouro;510700
+Tesouro;510719
+Tesouro;510810
+Tesouro;510820
+Rondonópolis;510360
+Rondonópolis;510460
+Rondonópolis;510480
+Rondonópolis;510520
+Rondonópolis;510637
+Rondonópolis;510729
+Rondonópolis;510740
+Rondonópolis;510760
+Alto Araguaia;510030
+Alto Araguaia;510040
+Alto Araguaia;510060
+Ignorado - MT;510000
+Ignorado - MT;519999
+S.Miguel Arag.;520640
+S.Miguel Arag.;521400
+S.Miguel Arag.;521405
+S.Miguel Arag.;521483
+S.Miguel Arag.;521525
+S.Miguel Arag.;522020
+S.Miguel Arag.;522157
+Rio Vermelho;520215
+Rio Vermelho;520250
+Rio Vermelho;520380
+Rio Vermelho;520753
+Rio Vermelho;520890
+Rio Vermelho;521100
+Rio Vermelho;521220
+Rio Vermelho;521295
+Rio Vermelho;521925
+Aragarças;520170
+Aragarças;520235
+Aragarças;520310
+Aragarças;520340
+Aragarças;520710
+Aragarças;521370
+Aragarças;521720
+Porangatu;520055
+Porangatu;520082
+Porangatu;520357
+Porangatu;520465
+Porangatu;520470
+Porangatu;520495
+Porangatu;520750
+Porangatu;520810
+Porangatu;521280
+Porangatu;521308
+Porangatu;521377
+Porangatu;521410
+Porangatu;521460
+Porangatu;521487
+Porangatu;521800
+Porangatu;521960
+Porangatu;521970
+Porangatu;522145
+Porangatu;522160
+Chap.Veadeiros;520060
+Chap.Veadeiros;520490
+Chap.Veadeiros;520530
+Chap.Veadeiros;520552
+Chap.Veadeiros;521350
+Chap.Veadeiros;521490
+Chap.Veadeiros;522000
+Chap.Veadeiros;522108
+Ceres;520320
+Ceres;520500
+Ceres;520540
+Ceres;520860
+Ceres;520929
+Ceres;520945
+Ceres;520980
+Ceres;521015
+Ceres;521090
+Ceres;521120
+Ceres;521385
+Ceres;521470
+Ceres;521486
+Ceres;521690
+Ceres;521860
+Ceres;521870
+Ceres;521890
+Ceres;521935
+Ceres;521945
+Ceres;522015
+Ceres;522028
+Ceres;522170
+Anápolis;520110
+Anápolis;520160
+Anápolis;520360
+Anápolis;520485
+Anápolis;520520
+Anápolis;520680
+Anápolis;520960
+Anápolis;521000
+Anápolis;521040
+Anápolis;521056
+Anápolis;521060
+Anápolis;521140
+Anápolis;521180
+Anápolis;521205
+Anápolis;521500
+Anápolis;521540
+Anápolis;521680
+Anápolis;521950
+Anápolis;521990
+Anápolis;522100
+Iporá;520090
+Iporá;520420
+Iporá;520570
+Iporá;520760
+Iporá;521020
+Iporá;521030
+Iporá;521160
+Iporá;521200
+Iporá;521340
+Iporá;521520
+Anicuns;520015
+Anicuns;520085
+Anicuns;520130
+Anicuns;520260
+Anicuns;520280
+Anicuns;520393
+Anicuns;520780
+Anicuns;521390
+Anicuns;521440
+Anicuns;521900
+Anicuns;521910
+Anicuns;522010
+Anicuns;522150
+Goiânia;520005
+Goiânia;520140
+Goiânia;520180
+Goiânia;520330
+Goiânia;520355
+Goiânia;520455
+Goiânia;520840
+Goiânia;520870
+Goiânia;528707
+Goiânia;520880
+Goiânia;520920
+Goiânia;520970
+Goiânia;521230
+Goiânia;521450
+Goiânia;521973
+Goiânia;522045
+Goiânia;522119
+Goiânia;522140
+Vão do Paranã;520080
+Vão do Paranã;520396
+Vão do Paranã;520670
+Vão do Paranã;520790
+Vão do Paranã;520830
+Vão do Paranã;520940
+Vão do Paranã;520990
+Vão do Paranã;521270
+Vão do Paranã;521830
+Vão do Paranã;521980
+Vão do Paranã;522068
+Vão do Paranã;522070
+Ent.Brasília;520010
+Ent.Brasília;520017
+Ent.Brasília;520025
+Ent.Brasília;520030
+Ent.Brasília;520400
+Ent.Brasília;520549
+Ent.Brasília;520551
+Ent.Brasília;520580
+Ent.Brasília;520620
+Ent.Brasília;520800
+Ent.Brasília;521250
+Ent.Brasília;521305
+Ent.Brasília;521523
+Ent.Brasília;521560
+Ent.Brasília;521730
+Ent.Brasília;521760
+Ent.Brasília;521975
+Ent.Brasília;522185
+Ent.Brasília;522220
+Ent.Brasília;522230
+SO de Goiás;520145
+SO de Goiás;520150
+SO de Goiás;520440
+SO de Goiás;520505
+SO de Goiás;520547
+SO de Goiás;520725
+SO de Goiás;521190
+SO de Goiás;521300
+SO de Goiás;521310
+SO de Goiás;521375
+SO de Goiás;521565
+SO de Goiás;521645
+SO de Goiás;521810
+SO de Goiás;521880
+SO de Goiás;521930
+SO de Goiás;521940
+SO de Goiás;521971
+SO de Goiás;522050
+Vale Rio Bois;520013
+Vale Rio Bois;520460
+Vale Rio Bois;520545
+Vale Rio Bois;520735
+Vale Rio Bois;520740
+Vale Rio Bois;520995
+Vale Rio Bois;521170
+Vale Rio Bois;521570
+Vale Rio Bois;521590
+Vale Rio Bois;521640
+Vale Rio Bois;522005
+Vale Rio Bois;522155
+Vale Rio Bois;522190
+Meia Ponte;520020
+Meia Ponte;520050
+Meia Ponte;520350
+Meia Ponte;520390
+Meia Ponte;520425
+Meia Ponte;520450
+Meia Ponte;520650
+Meia Ponte;520910
+Meia Ponte;520993
+Meia Ponte;521150
+Meia Ponte;521210
+Meia Ponte;521260
+Meia Ponte;521290
+Meia Ponte;521380
+Meia Ponte;521600
+Meia Ponte;521710
+Meia Ponte;521770
+Meia Ponte;521805
+Meia Ponte;521839
+Meia Ponte;521878
+Meia Ponte;522205
+Pires do Rio;520630
+Pires do Rio;520815
+Pires do Rio;521530
+Pires do Rio;521580
+Pires do Rio;521740
+Pires do Rio;521920
+Pires do Rio;522026
+Pires do Rio;522060
+Pires do Rio;522180
+Pires do Rio;522200
+Catalão;520120
+Catalão;520480
+Catalão;520510
+Catalão;520590
+Catalão;520660
+Catalão;520690
+Catalão;520850
+Catalão;521010
+Catalão;521480
+Catalão;521550
+Catalão;522130
+Quirinópolis;520410
+Quirinópolis;520430
+Quirinópolis;520915
+Quirinópolis;521080
+Quirinópolis;521130
+Quirinópolis;521225
+Quirinópolis;521630
+Quirinópolis;521850
+Quirinópolis;522040
+Transf p/Tocantins;520040
+Transf p/Tocantins;520070
+Transf p/Tocantins;520100
+Transf p/Tocantins;520190
+Transf p/Tocantins;520200
+Transf p/Tocantins;520210
+Transf p/Tocantins;520220
+Transf p/Tocantins;520230
+Transf p/Tocantins;520240
+Transf p/Tocantins;520255
+Transf p/Tocantins;520270
+Transf p/Tocantins;520290
+Transf p/Tocantins;520300
+Transf p/Tocantins;520370
+Transf p/Tocantins;520550
+Transf p/Tocantins;520560
+Transf p/Tocantins;520600
+Transf p/Tocantins;520610
+Transf p/Tocantins;520700
+Transf p/Tocantins;520720
+Transf p/Tocantins;520730
+Transf p/Tocantins;520755
+Transf p/Tocantins;520765
+Transf p/Tocantins;520770
+Transf p/Tocantins;520820
+Transf p/Tocantins;520900
+Transf p/Tocantins;520930
+Transf p/Tocantins;520950
+Transf p/Tocantins;521050
+Transf p/Tocantins;521070
+Transf p/Tocantins;521110
+Transf p/Tocantins;521240
+Transf p/Tocantins;521320
+Transf p/Tocantins;521330
+Transf p/Tocantins;521360
+Transf p/Tocantins;521420
+Transf p/Tocantins;521430
+Transf p/Tocantins;521488
+Transf p/Tocantins;521510
+Transf p/Tocantins;521575
+Transf p/Tocantins;521610
+Transf p/Tocantins;521620
+Transf p/Tocantins;521650
+Transf p/Tocantins;521660
+Transf p/Tocantins;521670
+Transf p/Tocantins;521700
+Transf p/Tocantins;521750
+Transf p/Tocantins;521780
+Transf p/Tocantins;521790
+Transf p/Tocantins;521820
+Transf p/Tocantins;521840
+Transf p/Tocantins;521875
+Transf p/Tocantins;522030
+Transf p/Tocantins;522065
+Transf p/Tocantins;522080
+Transf p/Tocantins;522090
+Transf p/Tocantins;522110
+Transf p/Tocantins;522120
+Transf p/Tocantins;522208
+Transf p/Tocantins;522210
+Ignorado - GO;520000
+Ignorado - GO;529999
+Brasília;530010
+Brasília;530000
+Brasília;530009
+Brasília;530011
+Brasília;539999
+Ignorado/Exterior;000000
+Ignorado/Exterior;000001
+Ignorado/Exterior;009999
+Ignorado/Exterior;999999
