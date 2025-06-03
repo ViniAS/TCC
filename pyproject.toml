@@ -12,7 +12,9 @@ dependencies = [
     "dotenv (>=0.9.9,<0.10.0)",
     "pysus (>=0.15.0,<0.16.0)",
     "jupyter (>=1.1.1,<2.0.0)",
-    "geopandas (>=1.0.1,<2.0.0)"
+    "geopandas (>=1.0.1,<2.0.0)",
+    "networkx (>=3.5,<4.0)",
+    "matplotlib (>=3.10.3,<4.0.0)"
 ]
 
 
