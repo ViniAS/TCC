@@ -87,5 +87,8 @@ if __name__ == "__main__":
     principal_diagnosis = cid10_chapters[cid10_chapters['descricao'].str.startswith('Capítulo I -')]['codigo'].tolist()
     transformed_data = agg_num_hosp_city_hospital(uf=[], principal_diagnosis=principal_diagnosis)
     print(transformed_data.head())
+    
+    if not os.path.exists('data/agg_data'):
+        os.makedirs('data/agg_data')
     transformed_data.to_csv('data/agg_data/infectious_disease.csv', index=False)
     print("Transformed data saved")
