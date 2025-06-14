@@ -81,6 +81,16 @@ def get_city_name(city_codes: pd.Series) -> pd.Series:
     return city_codes.map(city_names).fillna('Unknown City')
 
 
+def get_state_name(city_codes: pd.Series) -> pd.Series:
+    """Get the name of the state from its code."""
+    state_names = pd.read_csv('data/aux_data/UF.csv', sep=';', dtype={'cod': str, 'value': str, 'value2': str})
+    state_names = state_names.set_index('cod')['value']
+
+    city_codes = city_codes.astype(str)
+    state_codes = city_codes.str[:2]
+    return state_codes.map(state_names).fillna('Unknown State')
+
+
 if __name__ == "__main__":
 
     cid10_chapters = pd.read_csv('data/CID10/cid10_capitulos.csv', sep=';')
