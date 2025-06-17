@@ -1,5 +1,6 @@
 data/SIH/*
 data/agg_data/*
+/site/data
 *.ipynb
 
 # Byte-compiled / optimized / DLL files
@@ -148,8 +149,7 @@ venv.bak/
 # Rope project settings
 .ropeproject
 
-# mkdocs documentation
-/site
+
 
 # mypy
 .mypy_cache/

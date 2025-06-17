@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brazil Mobility Map with D3.js</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+        #map {
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+        .municipality {
+            stroke: #fff;
+            stroke-width: 0.5px;
+            fill: #aaa;
+            cursor: pointer;
+        }
+        .municipality:hover {
+            fill: #f2a03d; /* Highlight color */
+        }
+        .connection-line {
+            stroke: #ff4136; /* Red color for connections */
+            stroke-width: 1.5;
+            pointer-events: none; /* Lines shouldn't be clickable */
+        }
+        .selected {
+            fill: #0074D9; /* Blue for the selected municipality */
+        }
+    </style>
+</head>
+<body>
+    <h1>Interactive Mobility Map of Brazil</h1>
+    <svg id="map" width="800" height="600"></svg>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
