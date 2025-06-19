@@ -59,14 +59,8 @@
 </head>
 </head>
 <body>
-    <h1>Mapa de Hospitalizações fora do Municípios / Estado de Domicílio</h1>
-    <div class="controls">
-        <button id="reset-zoom-map" style="margin-bottom:10px;">Resetar Zoom do Mapa</button>
-        <button id="show-munis" class="active">Municípios</button>
-        <button id="show-states">Estados</button>
-    </div>
-    <svg id="map" width="800" height="600"></svg>
-    <h1>Histograma de Distâncias médias viajadas por Município</h1>
+    <h1>Distribuição Geográfica de Hospitais Públicos e Mobilidade para Atendimento de Doenças Infecciosas no Brasil</h1>
+    <h2>Histograma de Distâncias médias viajadas por Município</h2>
     <div style="margin-bottom:10px;">
         <label for="state-select">Filtrar por estado:</label>
         <select id="state-select">
@@ -74,8 +68,16 @@
         </select>
     </div>
     <svg id="histogram" width="800" height="400"></svg>
+    <h2>Mapa de Hospitalizações fora do Municípios / Estado de Domicílio</h2>
+    <div class="controls">
+        <button id="reset-zoom-map" style="margin-bottom:10px;">Resetar Zoom do Mapa</button>
+        <button id="show-munis" class="active">Municípios</button>
+        <button id="show-states">Estados</button>
+    </div>
+    <svg id="map" width="800" height="600"></svg>
+    
 
-    <h1>Mapa Coroplético: Distância Média Ponderada por Município</h1>
+    <h2>Mapa Coroplético: Distância Média Ponderada por Município</h2>
     <button id="reset-zoom-choropleth" style="margin-bottom:10px;">Resetar Zoom do Mapa</button>
     <svg id="choropleth" width="800" height="600"></svg>
 
