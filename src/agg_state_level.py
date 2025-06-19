@@ -40,5 +40,5 @@ df['MOV_LON'] = df['CENTROID_MOV'].apply(lambda p: p.x)
 df.drop(columns=['CENTROID_RES', 'CENTROID_MOV'], inplace=True)
 
 # Save the aggregated data to a CSV file
-df.to_csv('site/data/states_graph.csv', index=False)
+df.to_csv('docs/static/data/states_graph.csv', index=False)
 

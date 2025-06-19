@@ -2,7 +2,7 @@ import geopandas as gpd
 
 # Define the input shapefile path and the desired output GeoJSON path
 shapefile_path = 'data/BR_Municipios_2024/BR_Municipios_2024.shp'
-geojson_path = 'site/data/brazil_municipalities.geojson'
+geojson_path = 'docs/static/data/brazil_municipalities.geojson'
 
 # Read the shapefile into a GeoDataFrame
 print("Reading shapefile...")

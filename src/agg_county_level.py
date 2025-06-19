@@ -72,5 +72,5 @@ if __name__ == "__main__":
     df['DIST_KM'] = df.apply(calc_distance, axis=1)
 
 
-    df.to_csv('site/data/graph.csv', index=False)
+    df.to_csv('docs/static/data/graph.csv', index=False)
 

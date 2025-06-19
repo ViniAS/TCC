@@ -15,6 +15,6 @@ states_gdf.replace({'name_state': {
 
 states_gdf['geometry'] = states_gdf['geometry'].simplify(tolerance=0.01)
 
-states_gdf.to_file('site/data/brazil-states.geojson', driver='GeoJSON')
+states_gdf.to_file('docs/static/data/brazil-states.geojson', driver='GeoJSON')
 
 print("'brazil-states.geojson' created successfully.")
