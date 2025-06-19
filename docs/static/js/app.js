@@ -110,6 +110,49 @@ Promise.all([
 }).catch(error => console.error("Error loading the data:", error));
 
 
+function drawLineWidthLegend(svgSelector, minHosp, maxHosp, scaleFn) {
+    // Remove any previous legend
+    d3.select(svgSelector).selectAll(".line-width-legend").remove();
+
+    const legendData = [minHosp, Math.round((minHosp + maxHosp) / 4), Math.round((minHosp + maxHosp) / 2), maxHosp];
+    const legendWidth = 220;
+    const legendHeight = 60;
+    const xStart = 40;
+    const yStart = 20;
+    const spacing = 50;
+
+    const legendGroup = d3.select(svgSelector)
+        .append("g")
+        .attr("class", "line-width-legend")
+        .attr("transform", `translate(20,${+d3.select(svgSelector).attr("height") - legendHeight - 10})`);
+
+    legendGroup.append("text")
+        .attr("x", 0)
+        .attr("y", 0)
+        .attr("font-size", 13)
+        .attr("font-weight", "bold")
+        .text("Hospitalizações (largura da linha)");
+
+    legendData.forEach((hosp, i) => {
+        legendGroup.append("line")
+            .attr("x1", xStart + i * spacing)
+            .attr("x2", xStart + i * spacing + 30)
+            .attr("y1", yStart)
+            .attr("y2", yStart)
+            .attr("stroke", "#ff4136")
+            .attr("stroke-width", scaleFn(hosp))
+            .attr("stroke-opacity", 0.6);
+
+        legendGroup.append("text")
+            .attr("x", xStart + i * spacing + 15)
+            .attr("y", yStart + 18)
+            .attr("text-anchor", "middle")
+            .attr("font-size", 12)
+            .text(hosp);
+    });
+}
+
+
 // --- Drawing Function for States ---
 function drawStates(geojson, mobilityData) {
     mapGroup.html("");
@@ -129,9 +172,17 @@ function drawStates(geojson, mobilityData) {
         .append("title")
         .text(d => d.properties.name_state);
 
+    const hospVals = mobilityData.map(d => +d.HOSPITALIZACOES).filter(d => !isNaN(d));
+    const minHosp = d3.min(hospVals);
+    const maxHosp = d3.max(hospVals);
+
+    
+    const widthScale = d3.scaleSqrt()
+        .domain([minHosp, maxHosp])
+        .range([1, 8]);
+
     function drawConnectionLines(connections) {
         lineGroup.html("");
-
         lineGroup.selectAll("path.connection-line")
             .data(connections)
             .enter()
@@ -146,10 +197,7 @@ function drawStates(geojson, mobilityData) {
                 return `M${start[0]},${start[1]}A${dr},${dr} 0 0,1 ${end[0]},${end[1]}`;
             })
             .attr("marker-end", "url(#arrowhead)")
-            // --- THIS IS THE RESTORED LINE ---
-            // It sets the stroke width based on the number of hospitalizations.
-            // We add 1 so minimum-value lines are visible, and divide by 5 to scale down the larger state-level numbers.
-            .style("stroke-width", d => Math.min(1 + Math.sqrt(d.HOSPITALIZACOES) / 5, 8));
+            .style("stroke-width", d => widthScale(+d.HOSPITALIZACOES));
     }
 
     drawConnectionLines(mobilityData);
@@ -161,6 +209,9 @@ function drawStates(geojson, mobilityData) {
         const filteredConnections = mobilityData.filter(link => link.UF_RES === clickedStateName);
         drawConnectionLines(filteredConnections);
     }
+
+    
+    drawLineWidthLegend("#map", minHosp, maxHosp, widthScale);
 }
 
 
@@ -184,6 +235,15 @@ function drawMunicipalities(geojson, mobilityData) {
         .append("title")
         .text(d => d.properties.NM_MUN);
 
+    const hospVals = mobilityData.map(d => +d.HOSPITALIZACOES).filter(d => !isNaN(d));
+    const minHosp = d3.min(hospVals);
+    const maxHosp = d3.max(hospVals);
+
+    // Use a D3 scale for width
+    const widthScale = d3.scaleSqrt()
+        .domain([minHosp, maxHosp])
+        .range([1, 5]);
+
     function handleClick(event, d) {
         const clickedMuniCode = d.properties.CD_MUN;
         d3.select(this.parentNode).selectAll('path').classed('selected', false);
@@ -200,10 +260,12 @@ function drawMunicipalities(geojson, mobilityData) {
                     .attr("x1", start[0]).attr("y1", start[1])
                     .attr("x2", end[0]).attr("y2", end[1])
                     .attr("class", "connection-line") // The CSS class provides the opacity
-                    .style("stroke-width", Math.min(Math.sqrt(conn.HOSPITALIZACOES), 5));
+                    .style("stroke-width", widthScale(+conn.HOSPITALIZACOES));
             }
         });
     }
+
+    drawLineWidthLegend("#map", minHosp, maxHosp, widthScale);
 }
 
 function drawHistogram(data) {
@@ -355,7 +417,7 @@ function drawChoropleth(geojson, weightedMeans, state) {
         .enter().append("stop")
         .attr("offset", d => `${d * 100}%`)
         .attr("stop-color", d => color(minVal * Math.pow(maxVal / minVal, d)));
-
+~
     legendSvg.append("rect")
         .attr("width", legendWidth)
         .attr("height", legendHeight)
