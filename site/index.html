@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brazil Mobility Map with D3.js</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -20,27 +18,52 @@
             border: 1px solid #ccc;
             background-color: #fff;
         }
+        /* This rule is essential for coloring the polygons */
         .municipality {
             stroke: #fff;
             stroke-width: 0.5px;
-            fill: #aaa;
             cursor: pointer;
         }
+        .selected {
+            fill: #0074D9 !important; /* Use !important to override inline styles on selection */
+            stroke: #fff;
+            stroke-width: 1.5px;
+        }
         .municipality:hover {
-            fill: #f2a03d; /* Highlight color */
+            fill: #f2a03d;
         }
         .connection-line {
-            stroke: #ff4136; /* Red color for connections */
+            stroke: #ff4136;
+            stroke-opacity: 0.6; /* Added opacity to see overlaps */
             stroke-width: 1.5;
-            pointer-events: none; /* Lines shouldn't be clickable */
+            fill: none; /* IMPORTANT: Prevents the arc from being filled in */
+            pointer-events: none;
         }
-        .selected {
-            fill: #0074D9; /* Blue for the selected municipality */
+        .controls {
+            margin-bottom: 15px;
+        }
+        .controls button {
+            padding: 8px 15px;
+            font-size: 14px;
+            cursor: pointer;
+            border: 1px solid #aaa;
+            background-color: #eee;
+            border-radius: 4px;
+        }
+        .controls button.active {
+            background-color: #0074D9;
+            color: white;
+            border-color: #0074D9;
         }
     </style>
 </head>
+</head>
 <body>
-    <h1>Interactive Mobility Map of Brazil</h1>
+    <h1>Mapa de Hospitalizações fora do Municípios / Estado de Domicílio</h1>
+    <div class="controls">
+        <button id="show-munis" class="active">Municípios</button>
+        <button id="show-states">Estados</button>
+    </div>
     <svg id="map" width="800" height="600"></svg>
 
     <script src="https://d3js.org/d3.v7.min.js"></script>

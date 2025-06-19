@@ -21,7 +21,7 @@ if gdf.crs != 'EPSG:4326':
 # The tolerance value is in the same units as the CRS (degrees for EPSG:4326).
 # Adjust the tolerance (e.g., 0.001) for more or less detail.
 print("Simplifying geometries...")
-gdf['geometry'] = gdf['geometry'].simplify(tolerance=0.001)
+gdf['geometry'] = gdf['geometry'].simplify(tolerance=0.01)
 
 
 # Save the GeoDataFrame to a GeoJSON file
