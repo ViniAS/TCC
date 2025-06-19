@@ -322,7 +322,7 @@ function drawHistogram(data) {
         .attr("y", margin.top / 2)
         .attr("text-anchor", "middle")
         .attr("font-size", "18px")
-        .text(`Histograma das Distâncias Médias Viajadas por Município (média = ${d3.mean(values).toFixed(2)} km)`);
+        .text(`Distâncias Médias Viajadas por Município (média = ${d3.mean(values).toFixed(2)} km)`);
 
     svg.append("text")
         .attr("x", margin.left + width / 2)
@@ -407,6 +407,14 @@ function drawChoropleth(geojson, weightedMeans, state) {
     const legendWidth = 300, legendHeight = 12;
     const legendSvg = svg.append("g")
         .attr("transform", `translate(${width - legendWidth - 40},${height - 40})`);
+
+    // Add legend title above the legendSvg
+    svg.append("text")
+        .attr("x", width - legendWidth - 40 + legendWidth / 2)
+        .attr("y", height - 48)
+        .attr("text-anchor", "middle")
+        .attr("font-size", 14)
+        .text("Distância Média Viajada (Escala Log)");
 
     const defs = svg.append("defs");
     const linearGradient = defs.append("linearGradient")

@@ -13,7 +13,7 @@
             background-color: #f0f0f0;
             color: #333;
         }
-        h1, h2 {
+        h1, h4 {
             text-align: center;
             color: #333;
         }
@@ -47,13 +47,7 @@
         .intro-text li {
             margin-bottom: 10px;
         }
-        .intro-text .explore-text {
-            text-align: center;
-            margin-top: 30px;
-            font-style: italic;
-            font-size: 1.1em;
-            color: #0074D9;
-        }
+
         /* --- Fim dos estilos do texto --- */
 
         #map, #histogram, #choropleth {
@@ -98,12 +92,57 @@
             color: white;
             border-color: #0074D9;
         }
+        .map-container {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            margin-top: 24px;
+            margin-bottom: 24px;
+        }
+
+        .map-container .controls {
+            position: absolute;
+            margin: 0;
+            z-index: 10;
+            background: rgba(255,255,255,0.9);
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+            padding: 5px 10px;
+        }
+        .map-container .controls-left {
+            top: 10px;
+            left: 10px;
+        }
+        .map-container .controls-right {
+            top: 10px;
+            right: 10px;
+        }
+        .histogram-container {
+            position: relative;
+            width: 800px;
+            height: 400px;
+            margin-top: 24px;
+            margin-bottom: 24px;
+        }
+        .histogram-container .controls-right {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 10;
+            background: rgba(255,255,255,0.9);
+            border-radius: 6px;
+            padding: 5px 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
     </style>
 </head>
 <body>
-    <h1>Distribuição Geográfica de Hospitais Públicos e Mobilidade para Atendimento de Doenças Infecciosas no Brasil</h1>
+    
 
     <div class="intro-text">
+        <h1>Distribuição Geográfica de Hospitais Públicos e Mobilidade para Atendimento de Doenças Infecciosas no Brasil</h1>
         <h3>Introdução e Justificativa</h3>
         <p>
             O Sistema Único de Saúde (SUS) do Brasil é um dos maiores sistemas públicos de saúde do mundo, fundamentado no princípio do acesso universal e integral à saúde. No entanto, em um país com dimensões continentais como o Brasil, a distância geográfica pode se tornar uma barreira significativa para que esse direito seja plenamente exercido. O tempo e o custo de deslocamento para receber atendimento médico podem impactar diretamente a eficácia do tratamento, especialmente em casos de doenças infecciosas, que frequentemente exigem uma resposta rápida.
@@ -118,8 +157,37 @@
         </p>
         <ul>
             <li><strong>Qual a distância</strong> que os brasileiros precisam viajar para conseguir atendimento hospitalar especializado em doenças infecciosas?</li>
-            <li>A <strong>distribuição geográfica atual</strong> dos hospitais públicos é eficiente para garantir que os pacientes sejam atendidos o mais próximo possível de suas residências?</li>
+            <div class="histogram-container" style="position: relative; width: 800px; height: 400px;">
+                <div class="controls controls-right" style="top: 35px; right: 10px;">
+                    <label for="state-select">Filtrar por estado:</label>
+                    <select id="state-select">
+                        <option value="ALL">Todos</option>
+                    </select>
+                </div>
+                <svg id="histogram" width="800" height="400"></svg>
+            </div>
+            <li>A <strong>distribuição geográfica atual</strong> dos hospitais públicos é eficiente para garantir que os pacientes sejam atendidos o mais próximo possível de suas residências? (clique no mapa)</li>
+            <h4>Mapa de Hospitalizações fora do Municípios / Estado de Domicílio</h4>
+            <div class="map-container" style="position: relative; width: 800px; height: 600px;">
+                <div class="controls controls-left">
+                    <button id="show-munis" class="active">Municípios</button>
+                    <button id="show-states">Estados</button>
+                </div>
+                <div class="controls controls-right">
+                    <button id="reset-zoom-map">Resetar Zoom</button>
+                </div>
+                <svg id="map" width="800" height="600"></svg>
+            </div>
+            
             <li>Quais municípios e regiões do país apresentam os maiores <strong>vazios assistenciais</strong> ou exigem os maiores deslocamentos da sua população?</li>
+            
+            <h4>Distância Média Viajada por Município para Hospitalização</h4>
+            <div class="map-container" style="position: relative; width: 800px; height: 600px;">
+                <div class="controls controls-right">
+                    <button id="reset-zoom-choropleth">Resetar Zoom</button>
+                </div>
+                <svg id="choropleth" width="800" height="600"></svg>
+            </div>
         </ul>
 
         <h3>Metodologia e Dados</h3>
@@ -131,34 +199,9 @@
         <p>
            Os resultados deste estudo podem fornecer um diagnóstico detalhado sobre o acesso geográfico aos serviços hospitalares do SUS. A identificação de áreas onde os pacientes viajam longas distâncias é uma informação estratégica que pode auxiliar gestores de saúde no planejamento de políticas públicas e na alocação de recursos, visando promover um acesso mais equitativo e eficiente para toda a população.
         </p>
-        
-        <p class="explore-text">
-            <strong>Explore os gráficos abaixo para visualizar os padrões de mobilidade e a distribuição do atendimento em todo o território nacional.</strong>
-        </p>
-    </div>
-
-    <h2>Histograma de Distâncias médias viajadas por Município</h2>
-    <div style="margin-bottom:10px;">
-        <label for="state-select">Filtrar por estado:</label>
-        <select id="state-select">
-            <option value="ALL">Todos</option>
-        </select>
-    </div>
-    <svg id="histogram" width="800" height="400"></svg>
     
-    <h2>Mapa de Hospitalizações fora do Municípios / Estado de Domicílio</h2>
-    <div class="controls">
-        <button id="show-munis" class="active">Municípios</button>
-        <button id="show-states">Estados</button>
-        <button id="reset-zoom-map">Resetar Zoom</button>
     </div>
-    <svg id="map" width="800" height="600"></svg>
-
-    <h2>Mapa Coroplético: Distância Média Ponderada por Município</h2>
-    <div class="controls">
-         <button id="reset-zoom-choropleth">Resetar Zoom</button>
-    </div>
-    <svg id="choropleth" width="800" height="600"></svg>
+    
 
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="static/js/app.js"></script>
