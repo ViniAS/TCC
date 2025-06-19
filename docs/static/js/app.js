@@ -62,7 +62,10 @@ Promise.all([
         d3.select("#show-munis").classed("active", false);
     });
 
-    drawMunicipalities(muniGeo, muniData);
+    // Change default to "Estados"
+    drawStates(stateGeo, stateData);
+    d3.select("#show-states").classed("active", true);
+    d3.select("#show-munis").classed("active", false);
 
     // Compute weighted mean per municipality
     const muniGroups = d3.group(muniData, d => d.MUNIC_RES, d => d.UF_RES);
