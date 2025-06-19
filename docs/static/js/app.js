@@ -19,16 +19,16 @@ const stateColorMapping = {
 // Define the arrowhead marker
 svg.append("defs").append("marker")
     .attr("id", "arrowhead")
-    .attr("viewBox", "0 -5 10 10")          // The coordinate system for the arrow shape
-    .attr("refX", 10)                       // How far along the line to place the arrow (at the tip)
+    .attr("viewBox", "0 -5 10 10")          
+    .attr("refX", 10)                       
     .attr("refY", 0)
-    .attr("markerUnits", "userSpaceOnUse")  // *** THE KEY FIX: Decouples arrow size from stroke-width ***
-    .attr("markerWidth", 10)                // The new fixed width of the arrowhead in pixels
-    .attr("markerHeight", 10)               // The new fixed height of the arrowhead in pixels
-    .attr("orient", "auto")                 // Automatically rotates the arrow
+    .attr("markerUnits", "userSpaceOnUse")  
+    .attr("markerWidth", 10)                
+    .attr("markerHeight", 10)               
+    .attr("orient", "auto")                 
     .attr("opacity", 0.8)
   .append("svg:path")
-    .attr("d", "M0,-5L10,0L0,5")            // The path that draws the triangle shape
+    .attr("d", "M0,-5L10,0L0,5")            
     .attr("fill", "#ff4136");
 
 const zoom = d3.zoom().scaleExtent([1, 8]).on("zoom", (event) => {
@@ -215,10 +215,9 @@ function drawStates(geojson, mobilityData) {
 }
 
 
-// --- Drawing Function for Municipalities (Unchanged) ---
+// --- Drawing Function for Municipalities ---
 function drawMunicipalities(geojson, mobilityData) {
-    // This function already has the dynamic stroke-width and will now also
-    // benefit from the updated translucent style in the CSS.
+
     mapGroup.html("");
     lineGroup.html("");
     mapGroup.selectAll("path")
@@ -289,7 +288,7 @@ function drawHistogram(data) {
     // Histogram bins
     const bins = d3.bin()
         .domain(x.domain())
-        .thresholds(30)(values);
+        .thresholds(40)(values);
 
     // Y scale
     const y = d3.scaleLinear()

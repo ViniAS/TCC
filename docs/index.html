@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <title>TCC - Mobilidade no Atendimento de Doenças Infecciosas</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -10,22 +11,62 @@
             align-items: center;
             flex-direction: column;
             background-color: #f0f0f0;
-        }
-        h1 {
             color: #333;
         }
-        #map {
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        h2 {
+            border-top: 2px solid #e0e0e0;
+            padding-top: 40px;
+            margin-top: 40px;
+            width: 800px;
+        }
+
+        /* --- Estilos para o texto introdutório --- */
+        .intro-text {
+            max-width: 800px;
+            margin: 20px auto 30px auto;
+            text-align: justify;
+            line-height: 1.6;
+            color: #444;
+        }
+        .intro-text h3 {
+            color: #333;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        .intro-text ul {
+            list-style-position: inside;
+            padding-left: 10px;
+        }
+        .intro-text li {
+            margin-bottom: 10px;
+        }
+        .intro-text .explore-text {
+            text-align: center;
+            margin-top: 30px;
+            font-style: italic;
+            font-size: 1.1em;
+            color: #0074D9;
+        }
+        /* --- Fim dos estilos do texto --- */
+
+        #map, #histogram, #choropleth {
             border: 1px solid #ccc;
             background-color: #fff;
         }
-        /* This rule is essential for coloring the polygons */
         .municipality {
             stroke: #fff;
             stroke-width: 0.5px;
             cursor: pointer;
         }
         .selected {
-            fill: #0074D9 !important; /* Use !important to override inline styles on selection */
+            fill: #0074D9 !important;
             stroke: #fff;
             stroke-width: 1.5px;
         }
@@ -34,13 +75,14 @@
         }
         .connection-line {
             stroke: #ff4136;
-            stroke-opacity: 0.6; /* Added opacity to see overlaps */
+            stroke-opacity: 0.6;
             stroke-width: 1.5;
-            fill: none; /* IMPORTANT: Prevents the arc from being filled in */
+            fill: none;
             pointer-events: none;
         }
         .controls {
             margin-bottom: 15px;
+            text-align: center;
         }
         .controls button {
             padding: 8px 15px;
@@ -49,6 +91,7 @@
             border: 1px solid #aaa;
             background-color: #eee;
             border-radius: 4px;
+            margin: 0 5px;
         }
         .controls button.active {
             background-color: #0074D9;
@@ -57,9 +100,43 @@
         }
     </style>
 </head>
-</head>
 <body>
     <h1>Distribuição Geográfica de Hospitais Públicos e Mobilidade para Atendimento de Doenças Infecciosas no Brasil</h1>
+
+    <div class="intro-text">
+        <h3>Introdução e Justificativa</h3>
+        <p>
+            O Sistema Único de Saúde (SUS) do Brasil é um dos maiores sistemas públicos de saúde do mundo, fundamentado no princípio do acesso universal e integral à saúde. No entanto, em um país com dimensões continentais como o Brasil, a distância geográfica pode se tornar uma barreira significativa para que esse direito seja plenamente exercido. O tempo e o custo de deslocamento para receber atendimento médico podem impactar diretamente a eficácia do tratamento, especialmente em casos de doenças infecciosas, que frequentemente exigem uma resposta rápida.
+        </p>
+        <p>
+            Este projeto nasce da necessidade de entender como a distribuição da infraestrutura hospitalar pública no território nacional se relaciona com a mobilidade dos pacientes. Queremos investigar se a localização dos hospitais atende de forma eficiente às necessidades da população, minimizando as longas viagens em busca de cuidados.
+        </p>
+
+        <h3>Objetivo do Trabalho</h3>
+        <p>
+            O objetivo principal deste trabalho é analisar os padrões de deslocamento de pacientes para internações hospitalares por doenças infecciosas no Brasil. Para isso, buscamos responder às seguintes perguntas:
+        </p>
+        <ul>
+            <li><strong>Qual a distância</strong> que os brasileiros precisam viajar para conseguir atendimento hospitalar especializado em doenças infecciosas?</li>
+            <li>A <strong>distribuição geográfica atual</strong> dos hospitais públicos é eficiente para garantir que os pacientes sejam atendidos o mais próximo possível de suas residências?</li>
+            <li>Quais municípios e regiões do país apresentam os maiores <strong>vazios assistenciais</strong> ou exigem os maiores deslocamentos da sua população?</li>
+        </ul>
+
+        <h3>Metodologia e Dados</h3>
+        <p>
+            Para realizar esta análise, utilizamos dados públicos de internações hospitalares (AIH - Autorização de Internação Hospitalar) disponibilizados pelo <strong>DataSUS</strong>. A partir desses dados, calculamos a distância entre o município de residência do paciente e o município do hospital. Essas informações são então agregadas para gerar os indicadores e visualizações interativas apresentadas a seguir.
+        </p>
+
+        <h3>Relevância e Impacto</h3>
+        <p>
+           Os resultados deste estudo podem fornecer um diagnóstico detalhado sobre o acesso geográfico aos serviços hospitalares do SUS. A identificação de áreas onde os pacientes viajam longas distâncias é uma informação estratégica que pode auxiliar gestores de saúde no planejamento de políticas públicas e na alocação de recursos, visando promover um acesso mais equitativo e eficiente para toda a população.
+        </p>
+        
+        <p class="explore-text">
+            <strong>Explore os gráficos abaixo para visualizar os padrões de mobilidade e a distribuição do atendimento em todo o território nacional.</strong>
+        </p>
+    </div>
+
     <h2>Histograma de Distâncias médias viajadas por Município</h2>
     <div style="margin-bottom:10px;">
         <label for="state-select">Filtrar por estado:</label>
@@ -68,17 +145,19 @@
         </select>
     </div>
     <svg id="histogram" width="800" height="400"></svg>
+    
     <h2>Mapa de Hospitalizações fora do Municípios / Estado de Domicílio</h2>
     <div class="controls">
-        <button id="reset-zoom-map" style="margin-bottom:10px;">Resetar Zoom do Mapa</button>
         <button id="show-munis" class="active">Municípios</button>
         <button id="show-states">Estados</button>
+        <button id="reset-zoom-map">Resetar Zoom</button>
     </div>
     <svg id="map" width="800" height="600"></svg>
-    
 
     <h2>Mapa Coroplético: Distância Média Ponderada por Município</h2>
-    <button id="reset-zoom-choropleth" style="margin-bottom:10px;">Resetar Zoom do Mapa</button>
+    <div class="controls">
+         <button id="reset-zoom-choropleth">Resetar Zoom</button>
+    </div>
     <svg id="choropleth" width="800" height="600"></svg>
 
     <script src="https://d3js.org/d3.v7.min.js"></script>
