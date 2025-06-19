@@ -61,12 +61,25 @@
 <body>
     <h1>Mapa de Hospitalizações fora do Municípios / Estado de Domicílio</h1>
     <div class="controls">
+        <button id="reset-zoom-map" style="margin-bottom:10px;">Resetar Zoom do Mapa</button>
         <button id="show-munis" class="active">Municípios</button>
         <button id="show-states">Estados</button>
     </div>
     <svg id="map" width="800" height="600"></svg>
+    <h1>Histograma de Distâncias médias viajadas por Município</h1>
+    <div style="margin-bottom:10px;">
+        <label for="state-select">Filtrar por estado:</label>
+        <select id="state-select">
+            <option value="ALL">Todos</option>
+        </select>
+    </div>
+    <svg id="histogram" width="800" height="400"></svg>
+
+    <h1>Mapa Coroplético: Distância Média Ponderada por Município</h1>
+    <button id="reset-zoom-choropleth" style="margin-bottom:10px;">Resetar Zoom do Mapa</button>
+    <svg id="choropleth" width="800" height="600"></svg>
 
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="app.js"></script>
+    <script src="static/js/app.js"></script>
 </body>
 </html>
