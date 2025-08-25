@@ -47,8 +47,8 @@ Promise.all([
     d3.csv("static/data/graph.csv"),
     d3.json("static/data/brazil-states.geojson"),
     d3.csv("static/data/states_graph.csv"),
-    
-]).then(([muniGeo, muniData, stateGeo, stateData]) => {
+    d3.csv("static/data/communities.csv")    
+]).then(([muniGeo, muniData, stateGeo, stateData, communitiesData]) => {
 
     d3.select("#show-munis").on("click", () => {
         drawMunicipalities(muniGeo, muniData);
@@ -99,6 +99,9 @@ Promise.all([
     drawHistogram(weightedMeans);
 
     drawChoropleth(muniGeo, weightedMeans, stateGeo);
+
+    // Draw communities map
+    drawCommunitiesMap(muniGeo, communitiesData, stateGeo);
 
     // Update histogram on dropdown change
     select.on("change", function() {
@@ -445,4 +448,146 @@ function drawChoropleth(geojson, weightedMeans, state) {
     legendSvg.append("g")
         .attr("transform", `translate(0,${legendHeight})`)
         .call(legendAxis);
+}
+
+
+function drawCommunitiesMap(geojson, communitiesData, stateGeo) {
+    const svg = d3.select("#communities-map");
+    svg.selectAll("*").remove();
+
+    const width = +svg.attr("width");
+    const height = +svg.attr("height");
+    const projection = d3.geoMercator().center([-54, -15]).scale(750).translate([width / 2, height / 2]);
+    const path = d3.geoPath().projection(projection);
+
+    // Create a group for zooming
+    const mapGroup = svg.append("g").attr("class", "communities-map-group");
+
+    // D3 zoom behavior
+    const zoom = d3.zoom()
+        .scaleExtent([1, 8])
+        .on("zoom", (event) => {
+            mapGroup.attr("transform", event.transform);
+        });
+    svg.call(zoom);
+
+    d3.select("#reset-zoom-communities").on("click", () => {
+        svg.transition().duration(500).call(zoom.transform, d3.zoomIdentity);
+    });
+
+    // Create a lookup for community ID by municipality name
+    const communityByMuni = new Map(communitiesData.map(d => [d.municipality, +d.community_id]));
+
+    // Get unique community IDs and create color scale
+    const communityIds = Array.from(new Set(communitiesData.map(d => +d.community_id)));
+    const maxCommunityId = d3.max(communityIds);
+    
+    // Use a categorical color scheme that can handle many colors
+    const colorScale = d3.scaleSequential(d3.interpolateRainbow)
+        .domain([0, maxCommunityId]);
+
+    // Draw municipalities
+    mapGroup.append("g")
+        .selectAll("path")
+        .data(geojson.features)
+        .enter().append("path")
+        .attr("d", path)
+        .attr("fill", d => {
+            const municipalityName = d.properties.NM_MUN + " - " + d.properties.NM_UF;
+            const communityId = communityByMuni.get(municipalityName);
+            return communityId !== undefined ? colorScale(communityId) : "#ddd";
+        })
+        .attr("stroke", "#fff")
+        .attr("stroke-width", 0.2)
+        .append("title")
+        .text(d => {
+            const municipalityName = d.properties.NM_MUN + " - " + d.properties.NM_UF;
+            const communityId = communityByMuni.get(municipalityName);
+            return `${d.properties.NM_MUN} - ${d.properties.NM_UF}\nComunidade: ${communityId !== undefined ? communityId : "não identificada"}`;
+        });
+
+    // Draw state borders on top
+    mapGroup.append("g")
+        .selectAll("path")
+        .data(stateGeo.features)
+        .enter().append("path")
+        .attr("d", path)
+        .attr("fill", "none")
+        .attr("stroke", "#000")
+        .attr("stroke-width", 0.8);
+
+    // Add legend
+    const legendWidth = 200;
+    const legendHeight = 20;
+    const legendX = width - legendWidth - 20;
+    const legendY = height - 60;
+
+    // Legend title
+    svg.append("text")
+        .attr("x", legendX + legendWidth / 2)
+        .attr("y", legendY - 10)
+        .attr("text-anchor", "middle")
+        .attr("font-size", 14)
+        .attr("font-weight", "bold")
+        .text("Comunidades de Mobilidade");
+
+    // Create gradient for legend
+    const defs = svg.append("defs");
+    const linearGradient = defs.append("linearGradient")
+        .attr("id", "community-gradient")
+        .attr("x1", "0%").attr("y1", "0%")
+        .attr("x2", "100%").attr("y2", "0%");
+
+    // Add color stops
+    const numStops = 20;
+    for (let i = 0; i <= numStops; i++) {
+        const ratio = i / numStops;
+        const communityId = ratio * maxCommunityId;
+        linearGradient.append("stop")
+            .attr("offset", `${ratio * 100}%`)
+            .attr("stop-color", colorScale(communityId));
+    }
+
+    // Legend rectangle
+    svg.append("rect")
+        .attr("x", legendX)
+        .attr("y", legendY)
+        .attr("width", legendWidth)
+        .attr("height", legendHeight)
+        .style("fill", "url(#community-gradient)")
+        .attr("stroke", "#000")
+        .attr("stroke-width", 1);
+
+    // Legend labels
+    svg.append("text")
+        .attr("x", legendX)
+        .attr("y", legendY + legendHeight + 15)
+        .attr("text-anchor", "start")
+        .attr("font-size", 12)
+        .text("0");
+
+    svg.append("text")
+        .attr("x", legendX + legendWidth)
+        .attr("y", legendY + legendHeight + 15)
+        .attr("text-anchor", "end")
+        .attr("font-size", 12)
+        .text(maxCommunityId);
+
+    // Add summary statistics
+    const totalMunicipalities = communitiesData.length;
+    const totalCommunities = communityIds.length;
+    
+    svg.append("text")
+        .attr("x", 20)
+        .attr("y", height - 40)
+        .attr("font-size", 12)
+        .attr("font-weight", "bold")
+        .text(`Total de municípios: ${totalMunicipalities}`);
+
+    svg.append("text")
+        .attr("x", 20)
+        .attr("y", height - 20)
+        .attr("font-size", 12)
+        .attr("font-weight", "bold")
+        .text(`Total de comunidades: ${totalCommunities}`);
 }
