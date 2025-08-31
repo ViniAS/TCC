@@ -469,10 +469,27 @@ function drawCommunitiesMap(geojson, communitiesData, stateGeo) {
         .on("zoom", (event) => {
             mapGroup.attr("transform", event.transform);
         });
-    svg.call(zoom);
+    svg.call(zoom)
+      .on("click", function(event) {
+          // If the click is directly on the svg (not on a municipality)
+          if (event.target.tagName === "svg") {
+              // Reset highlighting
+              mapGroup.selectAll('.community-municipality').classed('selected', false);
+              mapGroup.selectAll('.community-municipality').classed('dimmed', false);
+              mapGroup.selectAll('.community-municipality').attr('stroke-width', 0.2);
+              // Reset info panel
+              d3.select("#community-info").html("<p>Clique em um município no mapa para ver detalhes da sua comunidade.</p>");
+          }
+      });
 
     d3.select("#reset-zoom-communities").on("click", () => {
         svg.transition().duration(500).call(zoom.transform, d3.zoomIdentity);
+        // Reset highlighting
+        mapGroup.selectAll('.community-municipality').classed('selected', false);
+        mapGroup.selectAll('.community-municipality').classed('dimmed', false);
+        mapGroup.selectAll('.community-municipality').attr('stroke-width', 0.2);
+        // Reset info panel
+        d3.select("#community-info").html("<p>Clique em um município no mapa para ver detalhes da sua comunidade.</p>");
     });
 
     // Create a lookup for community ID by municipality name
@@ -499,6 +516,8 @@ function drawCommunitiesMap(geojson, communitiesData, stateGeo) {
         })
         .attr("stroke", "#fff")
         .attr("stroke-width", 0.2)
+        .attr("class", "community-municipality")
+        .on("click", handleClick)
         .append("title")
         .text(d => {
             const municipalityName = d.properties.NM_MUN + " - " + d.properties.NM_UF;
@@ -590,4 +609,45 @@ function drawCommunitiesMap(geojson, communitiesData, stateGeo) {
         .attr("font-size", 12)
         .attr("font-weight", "bold")
         .text(`Total de comunidades: ${totalCommunities}`);
+
+    function handleClick(event, d) {
+        const municipalityName = d.properties.NM_MUN + " - " + d.properties.NM_UF;
+        const clickedCommunityId = communityByMuni.get(municipalityName);
+        
+        if (clickedCommunityId === undefined) return;
+        
+        // Reset any previous highlighting
+        mapGroup.selectAll('.community-municipality').classed('selected', false);
+        mapGroup.selectAll('.community-municipality').classed('dimmed', false);
+        mapGroup.selectAll('.community-municipality').attr('stroke-width', 0.2);
+        
+        // Count municipalities in this community
+        const municipalitiesInCommunity = communitiesData.filter(item => 
+            +item.community_id === clickedCommunityId
+        );
+        
+        // Highlight all municipalities in this community
+        mapGroup.selectAll('.community-municipality')
+            .filter(d => {
+                const muniName = d.properties.NM_MUN + " - " + d.properties.NM_UF;
+                return communityByMuni.get(muniName) === clickedCommunityId;
+            })
+        
+        // Dim other municipalities
+        mapGroup.selectAll('.community-municipality')
+            .filter(d => {
+                const muniName = d.properties.NM_MUN + " - " + d.properties.NM_UF;
+                return communityByMuni.get(muniName) !== clickedCommunityId;
+            })
+            .classed('dimmed', true);
+            
+        // Display community information
+        d3.select("#community-info").html(`
+            <h4>Comunidade ${clickedCommunityId}</h4>
+            <p>Município selecionado: <strong>${municipalityName}</strong></p>
+            <p>Total de municípios nesta comunidade: <strong>${municipalitiesInCommunity.length}</strong></p>
+            <p>Representa <strong>${(municipalitiesInCommunity.length / communitiesData.length * 100).toFixed(2)}%</strong> dos municípios analisados</p>
+            <p><em>Para desselecionar, clique em uma área vazia do mapa ou no botão "Resetar Zoom"</em></p>
+        `);
+    }
 }

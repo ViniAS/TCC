@@ -64,6 +64,15 @@
             stroke: #fff;
             stroke-width: 1.5px;
         }
+        .community-municipality.selected {
+            stroke: #000;
+            stroke-width: 1.5px;
+            stroke-opacity: 1;
+            fill-opacity: 1;
+        }
+        .community-municipality:not(.selected).dimmed {
+            fill-opacity: 0.3;
+        }
         .municipality:hover {
             fill: #f2a03d;
         }
@@ -211,6 +220,9 @@
                 <button id="reset-zoom-communities">Resetar Zoom</button>
             </div>
             <svg id="communities-map" width="800" height="600"></svg>
+            <div id="community-info" style="margin-top: 20px; padding: 10px; background: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">
+                <p>Clique em um município no mapa para ver detalhes da sua comunidade.</p>
+            </div>
         </div>
     
     </div>
