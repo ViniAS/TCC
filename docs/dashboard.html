@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - TCC Mobilidade no Atendimento de Doenças Infecciosas</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <div class="navigation">
+        <a href="index.html" class="nav-button">← Voltar ao Estudo Completo</a>
+    </div>
+
+    <div class="intro-text">
+        <h1>Dashboard - Mobilidade no Atendimento de Doenças Infecciosas</h1>
+        
+        <p style="text-align: center; color: #666; max-width: 800px; margin: 0 auto 40px auto; line-height: 1.6;">
+            Este dashboard apresenta uma visão consolidada de todas as visualizações do estudo sobre mobilidade para atendimento hospitalar no Brasil. 
+            Explore os diferentes gráficos e mapas para compreender os padrões de deslocamento dos pacientes do SUS.
+        </p>
+
+        <h3>Qual a distância que os brasileiros precisam viajar para conseguir atendimento hospitalar especializado em doenças infecciosas?</h3>
+        <div class="histogram-container" style="position: relative; width: 800px; height: 400px;">
+            <div class="controls controls-right" style="top: 35px; right: 10px;">
+                <label for="state-select">Filtrar por estado:</label>
+                <select id="state-select">
+                    <option value="ALL">Todos</option>
+                </select>
+            </div>
+            <svg id="histogram" width="800" height="400"></svg>
+        </div>
+
+        <h3>A distribuição geográfica atual dos hospitais públicos é eficiente para garantir que os pacientes sejam atendidos o mais próximo possível de suas residências?</h3>
+        <h4>Mapa de Hospitalizações fora do Municípios / Estado de Domicílio</h4>
+        <div class="map-container" style="position: relative; width: 800px; height: 600px;">
+            <div class="controls controls-left">
+                <button id="show-munis" class="active">Municípios</button>
+                <button id="show-states">Estados</button>
+            </div>
+            <div class="controls controls-right">
+                <button id="reset-zoom-map">Resetar Zoom</button>
+            </div>
+            <svg id="map" width="800" height="600"></svg>
+        </div>
+
+        <h3>Quais municípios e regiões do país apresentam os maiores vazios assistenciais ou exigem os maiores deslocamentos da sua população?</h3>
+        <h4>Distância Média Viajada por Município para Hospitalização</h4>
+        <div class="map-container" style="position: relative; width: 800px; height: 600px;">
+            <div class="controls controls-right">
+                <button id="reset-zoom-choropleth">Resetar Zoom</button>
+            </div>
+            <svg id="choropleth" width="800" height="600"></svg>
+        </div>
+
+        <h3>Análise de Comunidades de Mobilidade Hospitalar</h3>
+        <p>
+            O mapa abaixo mostra o agrupamento de municípios em comunidades baseado em padrões de mobilidade para atendimento hospitalar. Municípios da mesma cor pertencem à mesma comunidade, indicando que compartilham padrões similares de deslocamento para tratamento médico.
+        </p>
+        <h4>Mapa de Comunidades de Mobilidade Hospitalar</h4>
+        <div class="map-container" style="position: relative; width: 800px; height: 600px;">
+            <div class="controls controls-right">
+                <button id="reset-zoom-communities">Resetar Zoom</button>
+            </div>
+            <svg id="communities-map" width="800" height="600"></svg>
+            <div id="community-info" style="margin-top: 20px; padding: 10px; background: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">
+                <p>Clique em um município no mapa para ver detalhes da sua comunidade.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="static/js/app.js"></script>
+</body>
+</html>

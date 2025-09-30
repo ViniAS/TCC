@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+import numpy as np
 from concurrent.futures import ProcessPoolExecutor
 
 
@@ -16,19 +17,20 @@ def process_file(files, principal_diagnosis):
     dfs = []
     for file in files:
         df = pd.read_parquet(file)
+        df['DIAG_PRINC'] = df['DIAG_PRINC'].str[:3]
         if len(principal_diagnosis) > 0:
-            df = df[df['DIAG_PRINC'].str[:3].isin(principal_diagnosis)]
-        df = df.groupby(['MUNIC_MOV', 'MUNIC_RES']).size().reset_index(name='HOSPITALIZACOES')
+            df = df[df['DIAG_PRINC'].isin(principal_diagnosis)]
+        df = df.groupby(['MUNIC_MOV', 'MUNIC_RES', 'DIAG_PRINC', 'ANO_CMPT']).size().reset_index(name='HOSPITALIZACOES')
         dfs.append(df)
     if dfs:
         df = pd.concat(dfs, ignore_index=True)
-        df = df.groupby(['MUNIC_MOV', 'MUNIC_RES'], as_index=False).sum()
+        df = df.groupby(['MUNIC_MOV', 'MUNIC_RES', 'DIAG_PRINC', 'ANO_CMPT'], as_index=False).sum()
 
         df = df.dropna(subset=['MUNIC_MOV', 'MUNIC_RES'])
         df = df[~df['MUNIC_MOV'].str.isspace() & ~df['MUNIC_RES'].str.isspace()]
         return df
     else:
-        return pd.DataFrame(columns=['MUNIC_MOV', 'MUNIC_RES', 'HOSPITALIZACOES'])
+        return pd.DataFrame(columns=['MUNIC_MOV', 'MUNIC_RES', 'HOSPITALIZACOES', 'DIAG_PRINC', 'ANO_CMPT'])
     
 
 def process_file_star(args):
@@ -93,12 +95,14 @@ def get_state_name(city_codes: pd.Series) -> pd.Series:
 
 if __name__ == "__main__":
 
-    cid10_chapters = pd.read_csv('data/CID10/cid10_capitulos.csv', sep=';')
-    principal_diagnosis = cid10_chapters[cid10_chapters['descricao'].str.startswith('Capítulo I -')]['codigo'].tolist()
-    transformed_data = agg_num_hosp_city_hospital(uf=[], principal_diagnosis=principal_diagnosis)
+    # cid10_chapters = pd.read_csv('data/CID10/cid10_capitulos.csv', sep=';')
+    # principal_diagnosis = cid10_chapters[cid10_chapters['descricao'].str.startswith('Capítulo I -')]['codigo'].tolist()
+    transformed_data: pd.DataFrame = agg_num_hosp_city_hospital(uf=[], principal_diagnosis=[])
     print(transformed_data.head())
     
     if not os.path.exists('data/agg_data'):
         os.makedirs('data/agg_data')
-    transformed_data.to_csv('data/agg_data/infectious_disease.csv', index=False)
+    transformed_data.astype({'MUNIC_MOV':np.int32,'MUNIC_RES':np.int32,'DIAG_PRINC':'string',
+                             'ANO_CMPT':'string','HOSPITALIZACOES':np.int32}) \
+    .to_parquet('data/agg_data/hospitalizacoes.parquet', index=False)
     print("Transformed data saved")

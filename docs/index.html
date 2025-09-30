@@ -2,144 +2,14 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TCC - Mobilidade no Atendimento de Doenças Infecciosas</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            background-color: #f0f0f0;
-            color: #333;
-        }
-        h1, h4 {
-            text-align: center;
-            color: #333;
-        }
-        h2 {
-            border-top: 2px solid #e0e0e0;
-            padding-top: 40px;
-            margin-top: 40px;
-            width: 800px;
-        }
-
-        /* --- Estilos para o texto introdutório --- */
-        .intro-text {
-            max-width: 800px;
-            margin: 20px auto 30px auto;
-            text-align: justify;
-            line-height: 1.6;
-            color: #444;
-        }
-        .intro-text h3 {
-            color: #333;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 5px;
-            margin-top: 25px;
-            margin-bottom: 15px;
-            font-size: 1.3em;
-        }
-        .intro-text ul {
-            list-style-position: inside;
-            padding-left: 10px;
-        }
-        .intro-text li {
-            margin-bottom: 10px;
-        }
-
-        /* --- Fim dos estilos do texto --- */
-
-        #map, #histogram, #choropleth {
-            border: 1px solid #ccc;
-            background-color: #fff;
-        }
-        .municipality {
-            stroke: #fff;
-            stroke-width: 0.5px;
-            cursor: pointer;
-        }
-        .selected {
-            fill: #0074D9 !important;
-            stroke: #fff;
-            stroke-width: 1.5px;
-        }
-        .municipality:hover {
-            fill: #f2a03d;
-        }
-        .connection-line {
-            stroke: #ff4136;
-            stroke-opacity: 0.6;
-            stroke-width: 1.5;
-            fill: none;
-            pointer-events: none;
-        }
-        .controls {
-            margin-bottom: 15px;
-            text-align: center;
-        }
-        .controls button {
-            padding: 8px 15px;
-            font-size: 14px;
-            cursor: pointer;
-            border: 1px solid #aaa;
-            background-color: #eee;
-            border-radius: 4px;
-            margin: 0 5px;
-        }
-        .controls button.active {
-            background-color: #0074D9;
-            color: white;
-            border-color: #0074D9;
-        }
-        .map-container {
-            position: relative;
-            width: 800px;
-            height: 600px;
-            margin-top: 24px;
-            margin-bottom: 24px;
-        }
-
-        .map-container .controls {
-            position: absolute;
-            margin: 0;
-            z-index: 10;
-            background: rgba(255,255,255,0.9);
-            border-radius: 6px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.07);
-            padding: 5px 10px;
-        }
-        .map-container .controls-left {
-            top: 10px;
-            left: 10px;
-        }
-        .map-container .controls-right {
-            top: 10px;
-            right: 10px;
-        }
-        .histogram-container {
-            position: relative;
-            width: 800px;
-            height: 400px;
-            margin-top: 24px;
-            margin-bottom: 24px;
-        }
-        .histogram-container .controls-right {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            z-index: 10;
-            background: rgba(255,255,255,0.9);
-            border-radius: 6px;
-            padding: 5px 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-    </style>
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
-    
+    <div class="navigation">
+        <a href="dashboard.html" class="nav-button">📊 Ver Dashboard</a>
+    </div>
 
     <div class="intro-text">
         <h1>Distribuição Geográfica de Hospitais Públicos e Mobilidade para Atendimento de Doenças Infecciosas no Brasil</h1>
@@ -211,6 +81,9 @@
                 <button id="reset-zoom-communities">Resetar Zoom</button>
             </div>
             <svg id="communities-map" width="800" height="600"></svg>
+            <div id="community-info" style="margin-top: 20px; padding: 10px; background: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">
+                <p>Clique em um município no mapa para ver detalhes da sua comunidade.</p>
+            </div>
         </div>
     
     </div>
