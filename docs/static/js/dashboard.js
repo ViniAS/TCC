@@ -207,8 +207,6 @@ Promise.all([
         const aggregatedData = aggregateFilteredData(filteredData);
         const aggregatedStateData = aggregateFilteredDataStates(filteredData);
         const weightedMeans = computeWeightedMeans(filteredData);
-        console.log('1')
-        console.log(aggregatedStateData);
 
         // Update state dropdown with filtered states
         const states = Array.from(new Set(weightedMeans.map(d => d.UF_RES))).sort();
@@ -336,8 +334,6 @@ function drawLineWidthLegend(svgSelector, minHosp, maxHosp, scaleFn) {
 
 // --- Drawing Function for States ---
 function drawStates(geojson, mobilityData) {
-    console.log(2);
-    console.log(mobilityData)
     mapGroup.html("");
     lineGroup.html("");
     
