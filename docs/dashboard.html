@@ -14,10 +14,37 @@
     <div class="intro-text">
         <h1>Dashboard - Mobilidade no Atendimento de Doenças Infecciosas</h1>
         
-        <p style="text-align: center; color: #666; max-width: 800px; margin: 0 auto 40px auto; line-height: 1.6;">
+        <p style="text-align: center; color: #666; max-width: 800px; margin: 0 auto 30px auto; line-height: 1.6;">
             Este dashboard apresenta uma visão consolidada de todas as visualizações do estudo sobre mobilidade para atendimento hospitalar no Brasil. 
             Explore os diferentes gráficos e mapas para compreender os padrões de deslocamento dos pacientes do SUS.
         </p>
+
+        <!-- Interactive Filters -->
+        <div style="background: #f8f9fa; border: 1px solid #ddd; border-radius: 10px; padding: 20px; margin: 0 auto 30px auto; max-width: 800px;">
+            <h3 style="margin-top: 0; color: #0074D9; text-align: center;">Filtros Interativos</h3>
+            <div style="display: flex; gap: 20px; justify-content: center; align-items: center; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <label for="year-select" style="font-weight: bold;">Ano:</label>
+                    <select id="year-select" style="padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
+                        <option value="ALL">Todos os Anos</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                    </select>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <label for="diagnosis-select" style="font-weight: bold;">Diagnóstico Principal:</label>
+                    <select id="diagnosis-select" style="padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; min-width: 200px;">
+                        <option value="ALL">Todas as Doenças Infecciosas</option>
+                    </select>
+                </div>
+                <button id="apply-filters" style="padding: 10px 20px; background: #0074D9; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">
+                    Aplicar Filtros
+                </button>
+            </div>
+            <div id="filter-status" style="text-align: center; margin-top: 15px; font-style: italic; color: #666;">
+                Mostrando: Todos os dados
+            </div>
+        </div>
 
         <h3>Qual a distância que os brasileiros precisam viajar para conseguir atendimento hospitalar especializado em doenças infecciosas?</h3>
         <div class="histogram-container" style="position: relative; width: 800px; height: 400px;">
@@ -69,6 +96,7 @@
     </div>
 
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="static/js/app.js"></script>
+    <!--<script type="module" src="https://cdn.jsdelivr.net/npm/parquet-wasm@0.6.0/esm/parquet.js"></script>-->
+    <script type="module" src="static/js/dashboard.js"></script>
 </body>
 </html>
