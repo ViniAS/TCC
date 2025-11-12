@@ -19,14 +19,18 @@ states_gdf.replace({'name_state': {
 
 states_gdf.set_index('name_state', inplace=True)
 
-df = pd.read_csv('data/agg_data/infectious_disease.csv')
+df = pd.read_parquet('data/agg_data/hospitalizacoes.parquet')
+
+groups = pd.read_csv('data/CID10/cid10_capitulos.csv',sep=';',index_col='codigo')['descricao_breve']
+groups = groups[~groups.index.duplicated(keep='first')]
+df['DIAG_PRINC'] = df['DIAG_PRINC'].map(groups)
 
 df['UF_RES'] = get_state_name(df['MUNIC_RES'])
 df['UF_MOV'] = get_state_name(df['MUNIC_MOV'])
 
 df = df[df['UF_RES'] != df['UF_MOV']]
 
-df = df.groupby(['UF_RES', 'UF_MOV']).agg({'HOSPITALIZACOES': 'sum'}).reset_index()
+df = df.groupby(['UF_RES', 'UF_MOV','ANO_CMPT','DIAG_PRINC']).agg({'HOSPITALIZACOES': 'sum'}).reset_index()
 
 df['CENTROID_RES'] = df['UF_RES'].map(states_gdf['centroid'])
 df['CENTROID_MOV'] = df['UF_MOV'].map(states_gdf['centroid'])
