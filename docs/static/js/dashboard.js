@@ -56,14 +56,15 @@ let currentFilters = {
 
 
 Promise.all([
+    d3.csv("static/data/counties.csv"),
+    d3.csv("static/data/county_info.csv"),
+    d3.csv("static/data/diag.csv"),
     d3.json("static/data/brazil_municipalities.geojson"),
-    d3.csv("static/data/hospitalizacoes.csv"),
     d3.json("static/data/brazil-states.geojson"),
     d3.csv("static/data/states_graph.csv"),
     d3.csv("static/data/communities.csv")    
-]).then(([muniGeo, muniData, stateGeo, stateData, communitiesData]) => {
+]).then(([muniData,muniInfo,diagInfo,muniGeo, stateGeo, stateData, communitiesData]) => {
     // Store raw data
-    rawMuniData = muniData;
     rawStateData = stateData;
 
     // Create a lookup for state coordinates from stateGeo centroids
@@ -77,8 +78,39 @@ Promise.all([
         });
     });
 
+    const muniInfoMap = new Map(
+        muniInfo.map(d => [d.CD_MUN, {
+            name: d.MUNIC_RES,
+            uf: d.UF,
+            lat: +d.LAT,
+            lon: +d.LON
+        }])
+    );
+
+    const diagInfoMap = new Map(
+        diagInfo.map(d => [d.COD, {
+            name: d.DIAG_PRINC
+        }])
+    );
+
+    rawMuniData = muniData.map(d => {
+        const resInfo = muniInfoMap.get(d.CD_MUN_RES);
+        const diag = diagInfoMap.get(d.DIAG_PRINC)
+        return {
+            CD_MUN_RES: d.CD_MUN_RES,
+            ANO_CMPT: d.ANO_CMPT,
+            DIAG_PRINC: diag?.name || 'Unknown',
+            HOSPITALIZACOES: +d.HOSPITALIZACOES,
+            DISTANCE: +d.DISTANCE,
+            MUNIC_RES: resInfo?.name || 'Unknown',
+            UF_RES: resInfo?.uf || 'Unknown',
+            RES_LAT: resInfo?.lat || 0,
+            RES_LON: resInfo?.lon || 0
+        };
+    })
+
     // Populate diagnosis dropdown with unique values
-    const diagnoses = Array.from(new Set(muniData.map(d => d.DIAG_PRINC))).sort();
+    const diagnoses = Array.from(diagInfoMap.values()).map(d => d.name).sort();
     const diagnosisSelect = d3.select("#diagnosis-select");
     diagnoses.forEach(diag => {
         diagnosisSelect.append("option")
@@ -96,38 +128,30 @@ Promise.all([
     }
 
     // Function to aggregate filtered data
-    function aggregateFilteredData(filteredData) {
-        // Group by source and destination
-        const grouped = d3.group(filteredData, 
-            d => d.MUNIC_RES, 
-            d => d.MUNIC_MOV
-        );
+        function aggregateFilteredData(filteredData) {
+        // Group by source municipality
+        const grouped = d3.group(filteredData, d => d.MUNIC_RES);
 
         const aggregated = [];
-        grouped.forEach((muniMovMap, municRes) => {
-            muniMovMap.forEach((records, municMov) => {
-                const totalHosp = d3.sum(records, d => +d.HOSPITALIZACOES || 0);
-                const firstRecord = records[0];
-                aggregated.push({
-                    MUNIC_RES: municRes,
-                    MUNIC_MOV: municMov,
-                    HOSPITALIZACOES: totalHosp,
-                    UF_RES: firstRecord.UF_RES,
-                    UF_MOV: firstRecord.UF_MOV,
-                    RES_LAT: firstRecord.RES_LAT,
-                    RES_LON: firstRecord.RES_LON,
-                    MOV_LAT: firstRecord.MOV_LAT,
-                    MOV_LON: firstRecord.MOV_LON,
-                    CD_MUN_RES: firstRecord.CD_MUN_RES,
-                    CD_MUN_MOV: firstRecord.CD_MUN_MOV,
-                    DISTANCE: firstRecord.DISTANCE
-                });
+        grouped.forEach((records, municRes) => {
+            const totalHosp = d3.sum(records, d => +d.HOSPITALIZACOES || 0);
+            const meanDist = totalHosp > 0
+                ? d3.sum(records, d => (+d.DISTANCE || 0) * (+d.HOSPITALIZACOES || 0)) / totalHosp
+                : 0;
+            const firstRecord = records[0];
+            aggregated.push({
+                MUNIC_RES: municRes,
+                HOSPITALIZACOES: totalHosp,
+                UF_RES: firstRecord.UF_RES,
+                RES_LAT: firstRecord.RES_LAT,
+                RES_LON: firstRecord.RES_LON,
+                CD_MUN_RES: firstRecord.CD_MUN_RES,
+                DISTANCE: meanDist
             });
         });
 
         return aggregated;
     }
-
     function aggregateFilteredDataStates(filteredData) {
         // Group by source and destination state
         const grouped = d3.group(filteredData, 
@@ -139,19 +163,15 @@ Promise.all([
         grouped.forEach((ufMovMap, ufRes) => {
             ufMovMap.forEach((records, ufMov) => {
                 const totalHosp = d3.sum(records, d => +d.HOSPITALIZACOES || 0);
-                
-                // Use coordinates from stateGeo centroids
-                const resCoords = stateCoordinates.get(ufRes);
-                const movCoords = stateCoordinates.get(ufMov);
-                
+                const firstRecord = records[0];
                 aggregated.push({
                     UF_RES: ufRes,
                     UF_MOV: ufMov,
                     HOSPITALIZACOES: totalHosp,
-                    RES_LAT: resCoords.lat ,
-                    RES_LON: resCoords.lon,
-                    MOV_LAT: movCoords.lat ,
-                    MOV_LON: movCoords.lon
+                    RES_LAT: firstRecord.RES_LAT,
+                    RES_LON: firstRecord.RES_LON,
+                    MOV_LAT: firstRecord.MOV_LAT,
+                    MOV_LON: firstRecord.MOV_LON,
                 });
             });
         });
@@ -204,8 +224,9 @@ Promise.all([
     // Function to refresh all visualizations
     function refreshVisualizations() {
         const filteredData = filterData(rawMuniData);
+        const filteredStateData = filterData(rawStateData)
         const aggregatedData = aggregateFilteredData(filteredData);
-        const aggregatedStateData = aggregateFilteredDataStates(filteredData);
+        const aggregatedStateData = aggregateFilteredDataStates(filteredStateData);
         const weightedMeans = computeWeightedMeans(filteredData);
 
         // Update state dropdown with filtered states
@@ -221,25 +242,19 @@ Promise.all([
         });
         stateSelect.property("value", currentStateValue);
 
-        // Redraw all visualizations
-        const currentView = d3.select("#show-states").classed("active") ? "states" : "munis";
-        
-        if (currentView === "states") {
-            drawStates(stateGeo, aggregatedStateData);
-        } else {
-            drawMunicipalities(muniGeo, aggregatedData);
-        }
+        drawStates(stateGeo, aggregatedStateData);
+
 
         // Update histogram
         const histogramStateFilter = d3.select("#state-select").property("value");
-        let histogramData = weightedMeans;
+        let histogramData = aggregatedData;
         if (histogramStateFilter !== "ALL") {
-            histogramData = weightedMeans.filter(d => d.UF_RES === histogramStateFilter);
+            histogramData = aggregatedData.filter(d => d.UF_RES === histogramStateFilter);
         }
         drawHistogram(histogramData);
 
         // Update choropleth
-        drawChoropleth(muniGeo, weightedMeans, stateGeo);
+        drawChoropleth(muniGeo, aggregatedData, stateGeo);
 
         // Update filter status
         updateFilterStatus();
@@ -256,31 +271,20 @@ Promise.all([
     refreshVisualizations();
 
     // Keep the existing button handlers
-    d3.select("#show-munis").on("click", () => {
-        const filteredData = filterData(rawMuniData);
-        const aggregatedData = aggregateFilteredData(filteredData);
-        drawMunicipalities(muniGeo, aggregatedData);
-        d3.select("#show-munis").classed("active", true);
-        d3.select("#show-states").classed("active", false);
-    });
 
-    d3.select("#show-states").on("click", () => {
-        const filteredStateData = filterData(rawMuniData);
-        const aggregatedStateData = aggregateFilteredDataStates(filteredStateData);
-        drawStates(stateGeo, aggregatedStateData);
-        d3.select("#show-states").classed("active", true);
-        d3.select("#show-munis").classed("active", false);
-    });
+    const filteredStateData = filterData(rawStateData);
+    const aggregatedStateData = aggregateFilteredDataStates(filteredStateData);
+    drawStates(stateGeo, aggregatedStateData);
 
     // Update histogram on state dropdown change
     d3.select("#state-select").on("change", function() {
         const selectedState = this.value;
         const filteredData = filterData(rawMuniData);
-        const weightedMeans = computeWeightedMeans(filteredData);
+        const aggregatedData = aggregateFilteredData(filteredData);
         
-        let histogramData = weightedMeans;
+        let histogramData = aggregatedData;
         if (selectedState !== "ALL") {
-            histogramData = weightedMeans.filter(d => d.UF_RES === selectedState);
+            histogramData = aggregatedData.filter(d => d.UF_RES === selectedState);
         }
         drawHistogram(histogramData);
     });
@@ -395,56 +399,56 @@ function drawStates(geojson, mobilityData) {
 
 
 // --- Drawing Function for Municipalities ---
-function drawMunicipalities(geojson, mobilityData) {
+// function drawMunicipalities(geojson, mobilityData) {
 
-    mapGroup.html("");
-    lineGroup.html("");
-    mapGroup.selectAll("path")
-        .data(geojson.features)
-        .enter().append("path")
-        .attr("d", path)
-        .attr("class", "municipality")
-        .attr("data-code", d => d.properties.CD_MUN)
-        .style("fill", d => {
-            const stateCode = d.properties.CD_UF; 
-            return fourColors[stateColorMapping[stateCode]];
-        })
-        .on("click", handleClick)
-        .append("title")
-        .text(d => d.properties.NM_MUN);
+//     mapGroup.html("");
+//     lineGroup.html("");
+//     mapGroup.selectAll("path")
+//         .data(geojson.features)
+//         .enter().append("path")
+//         .attr("d", path)
+//         .attr("class", "municipality")
+//         .attr("data-code", d => d.properties.CD_MUN)
+//         .style("fill", d => {
+//             const stateCode = d.properties.CD_UF; 
+//             return fourColors[stateColorMapping[stateCode]];
+//         })
+//         .on("click", handleClick)
+//         .append("title")
+//         .text(d => d.properties.NM_MUN);
 
-    const hospVals = mobilityData.map(d => +d.HOSPITALIZACOES).filter(d => !isNaN(d));
-    const minHosp = d3.min(hospVals);
-    const maxHosp = d3.max(hospVals);
+//     const hospVals = mobilityData.map(d => +d.HOSPITALIZACOES).filter(d => !isNaN(d));
+//     const minHosp = d3.min(hospVals);
+//     const maxHosp = d3.max(hospVals);
 
-    // Use a D3 scale for width
-    const widthScale = d3.scaleSqrt()
-        .domain([minHosp, maxHosp])
-        .range([1, 5]);
+//     // Use a D3 scale for width
+//     const widthScale = d3.scaleSqrt()
+//         .domain([minHosp, maxHosp])
+//         .range([1, 5]);
 
-    function handleClick(event, d) {
-        const clickedMuniCode = d.properties.CD_MUN;
-        d3.select(this.parentNode).selectAll('path').classed('selected', false);
-        d3.select(this).classed('selected', true);
-        lineGroup.html("");
+//     function handleClick(event, d) {
+//         const clickedMuniCode = d.properties.CD_MUN;
+//         d3.select(this.parentNode).selectAll('path').classed('selected', false);
+//         d3.select(this).classed('selected', true);
+//         lineGroup.html("");
 
-        const connections = mobilityData.filter(link => link.CD_MUN_RES == clickedMuniCode);
+//         const connections = mobilityData.filter(link => link.CD_MUN_RES == clickedMuniCode);
 
-        connections.forEach(conn => {
-            const start = projection([+conn.RES_LON, +conn.RES_LAT]);
-            const end = projection([+conn.MOV_LON, +conn.MOV_LAT]);
-            if (start && end) {
-                lineGroup.append("line")
-                    .attr("x1", start[0]).attr("y1", start[1])
-                    .attr("x2", end[0]).attr("y2", end[1])
-                    .attr("class", "connection-line") // The CSS class provides the opacity
-                    .style("stroke-width", widthScale(+conn.HOSPITALIZACOES));
-            }
-        });
-    }
+//         connections.forEach(conn => {
+//             const start = projection([+conn.RES_LON, +conn.RES_LAT]);
+//             const end = projection([+conn.MOV_LON, +conn.MOV_LAT]);
+//             if (start && end) {
+//                 lineGroup.append("line")
+//                     .attr("x1", start[0]).attr("y1", start[1])
+//                     .attr("x2", end[0]).attr("y2", end[1])
+//                     .attr("class", "connection-line") // The CSS class provides the opacity
+//                     .style("stroke-width", widthScale(+conn.HOSPITALIZACOES));
+//             }
+//         });
+//     }
 
-    drawLineWidthLegend("#map", minHosp, maxHosp, widthScale);
-}
+//     drawLineWidthLegend("#map", minHosp, maxHosp, widthScale);
+// }
 
 function drawHistogram(data) {
     const svg = d3.select("#histogram");
@@ -457,7 +461,7 @@ function drawHistogram(data) {
     const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
 
     // Parse values
-    const values = data.map(d => +d.WEIGHTED_MEAN_DIST).filter(d => !isNaN(d));
+    const values = data.map(d => +d.DISTANCE).filter(d => !isNaN(d));
 
     // X scale
     const x = d3.scaleLinear()
@@ -545,10 +549,10 @@ function drawChoropleth(geojson, weightedMeans, state) {
     });
 
     // Create a lookup for weighted mean by municipality name
-    const meanByMuni = new Map(weightedMeans.map(d => [d.MUNIC_RES, d.WEIGHTED_MEAN_DIST]));
+    const meanByMuni = new Map(weightedMeans.map(d => [d.MUNIC_RES, d.DISTANCE]));
 
     // Compute color scale (logarithmic)
-    const values = weightedMeans.map(d => d.WEIGHTED_MEAN_DIST).filter(d => !isNaN(d) && d > 0);
+    const values = weightedMeans.map(d => d.DISTANCE).filter(d => !isNaN(d) && d > 0);
     const minVal = d3.min(values);
     const maxVal = d3.max(values);
     const color = d3.scaleSequentialLog(d3.interpolateViridis)

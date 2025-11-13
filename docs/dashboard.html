@@ -27,6 +27,15 @@
                     <label for="year-select" style="font-weight: bold;">Ano:</label>
                     <select id="year-select" style="padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
                         <option value="ALL">Todos os Anos</option>
+                        <option value="2014">2014</option>
+                        <option value="2015">2015</option>
+                        <option value="2016">2016</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
                         <option value="2023">2023</option>
                         <option value="2024">2024</option>
                     </select>
@@ -58,12 +67,8 @@
         </div>
 
         <h3>A distribuição geográfica atual dos hospitais públicos é eficiente para garantir que os pacientes sejam atendidos o mais próximo possível de suas residências?</h3>
-        <h4>Mapa de Hospitalizações fora do Municípios / Estado de Domicílio</h4>
+        <h4>Mapa de Hospitalizações fora do Estado de Domicílio</h4>
         <div class="map-container" style="position: relative; width: 800px; height: 600px;">
-            <div class="controls controls-left">
-                <button id="show-munis" class="active">Municípios</button>
-                <button id="show-states">Estados</button>
-            </div>
             <div class="controls controls-right">
                 <button id="reset-zoom-map">Resetar Zoom</button>
             </div>
@@ -93,7 +98,7 @@
                 <p>Clique em um município no mapa para ver detalhes da sua comunidade.</p>
             </div>
         </div>
-    </div>
+    </div>s
 
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <!--<script type="module" src="https://cdn.jsdelivr.net/npm/parquet-wasm@0.6.0/esm/parquet.js"></script>-->
