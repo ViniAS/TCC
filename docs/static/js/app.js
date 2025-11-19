@@ -47,8 +47,35 @@ Promise.all([
     d3.csv("static/data/graph.csv"),
     d3.json("static/data/brazil-states.geojson"),
     d3.csv("static/data/states_graph.csv"),
-    d3.csv("static/data/communities.csv")    
-]).then(([muniGeo, muniData, stateGeo, stateData, communitiesData]) => {
+    d3.csv("static/data/communities.csv"),
+    d3.csv("static/data/county_info.csv")
+]).then(([muniGeo, muniData, stateGeo, stateData, communitiesData,muniInfo]) => {
+
+    
+
+    const muniInfoMap = new Map(
+        muniInfo.map(d => [d.CD_MUN, {
+            name: d.MUNIC_RES,
+            uf: d.UF,
+            lat: +d.LAT,
+            lon: +d.LON
+        }])
+    );
+
+    communitiesData = communitiesData.filter(d => {
+        const diagnosisMatch = d.DIAG_PRINC == 0;
+        return diagnosisMatch;
+    });
+
+    communitiesData = communitiesData.map(d => {
+        const munInfo = muniInfoMap.get(d.municipality);
+        return {
+            municipality: munInfo?.name || 'Unknown',
+            community_id: d.community_id,
+        };
+    });
+    
+    console.log(communitiesData);
 
     d3.select("#show-munis").on("click", () => {
         drawMunicipalities(muniGeo, muniData);

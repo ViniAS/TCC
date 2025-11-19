@@ -54,6 +54,8 @@ let currentFilters = {
     diagnosis: 'ALL'
 };
 
+let currentFilterCommunity = 'Todos';
+
 
 Promise.all([
     d3.csv("static/data/counties.csv"),
@@ -117,13 +119,17 @@ Promise.all([
             community_id: d.community_id,
             DIAG_PRINC: diag?.name || 'Unknown',
         };
-    })
+    });
 
     // Populate diagnosis dropdown with unique values
     const diagnoses = Array.from(diagInfoMap.values()).map(d => d.name).sort();
     const diagnosisSelect = d3.select("#diagnosis-select");
+    const diagnosisCommunitySelect = d3.select("#diagnosis-select-community");
     diagnoses.forEach(diag => {
         diagnosisSelect.append("option")
+            .attr("value", diag)
+            .text(diag);
+        diagnosisCommunitySelect.append("option")
             .attr("value", diag)
             .text(diag);
     });
@@ -239,10 +245,7 @@ Promise.all([
     function refreshVisualizations() {
         const filteredData = filterData(rawMuniData);
         const filteredStateData = filterData(rawStateData);
-        const filteredCommunitiesData = communitiesData.filter(d => {
-            const diagnosisMatch = (currentFilters.diagnosis === 'ALL' && d.DIAG_PRINC === 'Todos') || d.DIAG_PRINC === currentFilters.diagnosis;
-            return diagnosisMatch;
-        });
+
         const aggregatedData = aggregateFilteredData(filteredData);
         const aggregatedStateData = aggregateFilteredDataStates(filteredStateData);
         const weightedMeans = computeWeightedMeans(filteredData);
@@ -274,10 +277,19 @@ Promise.all([
         // Update choropleth
         drawChoropleth(muniGeo, aggregatedData, stateGeo);
 
-        drawCommunitiesMap(muniGeo, filteredCommunitiesData, stateGeo);
-
         // Update filter status
         updateFilterStatus();
+    }
+
+    function refreshCommunityViz() {
+        const filteredCommunitiesData = communitiesData.filter(d => {
+            const diagnosisMatch = d.DIAG_PRINC === currentFilterCommunity;
+            return diagnosisMatch;
+        });
+
+        d3.select("#filter-status-community").text(`Mostrando: ${currentFilterCommunity}`);
+
+        drawCommunitiesMap(muniGeo, filteredCommunitiesData, stateGeo);
     }
 
     // Apply filters button click handler
@@ -287,8 +299,14 @@ Promise.all([
         refreshVisualizations();
     });
 
+    d3.select("#apply-filters-community").on('click', () => {
+        currentFilterCommunity = d3.select('#diagnosis-select-community').property("value");
+        refreshCommunityViz();
+    })
+
     // Initial visualization with all data
     refreshVisualizations();
+    refreshCommunityViz();
 
     // Keep the existing button handlers
 

@@ -43,7 +43,7 @@
                 <div style="display: flex; align-items: center; gap: 8px;">
                     <label for="diagnosis-select" style="font-weight: bold;">Diagnóstico Principal:</label>
                     <select id="diagnosis-select" style="padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; min-width: 200px;">
-                        <option value="ALL">Todas as Doenças Infecciosas</option>
+                        <option value="ALL">Todos os Diagnósticos</option>
                     </select>
                 </div>
                 <button id="apply-filters" style="padding: 10px 20px; background: #0074D9; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">
@@ -85,6 +85,23 @@
         </div>
 
         <h3>Análise de Comunidades de Mobilidade Hospitalar</h3>
+                <div style="background: #f8f9fa; border: 1px solid #ddd; border-radius: 10px; padding: 20px; margin: 0 auto 30px auto; max-width: 800px;">
+            <h3 style="margin-top: 0; color: #0074D9; text-align: center;">Filtros Interativos</h3>
+            <div style="display: flex; gap: 20px; justify-content: center; align-items: center; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <label for="diagnosis-select" style="font-weight: bold;">Diagnóstico Principal:</label>
+                    <select id="diagnosis-select-community" style="padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; min-width: 200px;">
+                        <option value="ALL">Todos os Diagnósticos</option>
+                    </select>
+                </div>
+                <button id="apply-filters-community" style="padding: 10px 20px; background: #0074D9; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">
+                    Aplicar Filtro
+                </button>
+            </div>
+            <div id="filter-status-community" style="text-align: center; margin-top: 15px; font-style: italic; color: #666;">
+                Mostrando: Todos os dados
+            </div>
+        </div>
         <p>
             O mapa abaixo mostra o agrupamento de municípios em comunidades baseado em padrões de mobilidade para atendimento hospitalar. Municípios da mesma cor pertencem à mesma comunidade, indicando que compartilham padrões similares de deslocamento para tratamento médico.
         </p>
