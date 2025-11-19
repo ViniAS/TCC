@@ -23,3 +23,6 @@ if __name__ == "__main__":
     diag = pd.concat([pd.DataFrame({'DIAG_PRINC':['Todos'],'COD':[0]}).set_index('DIAG_PRINC',drop=True), diag],axis=0)
     diag.to_csv('docs/static/data/diag.csv')
     county_info.to_csv('docs/static/data/county_info.csv')
+    
+    graph_site = df.groupby(['CD_MUN_RES','CD_MUN_MOV']).agg({'HOSPITALIZACOES':'sum','DISTANCE':'first'})
+    graph_site.to_csv('docs/static/data/graph.csv')

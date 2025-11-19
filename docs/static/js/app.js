@@ -75,7 +75,54 @@ Promise.all([
         };
     });
     
-    console.log(communitiesData);
+    muniData = muniData.map(d => {
+        const resInfo = muniInfoMap.get(d.CD_MUN_RES);
+        const movInfo = muniInfoMap.get(d.CD_MUN_MOV);
+        return {
+            CD_MUN_RES: d.CD_MUN_RES,
+            ANO_CMPT: d.ANO_CMPT,
+            HOSPITALIZACOES: +d.HOSPITALIZACOES,
+            DIST_KM: +d.DISTANCE,
+            MUNIC_RES: resInfo?.name || 'Unknown',
+            UF_RES: resInfo?.uf || 'Unknown',
+            RES_LAT: resInfo?.lat || 0,
+            RES_LON: resInfo?.lon || 0,
+            MUNIC_MOV: movInfo?.name || 'Unknown',
+            UF_MOV: movInfo?.uf || 'Unknown',
+            MOV_LAT: movInfo?.lat || 0,
+            MOV_LON: movInfo?.lon || 0,
+        };
+    });
+
+    function aggregateDataStates(filteredData) {
+        // Group by source and destination state
+        const grouped = d3.group(filteredData, 
+            d => d.UF_RES, 
+            d => d.UF_MOV
+        );
+
+        const aggregated = [];
+        grouped.forEach((ufMovMap, ufRes) => {
+            ufMovMap.forEach((records, ufMov) => {
+                const totalHosp = d3.sum(records, d => +d.HOSPITALIZACOES || 0);
+                const firstRecord = records[0];
+                aggregated.push({
+                    UF_RES: ufRes,
+                    UF_MOV: ufMov,
+                    HOSPITALIZACOES: totalHosp,
+                    RES_LAT: firstRecord.RES_LAT,
+                    RES_LON: firstRecord.RES_LON,
+                    MOV_LAT: firstRecord.MOV_LAT,
+                    MOV_LON: firstRecord.MOV_LON,
+                });
+            });
+        });
+
+        return aggregated;
+    }
+
+    stateData = aggregateDataStates(stateData);
+
 
     d3.select("#show-munis").on("click", () => {
         drawMunicipalities(muniGeo, muniData);
