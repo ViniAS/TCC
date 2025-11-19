@@ -20,5 +20,6 @@ if __name__ == "__main__":
     .rename({'CD_MUN_RES':'CD_MUN','UF_RES':'UF','RES_LAT':'LAT','RES_LON':'LON'},axis=1).rename_axis('CD_MUN')
     
     distdf.to_csv('docs/static/data/counties.csv',index=False)
+    diag = pd.concat([pd.DataFrame({'DIAG_PRINC':['Todos'],'COD':[0]}).set_index('DIAG_PRINC',drop=True), diag],axis=0)
     diag.to_csv('docs/static/data/diag.csv')
     county_info.to_csv('docs/static/data/county_info.csv')
