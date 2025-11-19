@@ -95,7 +95,7 @@ Promise.all([
 
     rawMuniData = muniData.map(d => {
         const resInfo = muniInfoMap.get(d.CD_MUN_RES);
-        const diag = diagInfoMap.get(d.DIAG_PRINC)
+        const diag = diagInfoMap.get(d.DIAG_PRINC);
         return {
             CD_MUN_RES: d.CD_MUN_RES,
             ANO_CMPT: d.ANO_CMPT,
@@ -106,6 +106,16 @@ Promise.all([
             UF_RES: resInfo?.uf || 'Unknown',
             RES_LAT: resInfo?.lat || 0,
             RES_LON: resInfo?.lon || 0
+        };
+    })
+
+    communitiesData = communitiesData.map(d => {
+        const munInfo = muniInfoMap.get(d.municipality);
+        const diag = diagInfoMap.get(d.DIAG_PRINC);
+        return {
+            municipality: munInfo?.name || 'Unknown',
+            community_id: d.community_id,
+            DIAG_PRINC: diag?.name || 'Unknown',
         };
     })
 
@@ -125,6 +135,10 @@ Promise.all([
             const diagnosisMatch = currentFilters.diagnosis === 'ALL' || d.DIAG_PRINC === currentFilters.diagnosis;
             return yearMatch && diagnosisMatch;
         });
+    }
+
+    function filterCommunityData(data) {
+        return 
     }
 
     // Function to aggregate filtered data
@@ -224,7 +238,11 @@ Promise.all([
     // Function to refresh all visualizations
     function refreshVisualizations() {
         const filteredData = filterData(rawMuniData);
-        const filteredStateData = filterData(rawStateData)
+        const filteredStateData = filterData(rawStateData);
+        const filteredCommunitiesData = communitiesData.filter(d => {
+            const diagnosisMatch = (currentFilters.diagnosis === 'ALL' && d.DIAG_PRINC === 'Todos') || d.DIAG_PRINC === currentFilters.diagnosis;
+            return diagnosisMatch;
+        });
         const aggregatedData = aggregateFilteredData(filteredData);
         const aggregatedStateData = aggregateFilteredDataStates(filteredStateData);
         const weightedMeans = computeWeightedMeans(filteredData);
@@ -255,6 +273,8 @@ Promise.all([
 
         // Update choropleth
         drawChoropleth(muniGeo, aggregatedData, stateGeo);
+
+        drawCommunitiesMap(muniGeo, filteredCommunitiesData, stateGeo);
 
         // Update filter status
         updateFilterStatus();
@@ -288,9 +308,7 @@ Promise.all([
         }
         drawHistogram(histogramData);
     });
-
-    // Communities map doesn't need filtering as it's based on structure
-    drawCommunitiesMap(muniGeo, communitiesData, stateGeo);
+    
 
 }).catch(error => console.error("Error loading the data:", error));
 function drawLineWidthLegend(svgSelector, minHosp, maxHosp, scaleFn) {
