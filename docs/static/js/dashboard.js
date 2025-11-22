@@ -702,7 +702,7 @@ function drawChoropleth(geojson, weightedMeans, state) {
         .attr("y", height - 48)
         .attr("text-anchor", "middle")
         .attr("font-size", 14)
-        .text("Distância Média Viajada (Escala Log)");
+        .text("Distância Média Viajada (km). Escala Log");
 
     const defs = svg.append("defs");
     const linearGradient = defs.append("linearGradient")
@@ -722,9 +722,31 @@ function drawChoropleth(geojson, weightedMeans, state) {
     const legendScale = d3.scaleLog()
         .domain([minVal, maxVal])
         .range([0, legendWidth]);
+        
+    let tickVals = [];
+    
+    tickVals.push(minVal);
+
+    let power = 1;
+    while (power <= maxVal) {
+        if (power > minVal && power < maxVal) {
+            // Prevent overlap: if power is very close to minVal (e.g. min=9, power=10), skip it
+            // Log10 difference check:
+            if (Math.abs(Math.log10(power) - Math.log10(minVal)) > 0.2) {
+                tickVals.push(power);
+            }
+        }
+        power *= 10;
+    }
+
+    const lastTick = tickVals[tickVals.length - 1];
+    if (Math.abs(Math.log10(maxVal) - Math.log10(lastTick)) > 0.2) {
+        tickVals.push(maxVal);
+    }
+    
     const legendAxis = d3.axisBottom(legendScale)
-        .ticks(4, "~g") 
-        .tickFormat(d => d.toFixed(0) + " km")
+        .tickValues(tickVals) 
+        .tickFormat(d => d3.format(".0f")(d))
         .tickPadding(6);
 
     legendSvg.append("g")

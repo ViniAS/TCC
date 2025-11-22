@@ -504,7 +504,7 @@ function drawChoropleth(geojson, weightedMeans, state) {
         .enter().append("stop")
         .attr("offset", d => `${d * 100}%`)
         .attr("stop-color", d => color(minVal * Math.pow(maxVal / minVal, d)));
-~
+
     legendSvg.append("rect")
         .attr("width", legendWidth)
         .attr("height", legendHeight)
@@ -514,8 +514,30 @@ function drawChoropleth(geojson, weightedMeans, state) {
     const legendScale = d3.scaleLog()
         .domain([minVal, maxVal])
         .range([0, legendWidth]);
+        
+    let tickVals = [];
+    
+    tickVals.push(minVal);
+
+    let power = 1;
+    while (power <= maxVal) {
+        if (power > minVal && power < maxVal) {
+            // Prevent overlap: if power is very close to minVal (e.g. min=9, power=10), skip it
+            // Log10 difference check:
+            if (Math.abs(Math.log10(power) - Math.log10(minVal)) > 0.2) {
+                tickVals.push(power);
+            }
+        }
+        power *= 10;
+    }
+
+    const lastTick = tickVals[tickVals.length - 1];
+    if (Math.abs(Math.log10(maxVal) - Math.log10(lastTick)) > 0.2) {
+        tickVals.push(maxVal);
+    }
+    
     const legendAxis = d3.axisBottom(legendScale)
-        .ticks(4, "~g") 
+        .tickValues(tickVals) 
         .tickFormat(d => d.toFixed(0) + " km")
         .tickPadding(6);
 
