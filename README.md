@@ -27,6 +27,12 @@ Para gerar os dados necessários para o site, execute:
 poetry run python -m src.agg_county_level
 ```
 ```bash
+poetry run python -m src.county_site_data
+```
+```bash
+poetry run python -m src.community
+```
+```bash
 poetry run python -m src.agg_state_level
 ```
 ```bash
