@@ -49,12 +49,127 @@ d3.select("#reset-zoom-map").on("click", () => {
 
 let rawMuniData = []; // Store the unfiltered data
 let rawStateData = []; // Store the unfiltered state data
+
+// -- Filters are Arrays --
 let currentFilters = {
-    year: 'ALL',
-    diagnosis: 'ALL'
+    years: ['ALL'],
+    diagnoses: ['ALL']
 };
 
 let currentFilterCommunity = 'Todos';
+
+// --- HELPER: Multi-select Logic ---
+function createMultiSelect(containerId, options, selectedValues) {
+    const container = d3.select(containerId);
+    container.html(""); // Clear existing
+
+    // 1. Display Box (The button that shows what is selected)
+    const displayBox = container.append("div")
+        .attr("class", "selectBox");
+    
+    const displayLabel = displayBox.append("div")
+        .attr("class", "multiselect-display")
+        .text("Todos Selecionados");
+
+    // 2. Checkboxes Container (Hidden by default via CSS)
+    const checkboxesContainer = container.append("div")
+        .attr("class", "checkboxes");
+
+    // Toggle Logic
+    displayBox.on("click", function(event) {
+        event.stopPropagation();
+        const isVisible = checkboxesContainer.classed("show");
+        
+        // Close all other dropdowns first
+        d3.selectAll(".checkboxes").classed("show", false);
+        
+        // Toggle this one
+        checkboxesContainer.classed("show", !isVisible);
+    });
+
+    // Helper to update label
+    function updateLabel() {
+        const checked = checkboxesContainer.selectAll("input:checked");
+        const count = checked.size();
+        const total = options.length;
+        
+        const isAllChecked = checkboxesContainer.select("input[value='ALL']").property("checked");
+
+        if (isAllChecked) {
+            displayLabel.text("Todos Selecionados");
+            selectedValues.length = 0;
+            selectedValues.push('ALL');
+        } else if (count === 0) {
+             displayLabel.text("Nenhum selecionado");
+             selectedValues.length = 0;
+        } else {
+            // Collect values
+            const values = [];
+            checked.each(function() { 
+                if(this.value !== 'ALL') values.push(this.value); 
+            });
+            
+            selectedValues.length = 0;
+            values.forEach(v => selectedValues.push(v));
+
+            if (count === 1) {
+                displayLabel.text(values[0]);
+            } else if (count === total) {
+                displayLabel.text("Todos Selecionados");
+            } else {
+                displayLabel.text(`${count} selecionados`);
+            }
+        }
+    }
+
+    // 3. Add "Select All" / "Todos" option
+    const allLabel = checkboxesContainer.append("label");
+    allLabel.append("input")
+        .attr("type", "checkbox")
+        .attr("value", "ALL")
+        .property("checked", true)
+        .on("change", function() {
+            const isChecked = this.checked;
+            // Check/Uncheck all others
+            checkboxesContainer.selectAll("input:not([value='ALL'])")
+                .property("checked", isChecked);
+            updateLabel();
+        });
+    allLabel.append("span").text("Todos");
+
+    // 4. Add individual options
+    options.forEach(opt => {
+        const lbl = checkboxesContainer.append("label");
+        lbl.append("input")
+            .attr("type", "checkbox")
+            .attr("value", opt)
+            .property("checked", true) // Default to all selected
+            .on("change", function() {
+                // If unchecking a specific item, uncheck "All"
+                if (!this.checked) {
+                    checkboxesContainer.select("input[value='ALL']").property("checked", false);
+                }
+                // If checking specific item, check if all are now checked
+                if (this.checked) {
+                    const allOpts = checkboxesContainer.selectAll("input:not([value='ALL'])");
+                    const allChecked = allOpts.size() === allOpts.filter(function() { return this.checked; }).size();
+                    if (allChecked) {
+                        checkboxesContainer.select("input[value='ALL']").property("checked", true);
+                    }
+                }
+                updateLabel();
+            });
+        lbl.append("span").text(opt);
+    });
+
+    // Close dropdown when clicking anywhere else on the body
+    d3.select("body").on("click." + containerId, function(event) {
+        // If the click target is NOT inside the container
+        if (!container.node().contains(event.target)) {
+            checkboxesContainer.classed("show", false);
+        }
+    });
+}
 
 
 Promise.all([
@@ -121,25 +236,33 @@ Promise.all([
         };
     });
 
-    // Populate diagnosis dropdown with unique values
+    // --- Setup Multi-Select Dropdowns ---
+    
+    // 1. Years
+    const years = ['2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024'];
+    createMultiSelect("#year-multiselect", years, currentFilters.years);
+
+    // 2. Diagnoses
     let diagnoses = Array.from(diagInfoMap.values()).map(d => d.name).sort();
-    diagnoses = diagnoses.filter(d => d !== 'Todos');
-    const diagnosisSelect = d3.select("#diagnosis-select");
+    diagnoses = diagnoses.filter(d => d !== 'Todos'); 
+    createMultiSelect("#diagnosis-multiselect", diagnoses, currentFilters.diagnoses);
+
+    // Setup standard select for community tab
     const diagnosisCommunitySelect = d3.select("#diagnosis-select-community");
     diagnoses.forEach(diag => {
-        diagnosisSelect.append("option")
-            .attr("value", diag)
-            .text(diag);
         diagnosisCommunitySelect.append("option")
             .attr("value", diag)
             .text(diag);
     });
 
-    // Function to filter data based on current filters
+    // --- Updated Filter Function ---
     function filterData(data) {
         return data.filter(d => {
-            const yearMatch = currentFilters.year === 'ALL' || d.ANO_CMPT === currentFilters.year;
-            const diagnosisMatch = currentFilters.diagnosis === 'ALL' || d.DIAG_PRINC === currentFilters.diagnosis;
+            // Check Year
+            const yearMatch = currentFilters.years.includes('ALL') || currentFilters.years.includes(d.ANO_CMPT);
+            // Check Diagnosis
+            const diagnosisMatch = currentFilters.diagnoses.includes('ALL') || currentFilters.diagnoses.includes(d.DIAG_PRINC);
+            
             return yearMatch && diagnosisMatch;
         });
     }
@@ -222,15 +345,19 @@ Promise.all([
         let statusText = "Mostrando: ";
         const parts = [];
         
-        if (currentFilters.year !== 'ALL') {
-            parts.push(`Ano ${currentFilters.year}`);
+        if (!currentFilters.years.includes('ALL')) {
+            parts.push(`Anos: ${currentFilters.years.join(", ")}`);
         }
-        if (currentFilters.diagnosis !== 'ALL') {
-            parts.push(currentFilters.diagnosis);
+        if (!currentFilters.diagnoses.includes('ALL')) {
+            if(currentFilters.diagnoses.length > 3) {
+                parts.push(`Diagnósticos: ${currentFilters.diagnoses.length} selecionados`);
+            } else {
+                parts.push(`Diagnósticos: ${currentFilters.diagnoses.join(", ")}`);
+            }
         }
         
         if (parts.length === 0) {
-            statusText += "Todos os dados";
+            statusText += "Todos os dados (Anos e Diagnósticos)";
         } else {
             statusText += parts.join(" | ");
         }
@@ -291,8 +418,6 @@ Promise.all([
 
     // Apply filters button click handler
     d3.select("#apply-filters").on("click", () => {
-        currentFilters.year = d3.select("#year-select").property("value");
-        currentFilters.diagnosis = d3.select("#diagnosis-select").property("value");
         refreshVisualizations();
     });
 
@@ -429,59 +554,6 @@ function drawStates(geojson, mobilityData) {
     
     drawLineWidthLegend("#map", minHosp, maxHosp, widthScale);
 }
-
-
-// --- Drawing Function for Municipalities ---
-// function drawMunicipalities(geojson, mobilityData) {
-
-//     mapGroup.html("");
-//     lineGroup.html("");
-//     mapGroup.selectAll("path")
-//         .data(geojson.features)
-//         .enter().append("path")
-//         .attr("d", path)
-//         .attr("class", "municipality")
-//         .attr("data-code", d => d.properties.CD_MUN)
-//         .style("fill", d => {
-//             const stateCode = d.properties.CD_UF; 
-//             return fourColors[stateColorMapping[stateCode]];
-//         })
-//         .on("click", handleClick)
-//         .append("title")
-//         .text(d => d.properties.NM_MUN);
-
-//     const hospVals = mobilityData.map(d => +d.HOSPITALIZACOES).filter(d => !isNaN(d));
-//     const minHosp = d3.min(hospVals);
-//     const maxHosp = d3.max(hospVals);
-
-//     // Use a D3 scale for width
-//     const widthScale = d3.scaleSqrt()
-//         .domain([minHosp, maxHosp])
-//         .range([1, 5]);
-
-//     function handleClick(event, d) {
-//         const clickedMuniCode = d.properties.CD_MUN;
-//         d3.select(this.parentNode).selectAll('path').classed('selected', false);
-//         d3.select(this).classed('selected', true);
-//         lineGroup.html("");
-
-//         const connections = mobilityData.filter(link => link.CD_MUN_RES == clickedMuniCode);
-
-//         connections.forEach(conn => {
-//             const start = projection([+conn.RES_LON, +conn.RES_LAT]);
-//             const end = projection([+conn.MOV_LON, +conn.MOV_LAT]);
-//             if (start && end) {
-//                 lineGroup.append("line")
-//                     .attr("x1", start[0]).attr("y1", start[1])
-//                     .attr("x2", end[0]).attr("y2", end[1])
-//                     .attr("class", "connection-line") // The CSS class provides the opacity
-//                     .style("stroke-width", widthScale(+conn.HOSPITALIZACOES));
-//             }
-//         });
-//     }
-
-//     drawLineWidthLegend("#map", minHosp, maxHosp, widthScale);
-// }
 
 function drawHistogram(data) {
     const svg = d3.select("#histogram");
@@ -640,7 +712,7 @@ function drawChoropleth(geojson, weightedMeans, state) {
         .enter().append("stop")
         .attr("offset", d => `${d * 100}%`)
         .attr("stop-color", d => color(minVal * Math.pow(maxVal / minVal, d)));
-~
+
     legendSvg.append("rect")
         .attr("width", legendWidth)
         .attr("height", legendHeight)
@@ -860,4 +932,4 @@ function drawCommunitiesMap(geojson, communitiesData, stateGeo) {
             <p><em>Para desselecionar, clique em uma área vazia do mapa ou no botão "Resetar Zoom"</em></p>
         `);
     }
-} 
+}

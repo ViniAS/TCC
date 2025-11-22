@@ -49,8 +49,6 @@ h2 {
     color: #0074D9;
 }
 
-
-
 /* --- Intro text styles --- */
 .intro-text {
     max-width: 800px;
@@ -199,4 +197,92 @@ h2 {
     background: #f8f8f8;
     border: 1px solid #ddd;
     border-radius: 5px;
+}
+
+/* =========================================
+   MULTI-SELECT DROPDOWN STYLES
+   ========================================= */
+
+/* The main container for the dropdown */
+.multiselect {
+    position: relative;
+    font-family: 'Arial', sans-serif;
+    width: 250px; /* Fixed width for the dropdown */
+    user-select: none;
+    background-color: white;
+}
+
+/* The box you click to open the menu */
+.selectBox {
+    position: relative;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* The text inside the box */
+.multiselect-display {
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #333;
+    max-width: 220px;
+}
+
+/* The down arrow */
+.selectBox::after {
+    content: "▼";
+    font-size: 10px;
+    color: #666;
+    margin-left: 8px;
+}
+
+/* The hidden list of checkboxes */
+.checkboxes {
+    display: none; /* Hidden by default */
+    border: 1px solid #ccc;
+    border-top: none;
+    position: absolute;
+    top: 100%; /* Push it exactly below the selectBox */
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 10000; /* Ensure it floats on top of maps/charts */
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    border-radius: 0 0 4px 4px;
+}
+
+/* When the .show class is added via JS, make it visible */
+.checkboxes.show {
+    display: block !important;
+}
+
+/* The individual items in the list */
+.checkboxes label {
+    display: block; /* Force vertical list */
+    padding: 8px 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+    margin: 0;
+    text-align: left;
+    color: #333;
+}
+
+.checkboxes label:hover {
+    background-color: #f0f7ff;
+    color: #0074D9;
+}
+
+.checkboxes label input {
+    margin-right: 8px;
+    transform: scale(1.1); /* Make checkboxes slightly larger */
 }
