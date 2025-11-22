@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório Técnico Detalhado - Mobilidade em Doenças Infecciosas</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <div class="navigation">
+        <a href="index.html" class="nav-button">🏠 Voltar ao Início</a>
+        <a href="dashboard.html" class="nav-button">📊 Ver Dashboard</a>
+    </div>
+
+    <div class="intro-text">
+        <h1>Análise da Mobilidade Hospitalar para Internações no SUS</h1>
+
+        <h3>1. Introdução</h3>
+        <p>
+            O Sistema Único de Saúde (SUS) opera sob a diretriz da regionalização,
+            buscando garantir que o acesso à saúde seja descentralizado e próximo ao cidadão.
+            No entanto, a infraestrutura para tratamento de alta complexidade ou doenças
+            específicas, como as infecciosas, frequentemente se concentra em polos regionais.
+            Isso gera um fenômeno de "migração para saúde", onde pacientes precisam percorrer 
+            grandes distâncias para obter atendimento.
+        </p>
+        <p>
+            Este projeto investiga esse fenômeno utilizando dados massivos de internações
+            (Big Data) para mapear os fluxos reais de pacientes. Diferente de abordagens teóricas,
+            este estudo baseia-se na evidência empírica de onde os pacientes residem versus onde
+            foram efetivamente internados, permitindo uma auditoria geográfica da eficiência da
+            rede hospitalar brasileira entre os anos de 2014 e 2024.
+        </p>
+
+        <h3>2. Objetivos do Projeto</h3>
+        <p>
+            O objetivo do projeto foi  gerar ferramentas visuais e interativas
+            através das quais seja possível os usuários analizarem padrões de mobilidade no
+            sistema hospitalar público brasileiro.
+        </p>
+        
+        <h3>3. Metodologia</h3>
+        <p>
+            A metodologia foi estruturada em três pilares: Engenharia de Dados,
+            Ciência de Redes e Desenvolvimento Web.
+        </p>
+
+        <h4>3.1 Engenharia de Dados (Backend & ETL)</h4>
+        <p>
+            O processamento dos dados foi realizado em Python, seguindo um pipeline rigoroso:
+        </p>
+        
+        <h5>3.1.1 Fonte de Dados</h5>
+        <p>
+        Utilizou-se o <strong>Sistema de Informações  Hospitalares</strong> (SIH-SUS). A extração foi
+        automatizada através da biblioteca <code>PySUS</code>, baixando arquivos para
+        todos os estados brasileiros, cobrindo a série histórica de 2014 a 2024. 
+        O SIH é um sistema de registro administrativo que coleta e processa dados de
+        todas as internações hospitalres fininciadas pelo SUS. Ele é utilizado principalmente
+        para motivos financeiros, rastreando quais foram os serviços prestados pelos hospitais.
+        </p>
+        <p>
+        Desse conjunto de dados, foram utilizados os seguintes dados:
+        <ul>
+            <li>Município e estado de residência do internado;</li>
+            <li>Município e estado onde ocorreu a internação;</li>
+            <li>Diagnóstico principal registrado como causa da internação;</li>
+            <li>Ano da internação.</li>
+        </ul>
+        Foram utilizados dados também da <strong>Plataforma de Ciência de Dados aplicada à Saúde</strong>
+        (PCDaS). Os dados utilizados foram dicionários para os dados do SIH-SUS, visto que tanto os municípios
+        e o diagnóstico principal eram guardados em código no dataset original.
+        </p>
+        <p>
+        Foram também utilizados dados de mapa do Brasil, disponibilizados pelo IBGE, para a criação
+        das vizualições.
+        </p>
+
+        <h5>3.1.2 Filtragem e Agregação:</h5> 
+        <p>
+            Os dados foram agrupados por município de residência, município de internação,
+            diagnóstico principal e ano, adicionando a informação de número de internações por
+            cada um desses grupos e também a distância entre os municípios de residência e internação.
+        </p>
+        <p>
+            O dado principal que queremos extrair desses dados é o grafo direcionado formado por municípios
+            de residência e de internação, com a quantidade de hospitalizações e distancia sendo atributos das
+            arestas, sendo os dados de diagnóstico e ano adicionados para filtragem dos dados por parte dos usuários
+            no <em>dashboard</em>.
+        </p>
+
+        <h4>3.2 Análise de Redes</h4>
+        <p>
+            Para identificar estruturas oculta da rede de saúde,
+            os dados foram modelados como um grafo direcionado e ponderado:
+        </p>
+        <ul>
+            <li><strong>Nós (Vértices):</strong> Municípios brasileiros.</li>
+            <li><strong>Arestas (Links):</strong> Fluxo de pacientes entre residência e internação.</li>
+            <li><strong>Peso:</strong> Volume de internações.</li>
+            <li><strong>Detecção de Comunidades:</strong> Utilizou-se a biblioteca
+                <code>igraph</code> e o algoritmo de <em>Leiden</em> 
+                (uma evolução do método Louvain) ou <em>Infomap</em> para detectar
+                "comunidades". O algoritmo de Leiden foi escolhido por lidar bem com grafos com arestas direcionadas
+                e com peso.
+                Essas comunidades representam grupos de municípios que trocam pacientes
+                intensamente entre si, revelando "Regiões de Saúde" baseadas
+                no comportamento da população.</li>
+        </ul>
+
+        <h4>3.3 Visualização</h4>
+        <p>
+            Para a aprensentação dos gráficos, foi escolhido apresentá-los em um site, permitindo fácil
+            acesso e maior interação. Para viabilizar a hospedagem do site, foi construído como um
+            site estático, permitindo que o site seja hospedado gratuitamente no GitHub Pages.
+        </p>
+
+        <h3>4. Resultados</h3>
+        <p>
+            O produto final é um painel analítico composto por três visualizações principais, que permitem responder às perguntas de pesquisa:
+        </p>
+        
+        <h4>4.1 Fluxos de Hospitalização</h4>
+        <p>
+            Um mapa interativo que traça linhas (arestas) conectando a origem e o destino dos pacientes. A espessura das linhas é proporcional ao volume de pacientes, e filtros laterais permitem isolar fluxos por Estado, Ano ou Diagnóstico Específico (ex: Dengue, Tuberculose). Isso visualiza claramente a dependência de municípios menores em relação aos grandes centros urbanos.
+        </p>
+
+        <h4>4.2 Distâncias</h4>
+        <p>
+            Através de um mapa coroplético e um histograma interativo, o sistema calcula a distância média ponderada que os residentes de cada município precisam viajar.
+        </p>
+        <ul>
+            <li><strong>Histograma:</strong> Permite analisar a distribuição estatística das distâncias (ex: quantos brasileiros viajam mais de 300km?).</li>
+            <li><strong>Mapa de Calor:</strong> Evidencia visualmente os "desertos médicos" — regiões (geralmente no Norte e Centro-Oeste) onde a cor mais intensa indica a necessidade de deslocamentos extremos para tratamento básico de doenças infecciosas.</li>
+        </ul>
+
+        <h4>4.3 Comunidades de Mobilidade</h4>
+        <p>
+            A aplicação do algoritmo de detecção de comunidades revelou clusters regionais. O mapa atribui cores distintas a cada comunidade detectada. Ao clicar em um município, o usuário pode ver toda a sua "bacia de drenagem" de saúde. Esse resultado é vital para gestores, pois mostra quais municípios vizinhos estão, na prática, integrados em uma mesma rede de atendimento, independentemente das divisas políticas.
+        </p>
+
+        <h3>5. Conclusão</h3>
+        <p>
+
+        </p>
+    </div>
+    
+    <script src="static/js/app.js"></script>
+</body>
+</html>

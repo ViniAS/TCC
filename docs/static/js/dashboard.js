@@ -1,5 +1,3 @@
-import init, { readParquet } from "https://unpkg.com/parquet-wasm@0.6.0/esm/parquet_wasm.js";
-
 // Initialize the WebAssembly module once
 await init();
 
