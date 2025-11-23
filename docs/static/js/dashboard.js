@@ -1,5 +1,5 @@
-// Initialize the WebAssembly module once
-await init();
+import * as topojsonServer from "https://esm.sh/topojson-server@3";
+import * as topojsonClient from "https://esm.sh/topojson-client@3";
 
 // --- Setup ---
 const width = 800;
@@ -181,6 +181,9 @@ Promise.all([
 ]).then(([muniData,muniInfo,diagInfo,muniGeo, stateGeo, stateData, communitiesData]) => {
     // Store raw data
     rawStateData = stateData;
+
+    // Compute topology for municipalities
+    const muniTopology = topojsonServer.topology({municipalities: muniGeo},9e2);
 
     // Create a lookup for state coordinates from stateGeo centroids
     const stateCoordinates = new Map();
@@ -411,7 +414,7 @@ Promise.all([
 
         d3.select("#filter-status-community").text(`Mostrando: ${currentFilterCommunity}`);
 
-        drawCommunitiesMap(muniGeo, filteredCommunitiesData, stateGeo);
+        drawCommunitiesMap(muniGeo, filteredCommunitiesData, stateGeo, muniTopology);
     }
 
     // Apply filters button click handler
@@ -753,7 +756,7 @@ function drawChoropleth(geojson, weightedMeans, state) {
 }
 
 
-function drawCommunitiesMap(geojson, communitiesData, stateGeo) {
+function drawCommunitiesMap(geojson, communitiesData, stateGeo, topology) {
     const svg = d3.select("#communities-map");
     svg.selectAll("*").remove();
 
@@ -826,6 +829,24 @@ function drawCommunitiesMap(geojson, communitiesData, stateGeo) {
             const communityId = communityByMuni.get(municipalityName);
             return `${d.properties.NM_MUN} - ${d.properties.NM_UF}\nComunidade: ${communityId !== undefined ? communityId : "não identificada"}`;
         });
+
+    // Draw community borders
+    if (topology) {
+        const mesh = topojsonClient.mesh(topology, topology.objects.municipalities, (a, b) => {
+            const muniA = a.properties.NM_MUN + " - " + a.properties.NM_UF;
+            const muniB = b.properties.NM_MUN + " - " + b.properties.NM_UF;
+            return communityByMuni.get(muniA) !== communityByMuni.get(muniB);
+        });
+
+        mapGroup.append("path")
+            .datum(mesh)
+            .attr("d", path)
+            .attr("fill", "none")
+            .attr("stroke", "#000")
+            .attr("stroke-width", 0.85)
+            .attr("stroke-linejoin", "round")
+            .attr("stroke-linecap", "round");
+    }
 
     // Draw state borders on top
     mapGroup.append("g")
