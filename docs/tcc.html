@@ -34,10 +34,13 @@
 
         <h3>2. Objetivos do Projeto</h3>
         <p>
-            O objetivo do projeto foi  gerar ferramentas visuais e interativas
-            através das quais seja possível os usuários analizarem padrões de mobilidade no
-            sistema hospitalar público brasileiro.
+            O objetivo central foi desenvolver uma plataforma analítica interativa que permita a gestores e pesquisadores:
         </p>
+        <ul>
+            <li><strong>Quantificar</strong> o volume de deslocamentos intermunicipais para internações no SUS;</li>
+            <li><strong>Mapear</strong> as distâncias percorridas pelos pacientes, identificando "vazios assistenciais";</li>
+            <li><strong>Detectar</strong> comunidades naturais de saúde, ou seja, grupos de municípios que funcionam como sistemas integrados na prática, independente das fronteiras administrativas estaduais.</li>
+        </ul>
         
         <h3>3. Metodologia</h3>
         <p>
@@ -121,30 +124,114 @@
         </p>
         
         <h4>4.1 Fluxos de Hospitalização</h4>
+        <div class="map-container" style="position: relative; width: 800px; height: 600px;">
+            <div class="controls controls-left">
+                <button id="show-munis" class="active">Municípios</button>
+                <button id="show-states">Estados</button>
+            </div>
+            <div class="controls controls-right">
+                <button id="reset-zoom-map">Resetar Zoom</button>
+            </div>
+            <svg id="map" width="800" height="600"></svg>
+        </div>
         <p>
-            Um mapa interativo que traça linhas (arestas) conectando a origem e o destino dos pacientes. A espessura das linhas é proporcional ao volume de pacientes, e filtros laterais permitem isolar fluxos por Estado, Ano ou Diagnóstico Específico (ex: Dengue, Tuberculose). Isso visualiza claramente a dependência de municípios menores em relação aos grandes centros urbanos.
+            Um mapa interativo que traça linhas (arestas) conectando a origem e o destino dos pacientes. A espessura das linhas é proporcional ao volume de pacientes,
+            e filtros laterais permitem isolar fluxos por Estado, Ano ou Diagnóstico Específico (ex: Dengue, Tuberculose). Isso visualiza claramente a dependência de 
+            municípios menores em relação aos grandes centros urbanos.
         </p>
 
         <h4>4.2 Distâncias</h4>
+        <div class="histogram-container" style="position: relative; width: 800px; height: 400px;">
+            <div class="controls controls-right" style="top: 35px; right: 10px;">
+                <label for="state-select">Filtrar por estado:</label>
+                <select id="state-select">
+                    <option value="ALL">Todos</option>
+                </select>
+            </div>
+            <svg id="histogram" width="800" height="400"></svg>
+        </div>
+        <div class="map-container" style="position: relative; width: 800px; height: 600px;">
+            <div class="controls controls-right">
+                <button id="reset-zoom-choropleth">Resetar Zoom</button>
+            </div>
+            <svg id="choropleth" width="800" height="600"></svg>
+        </div>
         <p>
             Através de um mapa coroplético e um histograma interativo, o sistema calcula a distância média ponderada que os residentes de cada município precisam viajar.
         </p>
         <ul>
             <li><strong>Histograma:</strong> Permite analisar a distribuição estatística das distâncias (ex: quantos brasileiros viajam mais de 300km?).</li>
-            <li><strong>Mapa de Calor:</strong> Evidencia visualmente os "desertos médicos" — regiões (geralmente no Norte e Centro-Oeste) onde a cor mais intensa indica a necessidade de deslocamentos extremos para tratamento básico de doenças infecciosas.</li>
+            <li><strong>Mapa de Calor:</strong> Evidencia visualmente os "desertos médicos" — regiões (geralmente no Norte e Centro-Oeste) onde a cor mais
+                intensa indica a necessidade de deslocamentos extremos para tratamento básico de doenças infecciosas.</li>
         </ul>
 
         <h4>4.3 Comunidades de Mobilidade</h4>
+        <div class="map-container" style="position: relative; width: 800px; height: 600px;">
+            <div class="controls controls-right">
+                <button id="reset-zoom-communities">Resetar Zoom</button>
+            </div>
+            <svg id="communities-map" width="800" height="600"></svg>
+        </div>
+        <div id="community-info" style="margin-top: 20px; padding: 10px; background: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">
+            <p>Clique em um município no mapa para ver detalhes da sua comunidade.</p>
+        </div>
         <p>
-            A aplicação do algoritmo de detecção de comunidades revelou clusters regionais. O mapa atribui cores distintas a cada comunidade detectada. Ao clicar em um município, o usuário pode ver toda a sua "bacia de drenagem" de saúde. Esse resultado é vital para gestores, pois mostra quais municípios vizinhos estão, na prática, integrados em uma mesma rede de atendimento, independentemente das divisas políticas.
+            Apresenta o resultado do algoritmo Infomap. Cada cor no mapa representa uma "comunidade" detectada matematicamente.
+            O resultado mostra que a "geografia da saúde" frequentemente ignora as divisas estaduais; pacientes de regiões fronteiriças
+            tendem a buscar atendimento no estado vizinho se este for mais acessível.
         </p>
 
         <h3>5. Conclusão</h3>
         <p>
-
+            Este trabalho demonstra o potencial do uso de Big Data público para auditoria e planejamento em saúde.
+            A plataforma desenvolvida oferece uma visão transparente sobre a mobilidade de pacientes no SUS,
+            provendo evidências empíricas para gestores otimizarem a alocação de recursos e reduzirem as distâncias
+            percorridas pelos cidadãos brasileiros em busca de cura. 
         </p>
+        
+        <h3>6. Referências Bibliográficas</h3>
+        <p>
+            As seguintes fontes de dados, bibliotecas e documentações foram utilizadas para a elaboração deste estudo:
+        </p>
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li style="margin-bottom: 15px;">
+                FIOCRUZ. <strong>Plataforma de Ciência de Dados aplicada à Saúde (PCDaS)</strong>. 
+                Documentação do Sistema de Informações Hospitalares do SUS (SIH-SUS). 
+                Disponível em: <a href="https://pcdas.icict.fiocruz.br/conjunto-de-dados/sistema-de-informacoes-hospitalares-do-sus-sihsus/documentacao/" target="_blank">https://pcdas.icict.fiocruz.br/</a>. 
+                Acesso em: 24 nov. 2025.
+            </li>
+
+            <li style="margin-bottom: 15px;">
+                IBGE. <strong>Malhas Territoriais</strong>. 
+                Instituto Brasileiro de Geografia e Estatística. 
+                Disponível em: <a href="https://www.ibge.gov.br/geociencias/organizacao-do-territorio/malhas-territoriais/15774-malhas.html" target="_blank">https://www.ibge.gov.br/geociencias/organizacao-do-territorio/malhas-territoriais/15774-malhas.html</a>. 
+                Acesso em: 24 nov. 2025.
+            </li>
+
+            <li style="margin-bottom: 15px;">
+                IBGE. <strong>Estimativas de População</strong>. 
+                Instituto Brasileiro de Geografia e Estatística. 
+                Disponível em: <a href="https://www.ibge.gov.br/estatisticas/sociais/populacao/9103-estimativas-de-populacao.html" target="_blank">https://www.ibge.gov.br/estatisticas/sociais/populacao/9103-estimativas-de-populacao.html</a>. 
+                Acesso em: 24 nov. 2025.
+            </li>
+
+            <li style="margin-bottom: 15px;">
+                PySUS. <strong>PySUS: Python interface for DATASUS</strong>. 
+                Biblioteca Python para extração de dados do SUS. 
+                Disponível em: <a href="https://github.com/AlertaDengue/PySUS" target="_blank">https://github.com/AlertaDengue/PySUS</a>. 
+                Acesso em: 24 nov. 2025.
+            </li>
+
+            <li style="margin-bottom: 15px;">
+                TRAAG, V. A.; WALTMAN, L.; VAN ECK, N. J. 
+                <strong>From Louvain to Leiden: guaranteeing well-connected communities</strong>. 
+                Scientific Reports, 9, 5233, 2019. 
+                Disponível em: <a href="https://www.nature.com/articles/s41598-019-41695-z" target="_blank">https://www.nature.com/articles/s41598-019-41695-z</a>.
+            </li>
+        </ul>
     </div>
     
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="static/js/app.js"></script>
 </body>
 </html>
