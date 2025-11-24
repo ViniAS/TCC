@@ -3,8 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relatório Técnico Detalhado - Mobilidade em Doenças Infecciosas</title>
+    <title>Relatório Técnico - Mobilidade em Doenças Infecciosas</title>
     <link rel="stylesheet" href="static/css/style.css">
+    <style>
+        /* CSS suave para o 'pulo' da âncora não ficar escondido pelo cabeçalho se houver e destacar o alvo */
+        html {
+            scroll-behavior: smooth;
+        }
+        li:target {
+            background-color: #e8f0fe; /* Realça a referência quando clicada */
+            border-left: 4px solid #007bff;
+            padding-left: 10px;
+            transition: all 0.5s ease;
+        }
+    </style>
 </head>
 <body>
     <div class="navigation">
@@ -55,11 +67,11 @@
         
         <h5>3.1.1 Fonte de Dados</h5>
         <p>
-        Utilizou-se o <strong>Sistema de Informações  Hospitalares</strong> (SIH-SUS). A extração foi
-        automatizada através da biblioteca <code>PySUS</code>, baixando arquivos para
+        Utilizou-se o <strong>Sistema de Informações Hospitalares</strong> (SIH-SUS). A extração foi
+        automatizada através da biblioteca <a href="#ref-pysus"><code>PySUS</code></a>, baixando arquivos para
         todos os estados brasileiros, cobrindo a série histórica de 2014 a 2024. 
         O SIH é um sistema de registro administrativo que coleta e processa dados de
-        todas as internações hospitalres fininciadas pelo SUS. Ele é utilizado principalmente
+        todas as internações hospitalares financiadas pelo SUS. Ele é utilizado principalmente
         para motivos financeiros, rastreando quais foram os serviços prestados pelos hospitais.
         </p>
         <p>
@@ -70,13 +82,12 @@
             <li>Diagnóstico principal registrado como causa da internação;</li>
             <li>Ano da internação.</li>
         </ul>
-        Foram utilizados dados também da <strong>Plataforma de Ciência de Dados aplicada à Saúde</strong>
-        (PCDaS). Os dados utilizados foram dicionários para os dados do SIH-SUS, visto que tanto os municípios
+        Foram utilizados dados também da <a href="#ref-pcdas"><strong>Plataforma de Ciência de Dados aplicada à Saúde</strong> (PCDaS)</a>. Os dados utilizados foram dicionários para os dados do SIH-SUS, visto que tanto os municípios
         e o diagnóstico principal eram guardados em código no dataset original.
         </p>
         <p>
-        Foram também utilizados dados de mapa do Brasil, disponibilizados pelo IBGE, para a criação
-        das vizualições.
+        Foram também utilizados dados de mapa do Brasil, disponibilizados pelo <a href="#ref-ibge-malhas">IBGE</a>, para a criação
+        das visualizações.
         </p>
 
         <h5>3.1.2 Filtragem e Agregação:</h5> 
@@ -102,7 +113,7 @@
             <li><strong>Arestas (Links):</strong> Fluxo de pacientes entre residência e internação.</li>
             <li><strong>Peso:</strong> Volume de internações.</li>
             <li><strong>Detecção de Comunidades:</strong> Utilizou-se a biblioteca
-                <code>igraph</code> e o algoritmo de <em>Leiden</em> 
+                <code>igraph</code> e o <a href="#ref-leiden">algoritmo de <em>Leiden</em></a>
                 (uma evolução do método Louvain) ou <em>Infomap</em> para detectar
                 "comunidades". O algoritmo de Leiden foi escolhido por lidar bem com grafos com arestas direcionadas
                 e com peso.
@@ -113,7 +124,7 @@
 
         <h4>3.3 Visualização</h4>
         <p>
-            Para a aprensentação dos gráficos, foi escolhido apresentá-los em um site, permitindo fácil
+            Para a apresentação dos gráficos, foi escolhido apresentá-los em um site, permitindo fácil
             acesso e maior interação. Para viabilizar a hospedagem do site, foi construído como um
             site estático, permitindo que o site seja hospedado gratuitamente no GitHub Pages.
         </p>
@@ -194,35 +205,35 @@
             As seguintes fontes de dados, bibliotecas e documentações foram utilizadas para a elaboração deste estudo:
         </p>
         <ul style="list-style-type: none; padding-left: 0;">
-            <li style="margin-bottom: 15px;">
+            <li id="ref-pcdas" style="margin-bottom: 15px;">
                 FIOCRUZ. <strong>Plataforma de Ciência de Dados aplicada à Saúde (PCDaS)</strong>. 
                 Documentação do Sistema de Informações Hospitalares do SUS (SIH-SUS). 
                 Disponível em: <a href="https://pcdas.icict.fiocruz.br/conjunto-de-dados/sistema-de-informacoes-hospitalares-do-sus-sihsus/documentacao/" target="_blank">https://pcdas.icict.fiocruz.br/</a>. 
                 Acesso em: 24 nov. 2025.
             </li>
 
-            <li style="margin-bottom: 15px;">
+            <li id="ref-ibge-malhas" style="margin-bottom: 15px;">
                 IBGE. <strong>Malhas Territoriais</strong>. 
                 Instituto Brasileiro de Geografia e Estatística. 
                 Disponível em: <a href="https://www.ibge.gov.br/geociencias/organizacao-do-territorio/malhas-territoriais/15774-malhas.html" target="_blank">https://www.ibge.gov.br/geociencias/organizacao-do-territorio/malhas-territoriais/15774-malhas.html</a>. 
                 Acesso em: 24 nov. 2025.
             </li>
 
-            <li style="margin-bottom: 15px;">
+            <li id="ref-ibge-pop" style="margin-bottom: 15px;">
                 IBGE. <strong>Estimativas de População</strong>. 
                 Instituto Brasileiro de Geografia e Estatística. 
                 Disponível em: <a href="https://www.ibge.gov.br/estatisticas/sociais/populacao/9103-estimativas-de-populacao.html" target="_blank">https://www.ibge.gov.br/estatisticas/sociais/populacao/9103-estimativas-de-populacao.html</a>. 
                 Acesso em: 24 nov. 2025.
             </li>
 
-            <li style="margin-bottom: 15px;">
+            <li id="ref-pysus" style="margin-bottom: 15px;">
                 PySUS. <strong>PySUS: Python interface for DATASUS</strong>. 
                 Biblioteca Python para extração de dados do SUS. 
                 Disponível em: <a href="https://github.com/AlertaDengue/PySUS" target="_blank">https://github.com/AlertaDengue/PySUS</a>. 
                 Acesso em: 24 nov. 2025.
             </li>
 
-            <li style="margin-bottom: 15px;">
+            <li id="ref-leiden" style="margin-bottom: 15px;">
                 TRAAG, V. A.; WALTMAN, L.; VAN ECK, N. J. 
                 <strong>From Louvain to Leiden: guaranteeing well-connected communities</strong>. 
                 Scientific Reports, 9, 5233, 2019. 
