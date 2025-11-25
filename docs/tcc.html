@@ -6,12 +6,11 @@
     <title>Relatório Técnico - Mobilidade em Doenças Infecciosas</title>
     <link rel="stylesheet" href="static/css/style.css">
     <style>
-        /* CSS suave para o 'pulo' da âncora não ficar escondido pelo cabeçalho se houver e destacar o alvo */
         html {
             scroll-behavior: smooth;
         }
         li:target {
-            background-color: #e8f0fe; /* Realça a referência quando clicada */
+            background-color: #e8f0fe;
             border-left: 4px solid #007bff;
             padding-left: 10px;
             transition: all 0.5s ease;
@@ -37,8 +36,7 @@
             grandes distâncias para obter atendimento.
         </p>
         <p>
-            Este projeto investiga esse fenômeno utilizando dados massivos de internações
-            (Big Data) para mapear os fluxos reais de pacientes. Diferente de abordagens teóricas,
+            Este projeto investiga esse fenômeno utilizando dados de internações para mapear os fluxos reais de pacientes. Diferente de abordagens teóricas,
             este estudo baseia-se na evidência empírica de onde os pacientes residem versus onde
             foram efetivamente internados, permitindo uma auditoria geográfica da eficiência da
             rede hospitalar brasileira entre os anos de 2014 e 2024.
@@ -113,10 +111,8 @@
             <li><strong>Arestas (Links):</strong> Fluxo de pacientes entre residência e internação.</li>
             <li><strong>Peso:</strong> Volume de internações.</li>
             <li><strong>Detecção de Comunidades:</strong> Utilizou-se a biblioteca
-                <code>igraph</code> e o <a href="#ref-leiden">algoritmo de <em>Leiden</em></a>
-                (uma evolução do método Louvain) ou <em>Infomap</em> para detectar
-                "comunidades". O algoritmo de Leiden foi escolhido por lidar bem com grafos com arestas direcionadas
-                e com peso.
+                <code>igraph</code> e o algoritmo <em>Infomap</em> para detectar
+                "comunidades". O algoritmo baseia-se na teoria da informação para minimizar a descrição do caminho de um "caminhante aleatório" na rede, sendo ideal para capturar fluxos.
                 Essas comunidades representam grupos de municípios que trocam pacientes
                 intensamente entre si, revelando "Regiões de Saúde" baseadas
                 no comportamento da população.</li>
@@ -126,15 +122,17 @@
         <p>
             Para a apresentação dos gráficos, foi escolhido apresentá-los em um site, permitindo fácil
             acesso e maior interação. Para viabilizar a hospedagem do site, foi construído como um
-            site estático, permitindo que o site seja hospedado gratuitamente no GitHub Pages.
+            site estático utilizando HTML5, CSS3 e JavaScript (D3.js), permitindo que o site seja hospedado gratuitamente no GitHub Pages.
         </p>
 
-        <h3>4. Resultados</h3>
+        <h3>4. Resultados e Interatividade</h3>
         <p>
-            O produto final é um painel analítico composto por três visualizações principais, que permitem responder às perguntas de pesquisa:
+            O produto final é um painel analítico composto por três visualizações principais, desenvolvidas com a biblioteca <strong>D3.js</strong>,
+            que permitem responder às perguntas de pesquisa através de exploração interativa. Aqui são apresentados os gráficos mostrando os dados dos anos 2014 à 2024,
+            mas no <em>dashboard</em>, é possível filtrar tanto por ano, quanto por diagnóstico.
         </p>
         
-        <h4>4.1 Fluxos de Hospitalização</h4>
+        <h4>4.1 Mapeamento de Fluxos de Hospitalização</h4>
         <div class="map-container" style="position: relative; width: 800px; height: 600px;">
             <div class="controls controls-left">
                 <button id="show-munis" class="active">Municípios</button>
@@ -146,12 +144,26 @@
             <svg id="map" width="800" height="600"></svg>
         </div>
         <p>
-            Um mapa interativo que traça linhas (arestas) conectando a origem e o destino dos pacientes. A espessura das linhas é proporcional ao volume de pacientes,
-            e filtros laterais permitem isolar fluxos por Estado, Ano ou Diagnóstico Específico (ex: Dengue, Tuberculose). Isso visualiza claramente a dependência de 
-            municípios menores em relação aos grandes centros urbanos.
+            <strong>Descrição Técnica:</strong> Um grafo geoespacial onde os nós são posicionados conforme coordenadas geográficas (latitude/longitude) 
+            e as arestas representam o fluxo de pacientes. A espessura das linhas é calculada usando uma escala de raiz quadrada baseada no volume de 
+            hospitalizações, permitindo visualizar tanto grandes fluxos quanto conexões menores sem poluição visual excessiva.
+        </p>
+        <p>
+            <strong>Interatividade:</strong>
+            <ul>
+                <li><strong>Alternância de Escala:</strong> Botões permitem alternar entre a visão (Estados) e (Municípios). 
+                    Esta funcionalidade foi desabilitada para o dashboard por limitações de armazenamento.
+                </li>
+                <li><strong>Filtragem por Origem:</strong> Ao clicar em um estado ou município, 
+                    o mapa destaca apenas as conexões que se originam daquele local, facilitando a análise de dependência de uma região específica.
+                </li>
+                <li><strong>Zoom e Pan:</strong> O usuário pode aproximar e arrastar o mapa para investigar regiões densas.</li>
+            </ul>
         </p>
 
-        <h4>4.2 Distâncias</h4>
+        <h4>4.2 Análise de Distâncias e Vazios Assistenciais</h4>
+        
+        <h5>4.2.1 Distribuição de Distâncias (Histograma)</h5>
         <div class="histogram-container" style="position: relative; width: 800px; height: 400px;">
             <div class="controls controls-right" style="top: 35px; right: 10px;">
                 <label for="state-select">Filtrar por estado:</label>
@@ -161,6 +173,21 @@
             </div>
             <svg id="histogram" width="800" height="400"></svg>
         </div>
+        <p>
+            <strong>Descrição Técnica:</strong> 
+            Esta visualização é um histograma que apresenta as distâncias médias de viagem por município, filtrando por estado, ou também mostrando o gráfico do país como um todo. 
+            As distâncias são calculadas segundo o centro geográfico de cada cidade, Então internações que ocorreram na mesma cidade de residência contaram como sendo distância 0.
+            O eixo Y representa o número de municípios que se enquadram em cada faixa de distância, permitindo uma análise estatística da acessibilidade.
+        </p>
+        <p>
+            <strong>Interatividade:</strong>
+            <ul>
+                <li><strong>Filtro Regional:</strong> Um menu suspenso permite recalcular dinamicamente a distribuição de distâncias apenas para um estado 
+                    específico. Isso permite comparar perfis distintos, como as longas viagens necessárias no Amazonas versus as curtas distâncias em São Paulo.</li>
+            </ul>
+        </p>
+
+        <h5>4.2.2 Geografia da Acessibilidade (Mapa Coroplético)</h5>
         <div class="map-container" style="position: relative; width: 800px; height: 600px;">
             <div class="controls controls-right">
                 <button id="reset-zoom-choropleth">Resetar Zoom</button>
@@ -168,15 +195,21 @@
             <svg id="choropleth" width="800" height="600"></svg>
         </div>
         <p>
-            Através de um mapa coroplético e um histograma interativo, o sistema calcula a distância média ponderada que os residentes de cada município precisam viajar.
+            <strong>Descrição Técnica:</strong> 
+            Um mapa de calor que utiliza uma escala de cores logarítmica para colorir cada município com base na distância média
+            percorrida por seus residentes, mesma distância apresentada no gráfico anterior. A escala logarítmica é essencial para diferenciar nuances entre municípios com distâncias curtas, 
+            sem que os valores extremos (viagens > 1000km) ofusquem a visualização.
         </p>
-        <ul>
-            <li><strong>Histograma:</strong> Permite analisar a distribuição estatística das distâncias (ex: quantos brasileiros viajam mais de 300km?).</li>
-            <li><strong>Mapa de Calor:</strong> Evidencia visualmente os "desertos médicos" — regiões (geralmente no Norte e Centro-Oeste) onde a cor mais
-                intensa indica a necessidade de deslocamentos extremos para tratamento básico de doenças infecciosas.</li>
-        </ul>
+        <p>
+            <strong>Interatividade:</strong>
+            <ul>
+                <li><strong>Identificação de Vazios:</strong> Cores mais claras/amarelas indicam "desertos médicos" ou regiões de alta vulnerabilidade logística.</li>
+                <li><strong>Tooltip de Dados:</strong> Ao passar o mouse sobre qualquer município, uma caixa flutuante revela o nome exato e a distância média em quilômetros.</li>
+                <li><strong>Navegação:</strong> Suporte completo a zoom e arrastar para explorar o território nacional em detalhes.</li>
+            </ul>
+        </p>
 
-        <h4>4.3 Comunidades de Mobilidade</h4>
+        <h4>4.3 Detecção de Comunidades de Mobilidade</h4>
         <div class="map-container" style="position: relative; width: 800px; height: 600px;">
             <div class="controls controls-right">
                 <button id="reset-zoom-communities">Resetar Zoom</button>
@@ -187,9 +220,16 @@
             <p>Clique em um município no mapa para ver detalhes da sua comunidade.</p>
         </div>
         <p>
-            Apresenta o resultado do algoritmo Infomap. Cada cor no mapa representa uma "comunidade" detectada matematicamente.
-            O resultado mostra que a "geografia da saúde" frequentemente ignora as divisas estaduais; pacientes de regiões fronteiriças
-            tendem a buscar atendimento no estado vizinho se este for mais acessível.
+            <strong>Descrição Técnica:</strong> 
+            Apresenta o resultado do algoritmo <strong>Infomap</strong>, processado via biblioteca <code>igraph</code> em Python. 
+            Cada cor representa uma comunidade detectada matematicamente — um grupo de municípios com alto fluxo interno de pacientes.
+        </p>
+        <p>
+            <strong>Interatividade:</strong>
+            <ul>
+                <li><strong>Destaque de Comunidade (Highlighting):</strong> Ao clicar em qualquer município, a visualização destaca <strong>toda</strong> a comunidade à qual ele pertence e esmaece (diminui a opacidade) de todo o restante do mapa. Isso permite visualizar claramente a extensão territorial real de uma região de saúde, que frequentemente ignora fronteiras estaduais.</li>
+                <li><strong>Painel de Detalhes:</strong> Um painel informativo abaixo do mapa é atualizado dinamicamente com estatísticas sobre a comunidade selecionada, como o número total de municípios que a compõem.</li>
+            </ul>
         </p>
 
         <h3>5. Conclusão</h3>
