@@ -149,9 +149,8 @@ Promise.all([
     muniGroups.forEach((ufMap, muni) => {
         ufMap.forEach((rows, uf) => {
             // Only consider rows with valid DIST_KM and HOSPITALIZACOES
-            const validRows = rows.filter(d => d.DIST_KM && d.HOSPITALIZACOES && !isNaN(+d.DIST_KM) && !isNaN(+d.HOSPITALIZACOES));
-            const totalHosp = d3.sum(validRows, d => +d.HOSPITALIZACOES);
-            const weightedSum = d3.sum(validRows, d => +d.DIST_KM * +d.HOSPITALIZACOES);
+            const totalHosp = d3.sum(rows, d => +d.HOSPITALIZACOES || 0);
+            const weightedSum = d3.sum(rows, d => (+d.DIST_KM || 0) * (+d.HOSPITALIZACOES || 0));
             if (totalHosp > 0) {
                 weightedMeans.push({
                     MUNIC_RES: muni,
