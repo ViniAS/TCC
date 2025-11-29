@@ -3,78 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TCC - Mobilidade no Atendimento de Doenças Infecciosas</title>
+    <title>Dashboard - TCC Mobilidade no Atendimento de Doenças Infecciosas</title>
     <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
     <div class="navigation">
-        <a href="dashboard.html" class="nav-button">📊 Ver Dashboard</a>
-        <a href="tcc.html" class="nav-button">Ver Relatório</a>
+        <a href="tcc.html" class="nav-button">Relatório</a>
     </div>
+
     <div class="intro-text">
-        <h1>Distribuição Geográfica de Hospitais Públicos e Mobilidade para Atendimento de Doenças Infecciosas no Brasil</h1>
-        <h3>Introdução e Justificativa</h3>
-        <p>
-            O Sistema Único de Saúde (SUS) do Brasil é um dos maiores sistemas públicos de saúde do mundo, fundamentado no princípio do acesso universal e integral à saúde. No entanto, em um país com dimensões continentais como o Brasil, a distância geográfica pode se tornar uma barreira significativa para que esse direito seja plenamente exercido. O tempo e o custo de deslocamento para receber atendimento médico podem impactar diretamente a eficácia do tratamento, especialmente em casos de doenças infecciosas, que frequentemente exigem uma resposta rápida.
-        </p>
-        <p>
-            Este projeto nasce da necessidade de entender como a distribuição da infraestrutura hospitalar pública no território nacional se relaciona com a mobilidade dos pacientes. Queremos investigar se a localização dos hospitais atende de forma eficiente às necessidades da população, minimizando as longas viagens em busca de cuidados.
+        <h1>Dashboard - Mobilidade no Atendimento de Doenças Infecciosas</h1>
+        
+        <p style="text-align: center; color: #666; max-width: 800px; margin: 0 auto 30px auto; line-height: 1.6;">
+            Este dashboard apresenta uma visão consolidada de todas as visualizações do estudo sobre mobilidade para atendimento hospitalar no Brasil. 
+            Explore os diferentes gráficos e mapas para compreender os padrões de deslocamento dos pacientes do SUS.
         </p>
 
-        <h3>Objetivo do Trabalho</h3>
-        <p>
-            O objetivo principal deste trabalho é analisar os padrões de deslocamento de pacientes para internações hospitalares por doenças infecciosas no Brasil. Para isso, buscamos responder às seguintes perguntas:
-        </p>
-        <ul>
-            <li><strong>Qual a distância</strong> que os brasileiros precisam viajar para conseguir atendimento hospitalar especializado em doenças infecciosas?</li>
-            <div class="histogram-container" style="position: relative; width: 800px; height: 400px;">
-                <div class="controls controls-right" style="top: 35px; right: 10px;">
-                    <label for="state-select">Filtrar por estado:</label>
-                    <select id="state-select">
-                        <option value="ALL">Todos</option>
+        <div style="background: #f8f9fa; border: 1px solid #ddd; border-radius: 10px; padding: 20px; margin: 0 auto 30px auto; max-width: 800px;">
+            <h3 style="margin-top: 0; color: #0074D9; text-align: center;">Filtros Interativos</h3>
+            <div style="display: flex; gap: 20px; justify-content: center; align-items: flex-start; flex-wrap: wrap;">
+                
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                    <label style="font-weight: bold;">Ano:</label>
+                    <div id="year-multiselect" class="multiselect">
+                        </div>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                    <label style="font-weight: bold;">Diagnóstico Principal:</label>
+                    <div id="diagnosis-multiselect" class="multiselect" style="min-width: 250px;">
+                        </div>
+                </div>
+
+                <button id="apply-filters" style="margin-top: 24px; padding: 10px 20px; background: #0074D9; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">
+                    Aplicar Filtros
+                </button>
+            </div>
+            <div id="filter-status" style="text-align: center; margin-top: 15px; font-style: italic; color: #666;">
+                Mostrando: Todos os dados
+            </div>
+        </div>
+
+        <h3>Qual a distância que os brasileiros precisam viajar para conseguir atendimento hospitalar especializado em doenças infecciosas?</h3>
+        <div class="histogram-container" style="position: relative; width: 800px; height: 400px;">
+            <div class="controls controls-right" style="top: 35px; right: 10px;">
+                <label for="state-select">Filtrar por estado:</label>
+                <select id="state-select">
+                    <option value="ALL">Todos</option>
+                </select>
+            </div>
+            <svg id="histogram" width="800" height="400"></svg>
+        </div>
+
+        <h3>A distribuição geográfica atual dos hospitais públicos é eficiente para garantir que os pacientes sejam atendidos o mais próximo possível de suas residências?</h3>
+        <h4>Mapa de Hospitalizações fora do Estado de Domicílio</h4>
+        <div class="map-container" style="position: relative; width: 800px; height: 600px;">
+            <div class="controls controls-right">
+                <button id="reset-zoom-map">Resetar Zoom</button>
+            </div>
+            <svg id="map" width="800" height="600"></svg>
+        </div>
+
+        <h3>Quais municípios e regiões do país apresentam os maiores vazios assistenciais ou exigem os maiores deslocamentos da sua população?</h3>
+        <h4>Distância Média Viajada por Município para Hospitalização</h4>
+        <div class="map-container" style="position: relative; width: 800px; height: 600px;">
+            <div class="controls controls-right">
+                <button id="reset-zoom-choropleth">Resetar Zoom</button>
+            </div>
+            <svg id="choropleth" width="800" height="600"></svg>
+        </div>
+
+        <h4>Porcentagem de Hospitalizações feitas no Município de Residência</h4>
+        <div class="map-container" style="position: relative; width: 800px; height: 600px;">
+            <div class="controls controls-right">
+                <button id="reset-zoom-choropleth-same">Resetar Zoom</button>
+            </div>
+            <svg id="choropleth-same" width="800" height="600"></svg>
+        </div>
+
+        <h3>Análise de Comunidades de Mobilidade Hospitalar</h3>
+                <div style="background: #f8f9fa; border: 1px solid #ddd; border-radius: 10px; padding: 20px; margin: 0 auto 30px auto; max-width: 800px;">
+            <h3 style="margin-top: 0; color: #0074D9; text-align: center;">Filtros Interativos</h3>
+            <div style="display: flex; gap: 20px; justify-content: center; align-items: center; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <label for="diagnosis-select-community" style="font-weight: bold;">Diagnóstico Principal:</label>
+                    <select id="diagnosis-select-community" style="padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; min-width: 200px;">
+                        <option value="Todos">Todos os Diagnósticos</option>
                     </select>
                 </div>
-                <svg id="histogram" width="800" height="400"></svg>
+                <button id="apply-filters-community" style="padding: 10px 20px; background: #0074D9; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">
+                    Aplicar Filtro
+                </button>
             </div>
-            <li>A <strong>distribuição geográfica atual</strong> dos hospitais públicos é eficiente para garantir que os pacientes sejam atendidos o mais próximo possível de suas residências? (clique no mapa)</li>
-            <h4>Mapa de Hospitalizações fora do Municípios / Estado de Domicílio</h4>
-            <div class="map-container" style="position: relative; width: 800px; height: 600px;">
-                <div class="controls controls-left">
-                    <button id="show-munis" class="active">Municípios</button>
-                    <button id="show-states">Estados</button>
-                </div>
-                <div class="controls controls-right">
-                    <button id="reset-zoom-map">Resetar Zoom</button>
-                </div>
-                <svg id="map" width="800" height="600"></svg>
+            <div id="filter-status-community" style="text-align: center; margin-top: 15px; font-style: italic; color: #666;">
+                Mostrando: Todos os dados
             </div>
-            
-            <li>Quais municípios e regiões do país apresentam os maiores <strong>vazios assistenciais</strong> ou exigem os maiores deslocamentos da sua população?</li>
-            
-            <h4>Distância Média Viajada por Município para Hospitalização</h4>
-            <div class="map-container" style="position: relative; width: 800px; height: 600px;">
-                <div class="controls controls-right">
-                    <button id="reset-zoom-choropleth">Resetar Zoom</button>
-                </div>
-                <svg id="choropleth" width="800" height="600"></svg>
-            </div>
-        </ul>
-
-        <h3>Metodologia e Dados</h3>
+        </div>
         <p>
-            Para realizar esta análise, utilizamos dados públicos de internações hospitalares (AIH - Autorização de Internação Hospitalar) disponibilizados pelo <strong>DataSUS</strong>. A partir desses dados, calculamos a distância entre o município de residência do paciente e o município do hospital. Essas informações são então agregadas para gerar os indicadores e visualizações interativas apresentadas a seguir.
+            O mapa abaixo mostra o agrupamento de municípios em comunidades baseado em padrões de mobilidade para atendimento hospitalar. Municípios da mesma cor pertencem à mesma comunidade, indicando que compartilham padrões similares de deslocamento para tratamento médico.
         </p>
-
-        <h3>Relevância e Impacto</h3>
-        <p>
-           Os resultados deste estudo podem fornecer um diagnóstico detalhado sobre o acesso geográfico aos serviços hospitalares do SUS. A identificação de áreas onde os pacientes viajam longas distâncias é uma informação estratégica que pode auxiliar gestores de saúde no planejamento de políticas públicas e na alocação de recursos, visando promover um acesso mais equitativo e eficiente para toda a população.
-        </p>
-
-        <h3>Análise de Comunidades</h3>
-        <p>
-            O mapa abaixo mostra o agrupamento de municípios em comunidades baseado em padrões de mobilidade para atendimento hospitalar. Municípios da mesma cor pertencem à mesma comunidade, indicando que compartilham padrões similares de deslocamento para tratamento médico. Esta análise de rede permite identificar regiões funcionalmente integradas do ponto de vista da saúde pública.
-        </p>
-
         <h4>Mapa de Comunidades de Mobilidade Hospitalar</h4>
         <div class="map-container" style="position: relative; width: 800px; height: 600px;">
             <div class="controls controls-right">
@@ -85,11 +112,9 @@
                 <p>Clique em um município no mapa para ver detalhes da sua comunidade.</p>
             </div>
         </div>
-    
     </div>
-    
 
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="static/js/app.js"></script>
+    <script type="module" src="static/js/dashboard.js"></script>
 </body>
 </html>

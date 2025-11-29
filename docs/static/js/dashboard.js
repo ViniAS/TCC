@@ -220,6 +220,7 @@ Promise.all([
             DIAG_PRINC: diag?.name || 'Unknown',
             HOSPITALIZACOES: +d.HOSPITALIZACOES,
             DISTANCE: +d.DISTANCE,
+            PCT_SAME_MUN: +d.PCT_SAME_MUN,
             MUNIC_RES: resInfo?.name || 'Unknown',
             UF_RES: resInfo?.uf || 'Unknown',
             RES_LAT: resInfo?.lat || 0,
@@ -278,7 +279,10 @@ Promise.all([
             const totalHosp = d3.sum(records, d => +d.HOSPITALIZACOES || 0);
             const meanDist = totalHosp > 0
                 ? d3.sum(records, d => (+d.DISTANCE || 0) * (+d.HOSPITALIZACOES || 0)) / totalHosp
-                : 0;
+                : NaN;
+            const meanPct = totalHosp > 0
+                ? d3.sum(records, d => 100 * ((+d.PCT_SAME_MUN || 0) * (+d.HOSPITALIZACOES || 0))) / totalHosp
+                : NaN;
             const firstRecord = records[0];
             aggregated.push({
                 MUNIC_RES: municRes,
@@ -287,7 +291,8 @@ Promise.all([
                 RES_LAT: firstRecord.RES_LAT,
                 RES_LON: firstRecord.RES_LON,
                 CD_MUN_RES: firstRecord.CD_MUN_RES,
-                DISTANCE: meanDist
+                DISTANCE: meanDist,
+                PCT_SAME_MUN: meanPct
             });
         });
 
@@ -318,27 +323,6 @@ Promise.all([
         });
 
         return aggregated;
-    }
-    // Function to compute weighted means from filtered data
-    function computeWeightedMeans(filteredData) {
-        const muniGroups = d3.group(filteredData, d => d.MUNIC_RES, d => d.UF_RES);
-        let weightedMeans = [];
-        
-        muniGroups.forEach((ufMap, muni) => {
-            ufMap.forEach((records, uf) => {
-                const totalHosp = d3.sum(records, d => +d.HOSPITALIZACOES || 0);
-                const weightedSum = d3.sum(records, d => (+d.DISTANCE || 0) * (+d.HOSPITALIZACOES || 0));
-                const weightedMean = totalHosp > 0 ? weightedSum / totalHosp : 0;
-                
-                weightedMeans.push({
-                    MUNIC_RES: muni,
-                    UF_RES: uf,
-                    WEIGHTED_MEAN_DIST: weightedMean
-                });
-            });
-        });
-        
-        return weightedMeans;
     }
 
     // Function to update filter status text
@@ -373,10 +357,9 @@ Promise.all([
 
         const aggregatedData = aggregateFilteredData(filteredData);
         const aggregatedStateData = aggregateFilteredDataStates(filteredStateData);
-        const weightedMeans = computeWeightedMeans(filteredData);
 
         // Update state dropdown with filtered states
-        const states = Array.from(new Set(weightedMeans.map(d => d.UF_RES))).sort();
+        const states = Array.from(new Set(aggregatedData.map(d => d.UF_RES))).sort();
         const stateSelect = d3.select("#state-select");
         const currentStateValue = stateSelect.property("value");
         
@@ -401,6 +384,7 @@ Promise.all([
 
         // Update choropleth
         drawChoropleth(muniGeo, aggregatedData, stateGeo);
+        drawChoroplethSame(muniGeo, aggregatedData, stateGeo);
 
         // Update filter status
         updateFilterStatus();
@@ -658,7 +642,7 @@ function drawChoropleth(geojson, weightedMeans, state) {
     const meanByMuni = new Map(weightedMeans.map(d => [d.MUNIC_RES, d.DISTANCE]));
 
     // Compute color scale (logarithmic)
-    const values = weightedMeans.map(d => d.DISTANCE).filter(d => !isNaN(d) && d > 0);
+    const values = weightedMeans.map(d => d.DISTANCE).filter(d => !isNaN(d) && d>0);
     const minVal = d3.min(values);
     const maxVal = d3.max(values);
     const color = d3.scaleSequentialLog(d3.interpolateViridis)
@@ -744,6 +728,114 @@ function drawChoropleth(geojson, weightedMeans, state) {
     if (Math.abs(Math.log10(maxVal) - Math.log10(lastTick)) > 0.2) {
         tickVals.push(maxVal);
     }
+    
+    const legendAxis = d3.axisBottom(legendScale)
+        .tickValues(tickVals) 
+        .tickFormat(d => d3.format(".0f")(d))
+        .tickPadding(6);
+
+    legendSvg.append("g")
+        .attr("transform", `translate(0,${legendHeight})`)
+        .call(legendAxis);
+}
+
+
+function drawChoroplethSame(geojson, weightedMeans, state) {
+    const svg = d3.select("#choropleth-same");
+    svg.selectAll("*").remove();
+
+    const width = +svg.attr("width");
+    const height = +svg.attr("height");
+    const projection = d3.geoMercator().center([-54, -15]).scale(750).translate([width / 2, height / 2]);
+    const path = d3.geoPath().projection(projection);
+
+    // Create a group for zooming
+    const mapGroup = svg.append("g").attr("class", "choropleth-same-map-group");
+
+    // D3 zoom behavior
+    const zoom = d3.zoom()
+        .scaleExtent([1, 8])
+        .on("zoom", (event) => {
+            mapGroup.attr("transform", event.transform);
+        });
+    svg.call(zoom);
+
+    d3.select("#reset-zoom-choropleth-same").on("click", () => {
+        svg.transition().duration(500).call(zoom.transform, d3.zoomIdentity);
+    });
+
+    // Create a lookup for weighted mean by municipality name
+    const meanByMuni = new Map(weightedMeans.map(d => [d.MUNIC_RES, d.PCT_SAME_MUN]));
+
+    // Compute color scale (logarithmic)
+    const values = weightedMeans.map(d => d.PCT_SAME_MUN).filter(d => !isNaN(d));
+    const minVal = 0.0;
+    const maxVal = 100.0;
+    const color = d3.scaleSequential(d3.interpolateViridis)
+        .domain([minVal, maxVal]);
+
+    // Draw municipalities
+    mapGroup.append("g")
+        .selectAll("path")
+        .data(geojson.features)
+        .enter().append("path")
+        .attr("d", path)
+        .attr("fill", d => {
+            const val = meanByMuni.get(d.properties.NM_MUN + " - " + d.properties.NM_UF);
+            return (val !== undefined) ? color(val) : "#eee";
+        })
+        .attr("stroke", "#fff")
+        .attr("stroke-width", 0.2)
+        .append("title")
+        .text(d => {
+            const val = meanByMuni.get(d.properties.NM_MUN + " - " + d.properties.NM_UF);
+            return `${d.properties.NM_MUN} - ${d.properties.NM_UF}\n${val !== undefined ? val.toFixed(2) + "%" : "sem dados"}`;
+        });
+
+    // Draw state borders on top
+    mapGroup.append("g")
+        .selectAll("path")
+        .data(state.features)
+        .enter().append("path")
+        .attr("d", path)
+        .attr("fill", "none")
+        .attr("stroke", "#000")
+        .attr("stroke-width", 0.5);
+
+    // Add a color legend (log scale)
+    const legendWidth = 300, legendHeight = 12;
+    const legendSvg = svg.append("g")
+        .attr("transform", `translate(${width - legendWidth - 40},${height - 40})`);
+
+    // Add legend title above the legendSvg
+    svg.append("text")
+        .attr("x", width - legendWidth - 40 + legendWidth / 2)
+        .attr("y", height - 48)
+        .attr("text-anchor", "middle")
+        .attr("font-size", 14)
+        .text("Hospitalizações atendidas no município de Residência (%).");
+
+    const defs = svg.append("defs");
+    const linearGradient = defs.append("linearGradient")
+        .attr("id", "legend-gradient");
+    linearGradient.selectAll("stop")
+        .data(d3.range(0, 1.01, 0.01))
+        .enter().append("stop")
+        .attr("offset", d => `${d * 100}%`)
+        .attr("stop-color", d => color(minVal * Math.pow(maxVal / minVal, d)));
+
+    legendSvg.append("rect")
+        .attr("width", legendWidth)
+        .attr("height", legendHeight)
+        .style("fill", "url(#legend-gradient)");
+
+    // Legend axis (log scale)
+    const legendScale = d3.scaleLinear()
+        .domain([minVal, maxVal])
+        .range([0, legendWidth]);
+        
+    let tickVals = [0.0,20.0,40.0,60.0,80.0,100.0];
+    
     
     const legendAxis = d3.axisBottom(legendScale)
         .tickValues(tickVals) 

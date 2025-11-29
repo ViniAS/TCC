@@ -5,10 +5,14 @@ if __name__ == "__main__":
     df = pd.read_parquet('data/agg_data/graph.parquet')
     
     df['HOSPxDIST'] = df['HOSPITALIZACOES'] * df['DISTANCE']
-    distdf = df.groupby(['CD_MUN_RES','ANO_CMPT','DIAG_PRINC']).agg({'HOSPITALIZACOES':'sum','HOSPxDIST':'sum'})
+    df['SAME_MUN'] = (df['CD_MUN_RES'] == df['CD_MUN_MOV']) * df['HOSPITALIZACOES']
+    distdf = df.groupby(['CD_MUN_RES','ANO_CMPT','DIAG_PRINC']).agg({'HOSPITALIZACOES':'sum','HOSPxDIST':'sum', 'SAME_MUN':'sum'})
     distdf['DISTANCE'] = distdf['HOSPxDIST'] / distdf['HOSPITALIZACOES']
+    distdf['PCT_SAME_MUN'] = distdf['SAME_MUN'] / distdf['HOSPITALIZACOES']
     distdf = distdf.drop('HOSPxDIST',axis =1)
+    distdf = distdf.drop('SAME_MUN', axis= 1)
     distdf['DISTANCE'] = distdf['DISTANCE'].round(3)
+    distdf['PCT_SAME_MUN'] = distdf['PCT_SAME_MUN'].round(5)
     distdf = distdf.reset_index(drop=False)
     
     diag = pd.DataFrame(distdf['DIAG_PRINC'].unique()).rename({0:'DIAG_PRINC'},axis=1) \

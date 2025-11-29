@@ -1,4 +1,7 @@
+import * as topojsonServer from "https://esm.sh/topojson-server@3";
+import * as topojsonClient from "https://esm.sh/topojson-client@3";
 // --- Setup ---
+
 const width = 800;
 const height = 600;
 const svg = d3.select("#map");
@@ -51,7 +54,8 @@ Promise.all([
     d3.csv("static/data/county_info.csv")
 ]).then(([muniGeo, muniData, stateGeo, stateData, communitiesData,muniInfo]) => {
 
-    
+    // Compute topology for municipalities
+    const muniTopology = topojsonServer.topology({municipalities: muniGeo},9e2);
 
     const muniInfoMap = new Map(
         muniInfo.map(d => [d.CD_MUN, {
@@ -80,6 +84,7 @@ Promise.all([
         const movInfo = muniInfoMap.get(d.CD_MUN_MOV);
         return {
             CD_MUN_RES: d.CD_MUN_RES,
+            CD_MUN_MOV: d.CD_MUN_MOV,
             ANO_CMPT: d.ANO_CMPT,
             HOSPITALIZACOES: +d.HOSPITALIZACOES,
             DIST_KM: +d.DISTANCE,
@@ -151,11 +156,14 @@ Promise.all([
             // Only consider rows with valid DIST_KM and HOSPITALIZACOES
             const totalHosp = d3.sum(rows, d => +d.HOSPITALIZACOES || 0);
             const weightedSum = d3.sum(rows, d => (+d.DIST_KM || 0) * (+d.HOSPITALIZACOES || 0));
+            const sameRows = rows.filter(d => d.CD_MUN_MOV === d.CD_MUN_RES);
+            const totalHospSame = d3.sum(sameRows, d => +d.HOSPITALIZACOES || 0);
             if (totalHosp > 0) {
                 weightedMeans.push({
                     MUNIC_RES: muni,
                     UF_RES: uf,
-                    WEIGHTED_MEAN_DIST: weightedSum / totalHosp
+                    WEIGHTED_MEAN_DIST: weightedSum / totalHosp,
+                    PCT_SAME_MUN: 100 * totalHospSame / totalHosp
                 });
             }
         });
@@ -173,8 +181,10 @@ Promise.all([
 
     drawChoropleth(muniGeo, weightedMeans, stateGeo);
 
+    drawChoroplethSame(muniGeo, weightedMeans, stateGeo);
+
     // Draw communities map
-    drawCommunitiesMap(muniGeo, communitiesData, stateGeo);
+    drawCommunitiesMap(muniGeo, communitiesData, stateGeo, muniTopology);
 
     // Update histogram on dropdown change
     select.on("change", function() {
@@ -545,8 +555,115 @@ function drawChoropleth(geojson, weightedMeans, state) {
         .call(legendAxis);
 }
 
+function drawChoroplethSame(geojson, weightedMeans, state) {
+    const svg = d3.select("#choropleth-same");
+    svg.selectAll("*").remove();
 
-function drawCommunitiesMap(geojson, communitiesData, stateGeo) {
+    const width = +svg.attr("width");
+    const height = +svg.attr("height");
+    const projection = d3.geoMercator().center([-54, -15]).scale(750).translate([width / 2, height / 2]);
+    const path = d3.geoPath().projection(projection);
+
+    // Create a group for zooming
+    const mapGroup = svg.append("g").attr("class", "choropleth-same-map-group");
+
+    // D3 zoom behavior
+    const zoom = d3.zoom()
+        .scaleExtent([1, 8])
+        .on("zoom", (event) => {
+            mapGroup.attr("transform", event.transform);
+        });
+    svg.call(zoom);
+
+    d3.select("#reset-zoom-choropleth-same").on("click", () => {
+        svg.transition().duration(500).call(zoom.transform, d3.zoomIdentity);
+    });
+
+    // Create a lookup for weighted mean by municipality name
+    const meanByMuni = new Map(weightedMeans.map(d => [d.MUNIC_RES, d.PCT_SAME_MUN]));
+
+    // Compute color scale (logarithmic)
+    const values = weightedMeans.map(d => d.PCT_SAME_MUN).filter(d => !isNaN(d));
+    const minVal = 0.0;
+    const maxVal = 100.0;
+    const color = d3.scaleSequential(d3.interpolateViridis)
+        .domain([minVal, maxVal]);
+
+    // Draw municipalities
+    mapGroup.append("g")
+        .selectAll("path")
+        .data(geojson.features)
+        .enter().append("path")
+        .attr("d", path)
+        .attr("fill", d => {
+            const val = meanByMuni.get(d.properties.NM_MUN + " - " + d.properties.NM_UF);
+            return (val !== undefined) ? color(val) : "#eee";
+        })
+        .attr("stroke", "#fff")
+        .attr("stroke-width", 0.2)
+        .append("title")
+        .text(d => {
+            const val = meanByMuni.get(d.properties.NM_MUN + " - " + d.properties.NM_UF);
+            return `${d.properties.NM_MUN} - ${d.properties.NM_UF}\n${val !== undefined ? val.toFixed(2) + "%" : "sem dados"}`;
+        });
+
+    // Draw state borders on top
+    mapGroup.append("g")
+        .selectAll("path")
+        .data(state.features)
+        .enter().append("path")
+        .attr("d", path)
+        .attr("fill", "none")
+        .attr("stroke", "#000")
+        .attr("stroke-width", 0.5);
+
+    // Add a color legend (log scale)
+    const legendWidth = 300, legendHeight = 12;
+    const legendSvg = svg.append("g")
+        .attr("transform", `translate(${width - legendWidth - 40},${height - 40})`);
+
+    // Add legend title above the legendSvg
+    svg.append("text")
+        .attr("x", width - legendWidth - 40 + legendWidth / 2)
+        .attr("y", height - 48)
+        .attr("text-anchor", "middle")
+        .attr("font-size", 14)
+        .text("Hospitalizações atendidas no município de Residência (%).");
+
+    const defs = svg.append("defs");
+    const linearGradient = defs.append("linearGradient")
+        .attr("id", "legend-gradient");
+    linearGradient.selectAll("stop")
+        .data(d3.range(0, 1.01, 0.01))
+        .enter().append("stop")
+        .attr("offset", d => `${d * 100}%`)
+        .attr("stop-color", d => color(minVal * Math.pow(maxVal / minVal, d)));
+
+    legendSvg.append("rect")
+        .attr("width", legendWidth)
+        .attr("height", legendHeight)
+        .style("fill", "url(#legend-gradient)");
+
+    // Legend axis (log scale)
+    const legendScale = d3.scaleLinear()
+        .domain([minVal, maxVal])
+        .range([0, legendWidth]);
+        
+    let tickVals = [0.0,20.0,40.0,60.0,80.0,100.0];
+    
+    
+    const legendAxis = d3.axisBottom(legendScale)
+        .tickValues(tickVals) 
+        .tickFormat(d => d3.format(".0f")(d))
+        .tickPadding(6);
+
+    legendSvg.append("g")
+        .attr("transform", `translate(0,${legendHeight})`)
+        .call(legendAxis);
+}
+
+
+function drawCommunitiesMap(geojson, communitiesData, stateGeo, topology) {
     const svg = d3.select("#communities-map");
     svg.selectAll("*").remove();
 
@@ -619,6 +736,24 @@ function drawCommunitiesMap(geojson, communitiesData, stateGeo) {
             const communityId = communityByMuni.get(municipalityName);
             return `${d.properties.NM_MUN} - ${d.properties.NM_UF}\nComunidade: ${communityId !== undefined ? communityId : "não identificada"}`;
         });
+
+    // Draw community borders
+    if (topology) {
+        const mesh = topojsonClient.mesh(topology, topology.objects.municipalities, (a, b) => {
+            const muniA = a.properties.NM_MUN + " - " + a.properties.NM_UF;
+            const muniB = b.properties.NM_MUN + " - " + b.properties.NM_UF;
+            return communityByMuni.get(muniA) !== communityByMuni.get(muniB);
+        });
+
+        mapGroup.append("path")
+            .datum(mesh)
+            .attr("d", path)
+            .attr("fill", "none")
+            .attr("stroke", "#000")
+            .attr("stroke-width", 0.85)
+            .attr("stroke-linejoin", "round")
+            .attr("stroke-linecap", "round");
+    }
 
     // Draw state borders on top
     mapGroup.append("g")

@@ -19,8 +19,7 @@
 </head>
 <body>
     <div class="navigation">
-        <a href="index.html" class="nav-button">🏠 Voltar ao Início</a>
-        <a href="dashboard.html" class="nav-button">📊 Ver Dashboard</a>
+        <a href="index.html" class="nav-button">📊 Ver Dashboard</a>
     </div>
 
     <div class="intro-text">
@@ -144,7 +143,7 @@
             <svg id="map" width="800" height="600"></svg>
         </div>
         <p>
-            <strong>Descrição Técnica:</strong> Um grafo geoespacial onde os nós são posicionados conforme coordenadas geográficas (latitude/longitude) 
+            Um grafo geoespacial onde os nós são posicionados conforme coordenadas geográficas (latitude/longitude) 
             e as arestas representam o fluxo de pacientes. A espessura das linhas é calculada usando uma escala de raiz quadrada baseada no volume de 
             hospitalizações, permitindo visualizar tanto grandes fluxos quanto conexões menores sem poluição visual excessiva.
         </p>
@@ -161,7 +160,7 @@
             </ul>
         </p>
 
-        <h4>4.2 Análise de Distâncias e Vazios Assistenciais</h4>
+        <h4>4.2 Análise de Distâncias</h4>
         
         <h5>4.2.1 Distribuição de Distâncias (Histograma)</h5>
         <div class="histogram-container" style="position: relative; width: 800px; height: 400px;">
@@ -174,7 +173,6 @@
             <svg id="histogram" width="800" height="400"></svg>
         </div>
         <p>
-            <strong>Descrição Técnica:</strong> 
             Esta visualização é um histograma que apresenta as distâncias médias de viagem por município, filtrando por estado, ou também mostrando o gráfico do país como um todo. 
             As distâncias são calculadas segundo o centro geográfico de cada cidade, Então internações que ocorreram na mesma cidade de residência contaram como sendo distância 0.
             O eixo Y representa o número de municípios que se enquadram em cada faixa de distância, permitindo uma análise estatística da acessibilidade.
@@ -195,7 +193,6 @@
             <svg id="choropleth" width="800" height="600"></svg>
         </div>
         <p>
-            <strong>Descrição Técnica:</strong> 
             Um mapa de calor que utiliza uma escala de cores logarítmica para colorir cada município com base na distância média
             percorrida por seus residentes, mesma distância apresentada no gráfico anterior. A escala logarítmica é essencial para diferenciar nuances entre municípios com distâncias curtas, 
             sem que os valores extremos (viagens > 1000km) ofusquem a visualização.
@@ -203,13 +200,31 @@
         <p>
             <strong>Interatividade:</strong>
             <ul>
-                <li><strong>Identificação de Vazios:</strong> Cores mais claras/amarelas indicam "desertos médicos" ou regiões de alta vulnerabilidade logística.</li>
                 <li><strong>Tooltip de Dados:</strong> Ao passar o mouse sobre qualquer município, uma caixa flutuante revela o nome exato e a distância média em quilômetros.</li>
                 <li><strong>Navegação:</strong> Suporte completo a zoom e arrastar para explorar o território nacional em detalhes.</li>
             </ul>
         </p>
 
-        <h4>4.3 Detecção de Comunidades de Mobilidade</h4>
+        <h4>4.3 Mapa de municípios com fácil acesso hospitais</h4>
+        <div class="map-container" style="position: relative; width: 800px; height: 600px;">
+            <div class="controls controls-right">
+                <button id="reset-zoom-choropleth-same">Resetar Zoom</button>
+            </div>
+            <svg id="choropleth-same" width="800" height="600"></svg>
+        </div>
+        <p>
+            Um mapa de calor que utiliza uma escala de cores linear para colorir cada município com base na porcentagem de hospitalizações de pacientes residentes
+            do município que foram feitar no próprio município.
+        </p>
+        <p>
+            <strong>Interatividade:</strong>
+            <ul>
+                <li><strong>Tooltip de Dados:</strong> Ao passar o mouse sobre qualquer município, uma caixa flutuante revela o nome exato e a distância média em quilômetros.</li>
+                <li><strong>Navegação:</strong> Suporte completo a zoom e arrastar para explorar o território nacional em detalhes.</li>
+            </ul>
+        </p>
+
+        <h4>4.4 Detecção de Comunidades de Mobilidade</h4>
         <div class="map-container" style="position: relative; width: 800px; height: 600px;">
             <div class="controls controls-right">
                 <button id="reset-zoom-communities">Resetar Zoom</button>
@@ -220,7 +235,6 @@
             <p>Clique em um município no mapa para ver detalhes da sua comunidade.</p>
         </div>
         <p>
-            <strong>Descrição Técnica:</strong> 
             Apresenta o resultado do algoritmo <strong>Infomap</strong>, processado via biblioteca <code>igraph</code> em Python. 
             Cada cor representa uma comunidade detectada matematicamente — um grupo de municípios com alto fluxo interno de pacientes.
         </p>
@@ -283,6 +297,6 @@
     </div>
     
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="static/js/app.js"></script>
+    <script type="module" src="static/js/app.js"></script>
 </body>
 </html>
